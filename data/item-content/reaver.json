@@ -1,0 +1,18 @@
+{
+  "key": "reaver",
+  "category": "secret_shop",
+  "summary": "Reaver бол +25 Strength өгдөг 2800 алтны үнэтэй бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Reaver нь Heart of Tarrasque, Satanic, Overwhelming Blink-ийн найрлагад ордог. Strength нь HP болон HP нөхөн сэргэлтийг нэмдэг тул эдгээр эд зүйл рүү явж байгаа баатрууд, ялангуяа Strength керри болон инициаторууд Reaver-ийг эхэлж худалдаж авдаг.\n\nSecret Shop-д зарагддаг тул courier-ээр авчруул. Нийтлэг алдаа: Reaver-ийг удаан бүтэн эд зүйл болгохгүй барих — үнэтэй ч өөрөө идэвхтэй чадваргүй.",
+  "goodFor": [
+    "centaur",
+    "axe",
+    "skeleton_king",
+    "sven",
+    "dragon_knight"
+  ],
+  "tips": [
+    "Strength үндсэн атрибуттай баатарт +25 Strength нь довтолгооны хүчийг ч нэмнэ.",
+    "Heart of Tarrasque хийх гэж байгаа бол Reaver-ийг эхэлж авч HP-гээ өсгө."
+  ]
+}

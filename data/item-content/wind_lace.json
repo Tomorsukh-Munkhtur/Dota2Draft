@@ -1,0 +1,19 @@
+{
+  "key": "wind_lace",
+  "category": "miscellaneous",
+  "summary": "Wind Lace нь 225 алтаар +15 хөдлөх хурд өгдөг хямд item. Tranquil Boots, Drum of Endurance, Eul's Scepter of Divinity, Solar Crest-ийн хэсэг.",
+  "abilities": [],
+  "usage": "Wind Lace нь тоглолтын эхэнд, ялангуяа саппортуудад газрын зураг дээр хурдан хөдлөх, ward тавих, ганк хийхэд тусалдаг. Хямд тул эхлэлийн item-д ч авч болно.\n\nДараа нь Tranquil Boots, Drum of Endurance, Eul's Scepter of Divinity эсвэл Solar Crest болгон угсрах боломжтой. Хөдлөх хурдны бонус нь гутлынхтай давхардаж нэмэгддэг тул гутлаас өмнө авахад ч ашигтай.",
+  "goodFor": [
+    "crystal_maiden",
+    "lion",
+    "shadow_shaman",
+    "dazzle",
+    "witch_doctor"
+  ],
+  "tips": [
+    "Саппортын эхлэлийн item-д хямд, хэрэгтэй сонголт.",
+    "Гутлын хөдлөх хурдтай давхардаж нэмэгддэг.",
+    "Tranquil Boots эсвэл Eul's болгон хувиргаарай."
+  ]
+}

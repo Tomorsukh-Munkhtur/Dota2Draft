@@ -1,0 +1,13 @@
+{
+  "key": "belt_of_strength",
+  "category": "attributes",
+  "summary": "Belt of Strength нь +6 Strength өгдөг хямд бүрдэл эд зүйл. Strength нь HP болон HP нөхөн сэргэлтийг нэмдэг тул бараг бүх баатарт бат бөх байдал өгнө.",
+  "abilities": [],
+  "usage": "Belt of Strength нь Power Treads, Sange, Dragon Lance, Skull Basher, Drum of Endurance зэрэг олон түгээмэл эд зүйлийн бүрдэл хэсэг. Эдгээрийн аль нэгийг хийх гэж байгаа бол Belt of Strength-ийг эрт авч, нэмэлт HP-гээр лайн дээр бат бөх болох нь ухаалаг.\n\nStrength баатрын хувьд энэ нь довтолгооны хүчийг ч нэмнэ. Гэхдээ ганцаар нь удаан барих биш, том эд зүйл рүү хурдан нийлүүлэх нь чухал.",
+  "goodFor": ["drow_ranger", "sniper", "life_stealer", "huskar"],
+  "tips": [
+    "Power Treads хийх бол Belt of Strength-ийг эхэлж авбал HP эрт нэмэгдэнэ.",
+    "Ogre Axe-тай нийлүүлж Sange, Blade of Alacrity-тай нийлүүлж Dragon Lance хийнэ.",
+    "Strength баатарт довтолгооны хүч ч нэмдэг тул давхар ашигтай."
+  ]
+}

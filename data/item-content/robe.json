@@ -1,0 +1,19 @@
+{
+  "key": "robe",
+  "category": "attributes",
+  "summary": "Robe of the Magi нь 450 алтаар +6 Intelligence өгдөг энгийн атрибут item. Intelligence нь мана болон мана нөхөн сэргэлтийг нэмэгдүүлдэг.",
+  "abilities": [],
+  "usage": "Robe of the Magi нь Kaya, Oblivion Staff, Veil of Discord, Diffusal Blade-ийн бүрэлдэхүүн хэсэг. Эдгээр item-ын аль нэгийг угсрах гэж байгаа бол Robe-оо эрт авахад мана нэмэгдэж, лайнд илүү олон удаа чадвар хэрэглэх боломжтой болно.\n\nIntelligence баатрын хувьд Intelligence нь довтолгооны хүчийг ч нэмдэг. Гэхдээ дангаар нь удаан хадгалах нь утгагүй — аль болох хурдан том item болгож хувиргаарай.",
+  "goodFor": [
+    "zuus",
+    "skywrath_mage",
+    "storm_spirit",
+    "invoker",
+    "phantom_lancer"
+  ],
+  "tips": [
+    "Мана дутаад байвал лайнд эрт авах хамгийн хямд Intelligence item-уудын нэг.",
+    "Kaya эсвэл Veil of Discord угсрах төлөвлөгөөтэй үед эхний хэсэг болгон аваарай.",
+    "Agility керрид голдуу Diffusal Blade угсрах үед л хэрэгтэй."
+  ]
+}

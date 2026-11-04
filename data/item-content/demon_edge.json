@@ -1,0 +1,13 @@
+{
+  "key": "demon_edge",
+  "category": "secret_shop",
+  "summary": "Demon Edge нь +40 довтолгооны хүч өгдөг, Secret Shop-оос авдаг бүрдэл эд зүйл. Daedalus, Monkey King Bar, Silver Edge, Divine Rapier зэрэг хүчирхэг эд зүйлсийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Demon Edge-ийг ихэвчлэн керриүд тоглолтын дунд-сүүл үед том хохирлын эд зүйл хийх замдаа авдаг: Crystalys-тай нийлүүлж Daedalus, Blitz Knuckles болон Javelin-тэй Monkey King Bar, Shadow Blade-тэй Silver Edge хийнэ.\n\nЭнэ нь Secret Shop-оос зарагддаг тул courier-ээрээ авахуулах эсвэл өөрөө очих хэрэгтэй. 2200 алтаар 40 хохирол өгдөг ч ганцаараа удаан барих нь үр ашиггүй тул бусад бүрдлээ хурдан цуглуулаарай.",
+  "goodFor": ["sven", "sniper", "kunkka", "juggernaut"],
+  "tips": [
+    "Secret Shop-оос авдаг тул courier-ээ ашиглаарай.",
+    "Хангалттай алттай болсон үедээ Daedalus эсвэл Monkey King Bar-ийг нэг дор дуусгахаар төлөвлө.",
+    "Divine Rapier-ийн бүрдэл хэсэг ч мөн."
+  ]
+}

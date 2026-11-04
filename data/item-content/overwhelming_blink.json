@@ -1,0 +1,24 @@
+{
+  "key": "overwhelming_blink",
+  "category": "armaments",
+  "summary": "Overwhelming Blink бол Blink Dagger-ийн Strength баатруудад зориулсан сайжруулалт бөгөөд +25 Strength өгч, teleport хийсний дараа ойролцоох дайснуудыг хохироож, ихээр удаашруулдаг.",
+  "abilities": [
+    {
+      "title": "Overwhelming Blink",
+      "description": "1200 хүртэлх зайд байгаа цэг рүү teleport хийнэ.\n\nTeleport хийсний дараа 800 AoE доторх бүх дайсан 100 + чиний Strength-ийн 50%-тай тэнцэх хохирол авч, нэмээд үүнтэй тэнцэх (100%) хохирлыг хугацааны турш авна. Мөн 6 секундын турш хөдлөх хурд нь 50%-иар, довтолгооны хурд нь 50-иар удаашрана.\n\nДайсны баатар эсвэл Roshan-оос хохирол авснаас хойш 3 секундын турш Overwhelming Blink-ийг ашиглах боломжгүй."
+    }
+  ],
+  "usage": "Overwhelming Blink-ийг тулаан эхлүүлдэг Strength баатрууд — Axe, Centaur Warrunner, Earthshaker, Mars, Tidehunter зэрэг — хожуу тоглоомд Blink Dagger-аа сайжруулахдаа авдаг. 800 радиус дахь хүчтэй удаашралт нь дайсныг зугтахад хэцүү болгож, Strength-ийн өсөлт тэсвэрийг чинь нэмнэ.\n\nBlink хийсний дараа шууд гол чадвараа (жишээ нь Axe-ийн Berserker's Call, Tidehunter-ийн Ravage) цутгаж хамгийн их үр дүнд хүр. Нийтлэг алдаа: дайсны баатар эсвэл Roshan-оос хохирол авсан даруйдаа Blink хийх гэж оролдох — 3 секунд хүлээх шаардлагатай тул тулааны захад байрлаж бэлдээрэй.",
+  "goodFor": [
+    "axe",
+    "centaur",
+    "earthshaker",
+    "mars",
+    "tidehunter"
+  ],
+  "tips": [
+    "Өөр дээрээ (self-cast) хэрэглэвэл өөрийн багийн fountain-ий зүг teleport хийнэ — зугтахад хэрэгтэй.",
+    "Reaver-ийг Secret Shop-оос авч, Blink Dagger-тай нийлүүлж угсарна.",
+    "Strength өндөр байх тусам хохирол нь өснө."
+  ]
+}

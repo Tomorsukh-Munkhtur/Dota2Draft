@@ -1,0 +1,18 @@
+{
+  "key": "oblivion_staff",
+  "category": "accessories",
+  "summary": "Oblivion Staff бол Intelligence, довтолгооны хурд, мана нөхөн сэргэлт өгдөг дунд шатны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Oblivion Staff нь Orchid Malevolence, Witch Blade, Bloodthorn-ийн найрлагад ордог. Orchid эсвэл Witch Blade руу явж буй мид болон керри баатрууд ихэвчлэн эхлээд Oblivion Staff-ийг угсарч, довтолгооны хурд болон мана нөхөн сэргэлтийн ашгийг эрт хүртдэг.\n\nOrchid эсвэл Witch Blade руу чиглээгүй бол Oblivion Staff-ийг дангаар нь авах нь бага ач холбогдолтой. Нийтлэг алдаа: бүрэлдэхүүн хэсгүүдийг нь (Blitz Knuckles, Robe of the Magi, Sage's Mask) тусад нь удаан барих.",
+  "goodFor": [
+    "storm_spirit",
+    "puck",
+    "clinkz",
+    "silencer",
+    "obsidian_destroyer"
+  ],
+  "tips": [
+    "Orchid хийх гэж байгаа бол Oblivion Staff-ийг эхэлж, Claymore-ийг дараа нь нэм.",
+    "Довтолгооны хурд нэмэгдэх нь ласт хит хийхэд ч тусална."
+  ]
+}

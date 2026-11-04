@@ -1,0 +1,18 @@
+{
+  "key": "energy_booster",
+  "category": "secret_shop",
+  "summary": "Energy Booster бол +250 мана өгдөг, 800 алтны Secret Shop-ын бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Energy Booster-ийг ихэвчлэн Aether Lens, Soul Booster (цаашлаад Bloodstone, Khanda, Crella's Crozier), Lotus Orb, Aeon Disk зэрэг item-ийн хэсэг болгон авдаг. Мана багатай, чадвараа хэрэглэхэд мана хүрэлцдэггүй баатарт эрт авахад шууд тус болно.\n\nSecret Shop-оос зарагддаг тул курьераар захиалах нь хялбар. Дангаар нь удаан зөөх нь inventory-н зай эзэлдэг тул удахгүй томоохон item болгох төлөвлөгөөтэй үед л ав.",
+  "goodFor": [
+    "lion",
+    "rubick",
+    "storm_spirit",
+    "shadow_shaman",
+    "leshrac"
+  ],
+  "tips": [
+    "Aether Lens руу явж буй саппорт Energy Booster-ийг эхэлж авбал мана дутагдах асуудлаа шууд шийднэ.",
+    "Energy Booster нь Mango, Clarity-гаас ялгаатай нь байнгын мана нэмдэг тул урт хугацаанд илүү ашигтай."
+  ]
+}

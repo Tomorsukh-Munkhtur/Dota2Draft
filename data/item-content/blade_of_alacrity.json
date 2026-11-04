@@ -1,0 +1,13 @@
+{
+  "key": "blade_of_alacrity",
+  "category": "attributes",
+  "summary": "Blade of Alacrity нь +10 Agility өгдөг бүрдэл эд зүйл. Agility нь довтолгооны хурд, хуягийг нэмдэг бөгөөд Agility баатарт довтолгооны хүч ч нэмнэ.",
+  "abilities": [],
+  "usage": "Blade of Alacrity нь Yasha, Dragon Lance, Diffusal Blade, Aghanim's Scepter, Specialist's Array зэрэг эд зүйлсийн бүрдэл хэсэг. Ихэвчлэн Agility керриүд эдгээр эд зүйл рүү явахдаа дунд шат болгон авдаг.\n\n1000 алтаар 10 Agility авах нь бага зэрэг үнэтэй ч Agility керрид шууд довтолгооны хүч, хурд, хуяг өгдөг тул лайн дээр мэдэгдэхүйц ялгаа гаргана. Ямар том эд зүйл хийхээ мэдэж байж авах хэрэгтэй.",
+  "goodFor": ["phantom_lancer", "sniper", "morphling", "juggernaut"],
+  "tips": [
+    "Belt of Strength-тэй нийлүүлж Dragon Lance хийнэ.",
+    "Band of Elvenskin-тэй нийлүүлж Yasha хийнэ.",
+    "Robe of the Magi-тэй нийлүүлж Diffusal Blade хийнэ."
+  ]
+}

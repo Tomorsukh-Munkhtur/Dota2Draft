@@ -1,0 +1,18 @@
+{
+  "key": "mantle",
+  "category": "attributes",
+  "summary": "Mantle of Intelligence бол +3 Intelligence өгдөг 140 алтны энгийн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Mantle of Intelligence өөрөө тийм ч хүчтэй биш ч Circlet болон жортой нийлээд Null Talisman болдог. Intelligence нь max мана болон мана нөхөн сэргэлтийг нэмдэг тул лайн дээр ид шидээ олон хэрэглэх шаардлагатай мид болон саппорт баатрууд тоглоомын эхэнд Tango, Iron Branch-тай хамт авах нь бий.\n\nIntelligence үндсэн атрибуттай баатарт довтолгооны хүчийг ч бага зэрэг нэмнэ. Нийтлэг алдаа: олон Mantle цүнхэнд хадгалж слот дүүргэх — аль болох хурдан Null Talisman болгон угсар.",
+  "goodFor": [
+    "zuus",
+    "lina",
+    "invoker",
+    "storm_spirit",
+    "skywrath_mage"
+  ],
+  "tips": [
+    "Circlet-тэй хамт аваад дараа нь жорыг нь нэмж Null Talisman болго.",
+    "Intelligence нэмэгдэх тусам max мана болон мана нөхөн сэргэлт өснө."
+  ]
+}

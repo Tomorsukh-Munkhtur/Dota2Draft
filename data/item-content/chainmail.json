@@ -1,0 +1,13 @@
+{
+  "key": "chainmail",
+  "category": "equipment",
+  "summary": "Chainmail нь +4 хуяг өгдөг хямд бүрдэл эд зүйл. Хуяг нь физик хохирлыг багасгадаг тул лайн дээр довтолгооны харасс ихтэй үед тус болно.",
+  "abilities": [],
+  "usage": "Chainmail нь Phase Boots, Mekansm, Medallion of Courage, Solar Crest, Witch Blade зэрэг олон эд зүйлийн бүрдэл хэсэг. Лайн дээр дайсны довтолгооны хохирол ихтэй байвал эрт авахад 4 хуяг нь мэдэгдэхүйц ялгаа гаргана.\n\nИхэвчлэн ганцаар нь удаан барихгүй, Phase Boots эсвэл Mekansm руу хурдан нийлүүлдэг.",
+  "goodFor": ["vengefulspirit", "slardar", "sven"],
+  "tips": [
+    "Boots of Speed, Blades of Attack-тай нийлүүлж Phase Boots хийнэ.",
+    "Headdress-тэй нийлүүлж Mekansm хийнэ.",
+    "Дайсны ranged баатар лайн дээр их харасс хийвэл эрт авахад тохиромжтой."
+  ]
+}

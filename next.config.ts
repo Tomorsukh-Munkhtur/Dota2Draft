@@ -1,9 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // Баатар, item-ийн зургууд Valve-ийн CDN-ээс шууд ирдэг тул дахин боловсруулах шаардлагагүй.
+    unoptimized: true,
+  },
+  // data/*.json-ийг ажиллах үед fs-ээр уншдаг тул Vercel-ийн serverless функцэд хамт оруулна.
+  outputFileTracingIncludes: {
+    "/*": ["./data/**/*.json"],
+  },
   turbopack: {
     rules: {
       "*.css": {

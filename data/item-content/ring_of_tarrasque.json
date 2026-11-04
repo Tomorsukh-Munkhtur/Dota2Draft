@@ -1,0 +1,19 @@
+{
+  "key": "ring_of_tarrasque",
+  "category": "secret_shop",
+  "summary": "Ring of Tarrasque нь Secret Shop-д зарагддаг, секундэд +12 HP нөхөн сэргэлт өгдөг бүрэлдэхүүн item. Heart of Tarrasque, Pipe of Insight, Boots of Bearing, Refresher Orb-ийн суурь хэсэг болдог.",
+  "abilities": [],
+  "usage": "Ring of Tarrasque-ийг дангаар нь авах нь ховор бөгөөд ихэвчлэн Heart of Tarrasque, Pipe of Insight, Boots of Bearing эсвэл Refresher Orb угсрах замдаа авдаг. Секундэд 12 HP нөхөн сэргэлт нь лайнд удаан тэсэх, фармын хооронд базад буцахгүй байхад их тус болно.\n\nSecret Shop-д зарагддаг тул courier-ээ ашиглан авчруулаарай. Шинэ тоглогчдын түгээмэл алдаа бол энэ хэсгийг удаан хадгалж явах — аль болох хурдан бүрэн item болгож дуусгах нь илүү үр дүнтэй.",
+  "goodFor": [
+    "centaur",
+    "tidehunter",
+    "bristleback",
+    "dragon_knight",
+    "abyssal_underlord"
+  ],
+  "tips": [
+    "Heart of Tarrasque руу явж байгаа бол эхлээд энэ хэсгийг авбал лайнд удаан тэснэ.",
+    "Тулааны дараа модны ард түр зогсоход нөхөн сэргэлт нь HP-г хурдан нөхнө.",
+    "Pipe of Insight, Boots of Bearing зэрэг багийн item-д ч ордог хэсэг."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "gloves",
+  "category": "equipment",
+  "summary": "Gloves of Haste бол +20 довтолгооны хурд өгдөг, 450 алтны үндсэн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Gloves of Haste-ийг ихэвчлэн Power Treads, Hand of Midas, Maelstrom, Armlet of Mordiggian зэрэг item-д угсрахаар авдаг. Довтолгооны хурд нь сүүлийн цохилт авах, фарм хийх, барилга нураахыг хурдасгана.\n\nКерри Power Treads эсвэл Maelstrom руу явж буй бол эрт авах нь фармыг шууд хурдасгадаг. Дангаараа удаан зөөх нь inventory-н зай эзэлнэ.",
+  "goodFor": [
+    "juggernaut",
+    "troll_warlord",
+    "huskar",
+    "alchemist",
+    "luna"
+  ],
+  "tips": [
+    "Power Treads авах гэж байгаа бол Boots of Speed-ийн дараа Gloves-ийг эхэлж аваарай.",
+    "Hand of Midas-ын гол бүрэлдэхүүн тул Midas авах төлөвлөгөөтэй үед эрт цуглуул."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "key": "ring_of_protection",
+  "category": "equipment",
+  "summary": "Ring of Protection бол +2 хуяг өгдөг 175 алтны хямд бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Ring of Protection нь Pavise, Urn of Shadows, Buckler, Soul Ring-ийн найрлагад ордог. Хямд боловч хуяг нэмдэг тул тоглоомын эхэнд лайн дээр физик хохирлыг тэсвэрлэхэд, ялангуяа melee баатарт тусална.\n\nSoul Ring хийх гэж буй баатар эсвэл Urn of Shadows, Pavise хийх саппортууд эхэнд нь авдаг. Нийтлэг алдаа: бүтэн эд зүйл болгохгүй удаан барих.",
+  "goodFor": [
+    "leshrac",
+    "pudge",
+    "spirit_breaker",
+    "treant"
+  ],
+  "tips": [
+    "Melee баатар эхний алтаараа Ring of Protection авбал лайн дээр крийпээс бага хохирол авна.",
+    "Soul Ring, Urn of Shadows, Pavise зэрэг олон эд зүйлд ордог тул сонголт уян хатан."
+  ]
+}

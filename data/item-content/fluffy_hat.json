@@ -1,0 +1,17 @@
+{
+  "key": "fluffy_hat",
+  "category": "miscellaneous",
+  "summary": "Fluffy Hat бол +125 HP өгдөг, 250 алтны хямд үндсэн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Fluffy Hat-ийг ихэвчлэн Force Staff, Falcon Blade, Pavise, Veil of Discord зэрэг item-ийн хэсэг болгон авдаг. Лайнд HP нэмэгдэх нь дайсны дарамтад тэсвэртэй болгодог тул эдгээр item руу явж буй бол эрт авах нь утга учиртай.\n\nДангаараа нэмэлт чадваргүй тул удаан зөөж явах хэрэггүй — аль болох хурдан том item болгон угсар.",
+  "goodFor": [
+    "crystal_maiden",
+    "skywrath_mage",
+    "dazzle",
+    "oracle"
+  ],
+  "tips": [
+    "Force Staff авах гэж буй саппорт Fluffy Hat-ийг эхэлж авбал лайнд амьд үлдэхэд тус болно.",
+    "Эхлэлийн item-д ч авч болох хямд HP-ийн эх үүсвэр."
+  ]
+}

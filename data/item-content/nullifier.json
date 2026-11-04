@@ -1,0 +1,24 @@
+{
+  "key": "nullifier",
+  "category": "weapons",
+  "summary": "Nullifier нь их хэмжээний довтолгооны хүч, хуяг өгнө. Идэвхжүүлэхэд дайсны эерэг buff-уудыг арилгаж, 4 секундын турш тасралтгүй dispel хийн удаашруулдаг.",
+  "abilities": [
+    {
+      "title": "Nullify",
+      "description": "Зорилтыг dispel хийж, 4 секунд үргэлжлэх debuff тавина. Энэ хугацаанд зорилтыг тасралтгүй dispel хийж, удаашруулна.\n\nDispel төрөл: Basic Dispel"
+    }
+  ],
+  "usage": "Nullifier-ийг дайсан Ghost Scepter, Glimmer Cape, Aeon Disk зэрэг хамгаалалтын эд зүйл эсвэл өөртөө buff тавьдаг чадвараар амьд үлддэг үед керри баатрууд авдаг. Nullify нь эдгээр buff-ийг арилгаад 4 секундын турш дахин хэрэглэх боломжгүй болгодог тул зорилтоо алахад маш тохиромжтой.\n\nДайсан хамгаалалтын эд зүйлээ ашиглангуут нь эсвэл ашиглахаас нь өмнө Nullify-г цутга; 10 секундын cooldown-той, мана шаарддаггүй. Нийтлэг алдаа: Black King Bar-ийг арилгана гэж бодох — Nullifier нь Basic Dispel тул BKB-ийн хамгаалалтыг арилгадаггүй.",
+  "goodFor": [
+    "spectre",
+    "life_stealer",
+    "faceless_void",
+    "monkey_king",
+    "troll_warlord"
+  ],
+  "tips": [
+    "Ghost Scepter-тэй саппорт эсвэл Glimmer Cape-тэй дайсны эсрэг Nullify-г хадгалж бай.",
+    "Invulnerable юнит дээр ч цутгаж болно.",
+    "Sacred Relic-ийг Secret Shop-оос эрт авбал довтолгооны хүч шууд нэмэгдэнэ."
+  ]
+}

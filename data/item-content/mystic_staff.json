@@ -1,0 +1,18 @@
+{
+  "key": "mystic_staff",
+  "category": "secret_shop",
+  "summary": "Mystic Staff бол Secret Shop-д зарагддаг, +25 Intelligence өгдөг 2800 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Mystic Staff нь Scythe of Vyse, Arcane Blink, Parasma, Wind Waker зэрэг хожуу тоглоомын хүчтэй ид шидийн эд зүйлсийн найрлагад ордог. Үнэтэй боловч Intelligence нь мана болон мана нөхөн сэргэлтийг нэмдэг тул эдгээр эд зүйл рүү явж байх үед эхэлж авахад тохиромжтой.\n\nSecret Shop-д л зарагддаг тул courier-ээр авчруулах эсвэл өөрөө очих хэрэгтэй. Нийтлэг алдаа: Mystic Staff-тай удаан явах — өөрөө идэвхтэй чадваргүй тул аль болох хурдан бүтэн эд зүйл болгох нь чухал.",
+  "goodFor": [
+    "invoker",
+    "lina",
+    "rubick",
+    "obsidian_destroyer",
+    "silencer"
+  ],
+  "tips": [
+    "Courier-ээр Secret Shop-оос авчруулж цагаа хэмнээрэй.",
+    "Intelligence үндсэн атрибуттай баатарт +25 Intelligence нь довтолгооны хүчийг ч нэмнэ."
+  ]
+}

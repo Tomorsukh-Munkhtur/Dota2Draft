@@ -1,0 +1,18 @@
+{
+  "key": "point_booster",
+  "category": "secret_shop",
+  "summary": "Point Booster бол +175 HP, +175 мана өгдөг 1200 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Point Booster нь Aghanim's Scepter, Soul Booster, Gleipnir, Dagon-ийн найрлагад ордог. Нэг дор HP, мана хоёуланг нэмдэг тул Aghanim's Scepter рүү явж байгаа олон баатар эхлээд үүнийг авдаг.\n\nSecret Shop-д зарагддаг тул courier-ээр авчруулах нь цаг хэмнэнэ. Нийтлэг алдаа: Point Booster-ийг удаан ганцаар нь барих — аль болох хурдан бүтэн эд зүйл болго.",
+  "goodFor": [
+    "lion",
+    "witch_doctor",
+    "shadow_shaman",
+    "ogre_magi",
+    "zuus"
+  ],
+  "tips": [
+    "Aghanim's Scepter-ийн хамгийн үнэтэй бүрэлдэхүүн хэсэг — эхэлж авбал HP, мана шууд нэмэгдэнэ.",
+    "Secret Shop-оос courier-ээр авчруул."
+  ]
+}

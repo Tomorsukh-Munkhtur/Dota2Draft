@@ -1,0 +1,19 @@
+{
+  "key": "void_stone",
+  "category": "secret_shop",
+  "summary": "Void Stone нь секундэд +1.75 мана нөхөн сэргэлт өгдөг 700 алтны бүрэлдэхүүн item. Eul's Scepter of Divinity, Aether Lens, Perseverance, Echo Sabre-ийн хэсэг.",
+  "abilities": [],
+  "usage": "Void Stone-ийг ихэвчлэн Eul's Scepter of Divinity, Aether Lens, Perseverance эсвэл Echo Sabre угсрах замд авдаг. Мана нөхөн сэргэлт сайтай тул лайнд маныг тогтвортой байлгахад тусална.\n\nSecret Shop-д зарагддаг тул courier-ээр авчруулна. Ганцаараа удаан үлдээхээс илүү дээрх бүрэн item-уудын аль нэг рүү хурдан угсарч дуусгаарай.",
+  "goodFor": [
+    "lion",
+    "rubick",
+    "crystal_maiden",
+    "lina",
+    "puck"
+  ],
+  "tips": [
+    "Мана дутагддаг саппортод Eul's эсвэл Aether Lens руу явах сайн эхлэл.",
+    "Ring of Health-тэй нийлүүлж Perseverance болговол HP нөхөн сэргэлт ч нэмэгдэнэ.",
+    "Secret Shop-оос courier-ээр авчруулна."
+  ]
+}

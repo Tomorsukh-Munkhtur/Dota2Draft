@@ -1,0 +1,13 @@
+{
+  "key": "blades_of_attack",
+  "category": "equipment",
+  "summary": "Blades of Attack нь +9 довтолгооны хүч өгдөг хямд бүрдэл эд зүйл. Last hit хийхэд тус болох бөгөөд олон түгээмэл эд зүйлийн бүрдэл хэсэг.",
+  "abilities": [],
+  "usage": "Blades of Attack нь Phase Boots, Crystalys, Armlet of Mordiggian, Falcon Blade, Vladmir's Offering зэрэг эд зүйлсийн бүрдэл хэсэг. Лайн дээр last hit хийхэд хүндрэлтэй байвал эрт авахад +9 хохирол нь мэдэгдэхүйц тус болно.\n\nЭнэ нь ганцаараа удаан барих эд зүйл биш; ихэвчлэн Phase Boots эсвэл Crystalys рүү хурдан нийлүүлдэг.",
+  "goodFor": ["phantom_assassin", "sven", "templar_assassin", "slardar"],
+  "tips": [
+    "Boots of Speed болон Chainmail-тэй нийлүүлж Phase Boots хийнэ.",
+    "Claymore-той нийлүүлж Crystalys хийнэ.",
+    "Лайн дээр last hit авахад хэцүү байвал эхний эд зүйл болгон авахад тохиромжтой."
+  ]
+}

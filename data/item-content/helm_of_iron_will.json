@@ -1,0 +1,18 @@
+{
+  "key": "helm_of_iron_will",
+  "category": "equipment",
+  "summary": "Helm of Iron Will бол +4 хуяг, +4 HP нөхөн сэргэлт өгдөг, 975 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Helm of Iron Will нь лайнд бат бөх байдал, эдгэрэлт хоёрыг зэрэг өгдөг тул эхэн шатанд ашигтай. Гол нь Armlet of Mordiggian, Crimson Guard, Helm of the Dominator зэрэг item-д угсрахаар авдаг.\n\nФизик хохирол ихтэй лайнд, ялангуяа melee баатрууд эсвэл офлэйнерууд эрт авбал лайнд тэсвэр нь мэдэгдэхүйц нэмэгдэнэ.",
+  "goodFor": [
+    "huskar",
+    "chen",
+    "centaur",
+    "mars",
+    "dragon_knight"
+  ],
+  "tips": [
+    "Armlet эсвэл Crimson Guard руу явж буй бол Helm-ийг эхэлж авч лайнд илүү удаан тэс.",
+    "Хуяг нь крийп болон баатрын физик цохилтыг бууруулдаг тул melee лайнд онцгой ашигтай."
+  ]
+}

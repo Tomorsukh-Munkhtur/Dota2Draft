@@ -1,0 +1,24 @@
+{
+  "key": "power_treads",
+  "category": "accessories",
+  "summary": "Power Treads нь хөдлөх хурд, довтолгооны хурд болон сонгосон атрибутад +10 өгдөг гутал бөгөөд атрибутаа хүссэн үедээ сольж болно.",
+  "abilities": [
+    {
+      "title": "Switch Attribute",
+      "description": "+10 Strength, +10 Agility, +10 Intelligence-ийн хооронд сэлгэнэ."
+    }
+  ],
+  "usage": "Power Treads-ийг ихэвчлэн керри болон довтолгооны хурд хэрэгтэй баатрууд авдаг. Атрибутаа нөхцөл байдлаас хамааран солих нь гол давуу тал: тулаанд Strength (илүү HP) эсвэл Agility (довтолгооны хурд, хуяг), ид шид цутгахдаа Intelligence (мана) руу шилжүүлнэ.\n\nМана болон HP хувиар хадгалагддаг тул ид шид цутгахаасаа өмнө Intelligence руу сольж, дараа нь буцаан Strength эсвэл Agility руу шилжүүлбэл мана хэмнэнэ. Belt of Strength, Band of Elvenskin эсвэл Robe of the Magi-ийн аль нэгээр угсарч болно. Нийтлэг алдаа: Intelligence дээр нь үлдээгээд тулаанд орох — HP бага байж хурдан үхнэ.",
+  "goodFor": [
+    "faceless_void",
+    "luna",
+    "drow_ranger",
+    "medusa",
+    "clinkz"
+  ],
+  "tips": [
+    "Хурдан солихын тулд Power Treads-д товчлуур оноо.",
+    "Healing Salve хэрэглэхдээ Agility эсвэл Intelligence дээр байж, дараа нь Strength руу сольвол HP-ийн хувь хадгалагдаж илүү их HP-тэй болно.",
+    "Тулаанд орохын өмнө аль атрибут дээр байгаагаа заавал шалга."
+  ]
+}

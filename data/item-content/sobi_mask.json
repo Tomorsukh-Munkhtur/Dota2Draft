@@ -1,0 +1,19 @@
+{
+  "key": "sobi_mask",
+  "category": "miscellaneous",
+  "summary": "Sage's Mask нь 175 алтаар секундэд +0.7 мана нөхөн сэргэлт өгдөг хямд item. Урт хугацааны мана хангамжийн суурь болдог.",
+  "abilities": [],
+  "usage": "Sage's Mask-ийг ихэвчлэн Ring of Basilius, Urn of Shadows, Falcon Blade эсвэл Oblivion Staff угсрах замд авдаг. Тоглолтын эхэнд маш хямд тул лайнд мана дутагдаж байгаа саппорт болон mid баатрууд эрт авахад тохиромжтой.\n\nДангаараа нөлөө нь бага тул удаан хадгалах шаардлагагүй — дээрх item-уудын аль нэг болгон хурдан хувиргаарай.",
+  "goodFor": [
+    "crystal_maiden",
+    "lion",
+    "tusk",
+    "earth_spirit",
+    "rubick"
+  ],
+  "tips": [
+    "Лайнд мана дутвал Clarity-тэй хамт эрт авахад тохиромжтой хямд сонголт.",
+    "Urn of Shadows эсвэл Ring of Basilius руу хурдан угсарч дуусгаарай.",
+    "Oblivion Staff-ийн хэсэг тул Orchid Malevolence зэрэг item руу явах замд ч ордог."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "key": "claymore",
+  "category": "equipment",
+  "summary": "Claymore нь +20 довтолгооны хүч өгдөг бүрдэл эд зүйл. Crystalys, Shadow Blade, Orchid Malevolence, Satanic, Butterfly зэрэг эд зүйлсийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Claymore-ийг ихэвчлэн керри эсвэл довтолгоонд түшиглэдэг баатрууд том эд зүйл рүү явах замдаа авдаг. Blades of Attack-тай нийлүүлж Crystalys (дараа нь Daedalus), Blitz Knuckles болон Shadow Amulet-тэй Shadow Blade, Oblivion Staff-тай Orchid Malevolence хийнэ.\n\n1350 алтаар 20 хохирол өгдөг тул эрт авахад хохирлоо мэдэгдэхүйц нэмэгдүүлнэ. Харин ямар эд зүйл хийхээ төлөвлөж байж авах хэрэгтэй.",
+  "goodFor": ["drow_ranger", "sniper", "storm_spirit", "kunkka"],
+  "tips": [
+    "Crystalys хийх бол Blades of Attack-тай нийлүүлнэ.",
+    "Orchid Malevolence хийх бол Oblivion Staff-тай нийлүүлнэ.",
+    "Satanic, Butterfly зэрэг тоглолтын сүүлийн эд зүйлст ч Claymore ордог."
+  ]
+}

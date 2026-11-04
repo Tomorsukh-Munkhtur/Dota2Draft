@@ -1,0 +1,19 @@
+{
+  "key": "vitality_booster",
+  "category": "secret_shop",
+  "summary": "Vitality Booster нь 1000 алтаар +250 HP өгдөг энгийн бүрэлдэхүүн item. Vanguard, Rod of Atos, Aeon Disk, Soul Booster, Consecrated Wraps зэрэг олон item-ын хэсэг.",
+  "abilities": [],
+  "usage": "Vitality Booster нь шууд HP нэмдэг тул дайсанд амархан алагдаж байгаа үед амьд үлдэхэд тусална. Ихэвчлэн Vanguard, Rod of Atos, Aeon Disk, Soul Booster эсвэл Consecrated Wraps угсрах замдаа авдаг.\n\nSecret Shop-д зарагддаг тул courier-ээ ашиглаарай. Олон item-д ордог уян хатан хэсэг тул аль item-ыг угсрахаа эцэслэн шийдээгүй үед ч эхэлж авахад тохиромжтой.",
+  "goodFor": [
+    "tidehunter",
+    "bristleback",
+    "abyssal_underlord",
+    "clinkz",
+    "storm_spirit"
+  ],
+  "tips": [
+    "Дайсны nuke-д амархан алагдаж байвал HP нэмэх хамгийн энгийн арга.",
+    "Vanguard, Rod of Atos, Aeon Disk болгон хувиргах боломжтой.",
+    "Secret Shop-оос courier-ээр авчруулна."
+  ]
+}

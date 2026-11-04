@@ -1,0 +1,18 @@
+{
+  "key": "ogre_axe",
+  "category": "attributes",
+  "summary": "Ogre Axe бол +10 Strength өгдөг 1000 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Ogre Axe нь Black King Bar, Sange, Echo Sabre, Aghanim's Scepter, Eternal Shroud-ийн найрлагад ордог. Strength нь HP болон HP нөхөн сэргэлтийг нэмдэг тул тэсвэр хэрэгтэй үед, ялангуяа Black King Bar хийх гэж байгаа бол Ogre Axe-ийг эхэлж авах нь түгээмэл.\n\nStrength үндсэн атрибуттай баатарт довтолгооны хүчийг ч нэмнэ. Нийтлэг алдаа: Ogre Axe-ийг бүтэн эд зүйл болгохгүйгээр удаан барих.",
+  "goodFor": [
+    "sven",
+    "dragon_knight",
+    "slardar",
+    "chaos_knight",
+    "skeleton_king"
+  ],
+  "tips": [
+    "BKB хэрэгтэй тоглоомд Ogre Axe-ийг эхэлж авбал HP нэмэгдэж амьд үлдэхэд илүү тусална.",
+    "Strength нь max HP болон HP нөхөн сэргэлтийг нэмдэг."
+  ]
+}

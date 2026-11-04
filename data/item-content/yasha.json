@@ -1,0 +1,19 @@
+{
+  "key": "yasha",
+  "category": "armaments",
+  "summary": "Yasha нь +16 Agility, довтолгооны хурд болон 10% хөдлөх хурд өгдөг item. Manta Style, Sange and Yasha, Yasha and Kaya-ийн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Yasha нь Agility керри нарт довтолгооны хүч, довтолгооны хурд, хөдлөх хурдыг зэрэг нэмж, фарм болон газрын зургаар хөдлөхийг хурдасгадаг. Ихэвчлэн Manta Style, Sange and Yasha эсвэл Yasha and Kaya угсрах замын эхний хэсэг болгон авдаг.\n\nYasha-д суурилсан хөдлөх хурдны бонус хэд хэдэн item-аас давхардахгүй тул нэг баатарт Yasha агуулсан хоёр item авах нь хөдлөх хурдны хувьд ашиггүй.",
+  "goodFor": [
+    "antimage",
+    "juggernaut",
+    "terrorblade",
+    "morphling",
+    "phantom_lancer"
+  ],
+  "tips": [
+    "Manta Style руу явж байгаа керрийн эхний алхам.",
+    "Хөдлөх хурдны бонус нь бусад Yasha item-тай давхардахгүй.",
+    "Agility баатарт хуяг болон довтолгооны хүч ч нэмэгдэнэ."
+  ]
+}

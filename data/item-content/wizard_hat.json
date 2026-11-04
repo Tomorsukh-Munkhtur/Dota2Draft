@@ -1,0 +1,19 @@
+{
+  "key": "wizard_hat",
+  "category": "miscellaneous",
+  "summary": "Wizard Hat нь 250 алтаар +125 мана өгдөг хямд item. Arcane Boots, Pavise, Dagon, Essence Distiller-ийн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Wizard Hat нь лайнд нэг хоёр чадвар нэмж хэрэглэх хэмжээний мана өгдөг тул эхлэлийн item-д ч авч болно. Ихэвчлэн Arcane Boots, Pavise, Essence Distiller эсвэл Dagon угсрах замд авдаг.\n\nМана нөхөн сэргэлт биш, зөвхөн манын дээд хэмжээг нэмдэг тул урт хугацаанд мана хэрэгтэй бол Sage's Mask, Void Stone зэрэгтэй хослуулаарай.",
+  "goodFor": [
+    "crystal_maiden",
+    "lion",
+    "zuus",
+    "lina",
+    "vengefulspirit"
+  ],
+  "tips": [
+    "Arcane Boots руу явж байгаа саппортод хамгийн эхний хэсэг.",
+    "Манын дээд хэмжээг нэмдэг ч нөхөн сэргэлт өгөхгүй.",
+    "Хямд тул эхлэлийн item-д нэмж авч болно."
+  ]
+}

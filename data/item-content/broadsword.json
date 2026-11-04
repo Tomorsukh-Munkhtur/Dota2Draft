@@ -1,0 +1,13 @@
+{
+  "key": "broadsword",
+  "category": "equipment",
+  "summary": "Broadsword нь +15 довтолгооны хүч өгдөг бүрдэл эд зүйл. Battle Fury, Blade Mail, Echo Sabre, Mask of Madness зэрэг эд зүйлсийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Broadsword-ыг ганцаар нь авах нь ховор, ихэвчлэн том эд зүйл хийх замдаа авдаг. Battle Fury-д хоёр Broadsword хэрэгтэй, Blade Mail-д Splintmail-тэй, Echo Sabre-д Ogre Axe болон Void Stone-тэй нийлдэг.\n\n1000 алтаар 15 хохирол өгдөг тул эрт үед last hit хийх, лайн дээр харасс хийхэд тус болно. Battle Fury хийх гэж байгаа бол Perseverance болон Broadsword-ын алийг нь түрүүлж авахаа нөхцөл байдлаас хамааруулан шийдээрэй.",
+  "goodFor": ["antimage", "juggernaut", "axe", "centaur"],
+  "tips": [
+    "Battle Fury хийх бол хоёр Broadsword хэрэгтэй гэдгийг санаарай.",
+    "Blade Mail хийхдээ Splintmail-тэй нийлүүлнэ.",
+    "Mask of Madness хийхдээ Morbid Mask-тай нийлүүлнэ."
+  ]
+}

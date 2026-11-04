@@ -1,0 +1,13 @@
+{
+  "key": "crown",
+  "category": "attributes",
+  "summary": "Crown нь бүх атрибутад +4 өгдөг бүрдэл эд зүйл. Dagon, Helm of the Dominator, Holy Locket, Meteor Hammer, Consecrated Wraps зэрэг эд зүйлсийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Crown нь Circlet-ийн илүү хүчтэй хувилбар мэт бөгөөд бүх статыг нэг дор нэмэгдүүлдэг. Ихэвчлэн Helm of the Dominator (Helm of Iron Will-тэй), Holy Locket (Magic Wand-тай), Dagon эсвэл Meteor Hammer хийх замдаа авдаг.\n\n450 алтаар HP, мана, хуяг, довтолгооны хурдыг бага зэрэг нэмдэг тул тоглолтын эхэнд түр зуур барихад муугүй. Гэхдээ том эд зүйл рүү нийлүүлэхээ мартах хэрэггүй.",
+  "goodFor": ["nyx_assassin", "beastmaster", "chen", "omniknight"],
+  "tips": [
+    "Helm of Iron Will-тэй нийлүүлж Helm of the Dominator хийнэ.",
+    "Magic Wand-тай нийлүүлж Holy Locket хийнэ.",
+    "Point Booster, Wizard Hat-тай нийлүүлж Dagon хийнэ."
+  ]
+}

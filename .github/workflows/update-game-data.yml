@@ -1,0 +1,47 @@
+# Тоглоомын өгөгдлийг (патч, skill, item, статистик) 3 цаг тутам шалгаж, өөрчлөгдсөн бол commit хийнэ.
+# Commit хийгдэхэд Vercel сайтыг автоматаар дахин deploy хийнэ.
+name: Тоглоомын өгөгдөл шинэчлэх
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Патч өөрчлөгдөөгүй ч бүгдийг одоо шинэчлэх"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: game-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Скриптүүд зөвхөн Node-ийн суурь модулиудыг ашигладаг тул npm install хэрэггүй.
+      - name: Өгөгдөл шинэчлэх
+        run: node scripts/update-all.mjs ${{ inputs.force && '--force' || '' }}
+
+      - name: Commit
+        run: |
+          if [ -z "$(git status --porcelain -- data)" ]; then
+            echo "Өөрчлөлт алга."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "Тоглоомын өгөгдөл шинэчлэв (патч $(node -p "require('./data/meta.json').patch"))"
+          git push

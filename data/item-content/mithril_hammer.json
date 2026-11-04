@@ -1,0 +1,18 @@
+{
+  "key": "mithril_hammer",
+  "category": "equipment",
+  "summary": "Mithril Hammer бол +24 довтолгооны хүч өгдөг 1600 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Mithril Hammer нь Desolator, Maelstrom, Skull Basher, Black King Bar зэрэг чухал эд зүйлсийн найрлагад ордог. Довтолгооны хүчийг нэг дор их нэмдэг тул керри болон мид баатрууд Desolator, Maelstrom руу явж байхдаа эхлээд Mithril Hammer-ийг авч, ласт хит хийх, цамхаг цохих чадвараа сайжруулдаг.\n\nBlack King Bar-д ч ордог тул BKB хэрэгтэй гэж бодож байгаа бол Ogre Axe эсвэл Mithril Hammer-ийн аль нэгийг эрт авах нь зүйтэй. Нийтлэг алдаа: бүрэлдэхүүн хэсгүүдийг удаан цуглуулж, бүтэн эд зүйл хийхгүй хойшлуулах.",
+  "goodFor": [
+    "templar_assassin",
+    "slardar",
+    "faceless_void",
+    "troll_warlord",
+    "juggernaut"
+  ],
+  "tips": [
+    "Desolator хийх гэж байгаа бол Orb of Blight-ийг эрт аваад Mithril Hammer-ийг дараа нь нэм.",
+    "+24 довтолгооны хүч нь ласт хит хийхэд мэдэгдэхүйц тусална."
+  ]
+}

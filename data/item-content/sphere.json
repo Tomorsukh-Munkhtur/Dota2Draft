@@ -1,0 +1,28 @@
+{
+  "key": "sphere",
+  "category": "armor",
+  "summary": "Linken's Sphere нь +16 бүх атрибут, HP ба мана нөхөн сэргэлт өгч, тодорхой хугацаа тутам дайсны онилсон чадварыг нэг удаа блоклодог item.",
+  "abilities": [
+    {
+      "title": "Spellblock",
+      "description": "14 секунд тутамд ихэнх онилсон (targeted) чадварыг нэг удаа блоклоно."
+    },
+    {
+      "title": "Transfer Spellblock",
+      "description": "Spellblock-ийг item-ийн эзэмшигчээс түр хасаж, 14 секундын турш холбоотон юнит руу шилжүүлнэ."
+    }
+  ],
+  "usage": "Linken's Sphere нь дайсны онилсон хүчтэй дисабл чадварууд (Doom, Lion-ий Hex, Legion Commander-ын Duel, Shadow Shaman-ий Shackles гэх мэт) таныг тулааны эхэнд устгах эрсдэлтэй үед керри болон мид баатруудын авдаг item. Spellblock нь нэг онилсон чадварыг бүрэн хааж, дараагийнх нь 14 секундын дараа ажиллана.\n\nДайсан эхлээд хямд чадвар эсвэл item (жишээ нь Rod of Atos, Orchid) хэрэглэж Linken's-ийг эвдэх оролдлого хийдэг гэдгийг сана. Transfer Spellblock-аар хамгийн их аюулд байгаа холбоотондоо хамгаалалтаа шилжүүлж болно. Талбайд нөлөөлдөг (AoE) чадварыг блоклохгүй.",
+  "goodFor": [
+    "antimage",
+    "faceless_void",
+    "morphling",
+    "juggernaut",
+    "terrorblade"
+  ],
+  "tips": [
+    "Нейтрал item-ийн онилсон чадвар Spellblock-ийг идэвхжүүлдэггүй.",
+    "Spellblock cooldown дээр байх үед дайсан чамайг дисабл хийж чадна — тэр хугацаанд болгоомжтой бай.",
+    "Дайсан Doom, Duel зэрэг хүчтэй онилдог ульттай бол Transfer Spellblock-ийг холбоотон керрид хэрэглэж хамгаал."
+  ]
+}

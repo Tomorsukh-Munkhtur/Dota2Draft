@@ -1,0 +1,18 @@
+{
+  "key": "eagle",
+  "category": "secret_shop",
+  "summary": "Eaglesong бол +25 Agility өгдөг, 2800 алтны Secret Shop-ын үнэтэй бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Eaglesong-ийг дангаар нь бараг зөөдөггүй, харин Butterfly, Disperser, Swift Blink зэрэг хожуу шатны хүчирхэг item-ийн хэсэг болгон авдаг. Agility баатарт довтолгооны хүч, хуяг, довтолгооны хурдыг зэрэг нэмдэг тул алт хангалттай болмогц авбал хүч шууд нэмэгдэнэ.\n\nSecret Shop-оос зарагддаг тул курьераар захиалж авах нь цаг хэмнэнэ. Strength эсвэл Intelligence баатарт Agility-ийн ашиг бага тул тэдэнд энэ item төдийлөн тохирохгүй.",
+  "goodFor": [
+    "morphling",
+    "terrorblade",
+    "phantom_assassin",
+    "phantom_lancer",
+    "drow_ranger"
+  ],
+  "tips": [
+    "Butterfly эсвэл Disperser руу явж буй бол Eaglesong-ийг эхэлж аваад, бусад хэсгийг дараа нь нийлүүл.",
+    "Secret Shop руу өөрөө гүйхийн оронд курьер ашиглаж фармаа тасалдуулахгүй байгаарай."
+  ]
+}

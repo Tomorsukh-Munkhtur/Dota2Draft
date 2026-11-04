@@ -1,0 +1,19 @@
+{
+  "key": "slippers",
+  "category": "attributes",
+  "summary": "Slippers of Agility нь 140 алтаар +3 Agility өгдөг хамгийн хямд атрибут item-уудын нэг. Agility нь хуяг, довтолгооны хурд болон Agility баатрын довтолгооны хүчийг нэмнэ.",
+  "abilities": [],
+  "usage": "Slippers of Agility-г ихэвчлэн Circlet-тэй хамт авч Wraith Band угсардаг. Тоглолтын эхэнд Agility керри болон зарим mid баатрууд лайнд крип цохих (last hit) чадвараа сайжруулж, бага зэрэг хуяг авахын тулд эхлэлийн item болгон авдаг.\n\nДангаар нь удаан хадгалах шаардлагагүй — Wraith Band болгон хурдан дуусгавал илүү үр ашигтай.",
+  "goodFor": [
+    "drow_ranger",
+    "sniper",
+    "phantom_lancer",
+    "clinkz",
+    "luna"
+  ],
+  "tips": [
+    "Circlet-тэй хамт авч Wraith Band болгоорой.",
+    "Agility нь хуяг нэмдэг тул лайнд физик хохирлоос бага зэрэг хамгаална.",
+    "Эхлэлийн item-д Tango, Iron Branch-тай хамт авах нь түгээмэл."
+  ]
+}

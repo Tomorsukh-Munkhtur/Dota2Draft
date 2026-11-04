@@ -1,0 +1,12 @@
+{
+  "key": "circlet",
+  "category": "attributes",
+  "summary": "Circlet нь бүх атрибутад +2 өгдөг, хамгийн хямд (155 алт) стат эд зүйлсийн нэг. Bracer, Wraith Band, Null Talisman, Urn of Shadows-ийн бүрдэл хэсэг.",
+  "abilities": [],
+  "usage": "Circlet-ийг ихэвчлэн тоглолтын эхэнд, эхний алтаараа авдаг. Ганцаар нь бага стат өгдөг ч Gauntlets of Strength-тэй нийлүүлж Bracer, Slippers of Agility-тэй Wraith Band, Mantle of Intelligence-тэй Null Talisman болгосноор эхний үеийн хамгийн үр ашигтай эд зүйлс болно.\n\nБаатрынхаа үндсэн атрибутаас хамааруулан аль эд зүйл рүү нийлүүлэхээ сонгоорой: Strength баатар бол Bracer, Agility баатар бол Wraith Band, Intelligence баатар бол Null Talisman.",
+  "goodFor": ["drow_ranger", "sniper", "zuus", "huskar"],
+  "tips": [
+    "Эхний алтаараа Circlet авч, дараа нь Bracer, Wraith Band эсвэл Null Talisman болгох нь түгээмэл.",
+    "Саппортууд Urn of Shadows хийхдээ Circlet ашигладаг."
+  ]
+}

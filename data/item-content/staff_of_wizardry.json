@@ -1,0 +1,19 @@
+{
+  "key": "staff_of_wizardry",
+  "category": "attributes",
+  "summary": "Staff of Wizardry нь 1000 алтаар +10 Intelligence өгдөг атрибут item. Force Staff, Eul's Scepter of Divinity, Kaya, Rod of Atos, Aghanim's Scepter-ийн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Staff of Wizardry-г ганцаараа авах нь ховор бөгөөд ихэвчлэн Force Staff, Eul's Scepter of Divinity, Kaya, Rod of Atos эсвэл Aghanim's Scepter угсрах замд эхэлж авдаг. Intelligence нь мана болон мана нөхөн сэргэлтийг нэмж, лайнд илүү олон чадвар хэрэглэх боломж өгнө.\n\nОлон том item-д ордог тул аль замаар явахаа эцэслэн шийдээгүй байсан ч эхэлж авахад алдагдалгүй. Гэхдээ удаан хадгалахгүй, бүрэн item болгож хувиргахыг бодоорой.",
+  "goodFor": [
+    "lion",
+    "zuus",
+    "lina",
+    "skywrath_mage",
+    "invoker"
+  ],
+  "tips": [
+    "Force Staff, Eul's, Kaya, Rod of Atos, Aghanim's Scepter зэрэг олон item-д ордог уян хатан эхлэл.",
+    "Intelligence баатарт довтолгооны хүч ч нэмнэ.",
+    "Мана дутагдаж байвал Robe of the Magi-аас илүү их Intelligence өгнө."
+  ]
+}

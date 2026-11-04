@@ -1,0 +1,17 @@
+{
+  "key": "gauntlets",
+  "category": "attributes",
+  "summary": "Gauntlets of Strength бол +3 Strength өгдөг, 140 алтны хамгийн хямд атрибут item-уудын нэг.",
+  "abilities": [],
+  "usage": "Gauntlets-ийг ихэвчлэн Bracer эсвэл Soul Ring болгон угсрахаар авдаг. Strength нь HP болон HP нөхөн сэргэлт нэмдэг тул лайнд илүү тэсвэртэй болгоно, Strength баатарт мөн довтолгооны хүч нэмнэ.\n\nЭхлэлийн item-ийн үлдсэн алтаар эсвэл лайнд байхдаа курьераар хямдхан авч болно. Дангаараа хожуу шатанд ач холбогдол багатай тул удаан зөөх хэрэггүй.",
+  "goodFor": [
+    "dragon_knight",
+    "axe",
+    "pudge",
+    "skeleton_king"
+  ],
+  "tips": [
+    "Bracer авах төлөвлөгөөтэй бол эхлэлийн item-д Gauntlets нэмж аваарай.",
+    "Strength баатарт +3 Strength нь +3 довтолгооны хүч бас нэмнэ."
+  ]
+}

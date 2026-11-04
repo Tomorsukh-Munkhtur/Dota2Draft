@@ -1,0 +1,17 @@
+{
+  "key": "ring_of_regen",
+  "category": "miscellaneous",
+  "summary": "Ring of Regen бол +1.25 HP нөхөн сэргэлт өгдөг 175 алтны хямд эд зүйл.",
+  "abilities": [],
+  "usage": "Ring of Regen нь Headdress (цаашлаад Mekansm, Drum of Endurance) болон Tranquil Boots-ийн найрлагад ордог. Тоглоомын эхэнд лайн дээр HP-гээ аажмаар нөхөх, Tango болон Healing Salve-ийн хэрэглээг багасгахад тусална.\n\nИхэвчлэн саппортууд Headdress эсвэл Tranquil Boots хийхийн тулд авдаг. Нийтлэг алдаа: олон Ring of Regen цуглуулах — илүү сайн сонголт нь Ring of Health эсвэл бүтэн эд зүйл.",
+  "goodFor": [
+    "crystal_maiden",
+    "treant",
+    "jakiro",
+    "venomancer"
+  ],
+  "tips": [
+    "Эхний эд зүйлсдээ Ring of Regen оруулбал лайнд илүү удаан тэсэх боломжтой.",
+    "Tranquil Boots хийх саппорт эхлээд Ring of Regen авах нь түгээмэл."
+  ]
+}

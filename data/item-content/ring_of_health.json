@@ -1,0 +1,17 @@
+{
+  "key": "ring_of_health",
+  "category": "miscellaneous",
+  "summary": "Ring of Health бол +4.5 HP нөхөн сэргэлт өгдөг 700 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Ring of Health нь Perseverance, Vanguard, Heaven's Halberd-ийн найрлагад ордог. Лайн дээр HP-гээ тогтмол нөхөх хэрэгтэй керри, offlane баатрууд эрт авч, fountain руу буцах хэрэгцээг багасгадаг.\n\nVanguard (тэсвэр) эсвэл Perseverance (Battle Fury, Lotus Orb, Linken's Sphere) рүү явахдаа эхний алхам болгон авдаг. Нийтлэг алдаа: Ring of Health-ийг удаан ганцаар нь барих.",
+  "goodFor": [
+    "antimage",
+    "axe",
+    "bristleback",
+    "tidehunter"
+  ],
+  "tips": [
+    "Тогтмол HP нөхөн сэргэлт нь Healing Salve хэрэглэх хэрэгцээг багасгана.",
+    "Battle Fury хийх гэж буй Anti-Mage-ийн хувьд эхний чухал алхам."
+  ]
+}

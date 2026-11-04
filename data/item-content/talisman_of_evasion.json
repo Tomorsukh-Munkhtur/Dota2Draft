@@ -1,0 +1,19 @@
+{
+  "key": "talisman_of_evasion",
+  "category": "secret_shop",
+  "summary": "Talisman of Evasion нь Secret Shop-д зарагддаг, +15% evasion (довтолгооноос мултрах магадлал) өгдөг item. Butterfly, Radiance, Heaven's Halberd-ийн бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Evasion нь дайсны довтолгоог 15% магадлалтайгаар хоосон өнгөрүүлдэг тул физик довтолгоонд түшиглэдэг дайсны эсрэг хамгаалалт болдог. Ихэвчлэн Butterfly, Radiance эсвэл Heaven's Halberd угсрах замдаа авна.\n\nДайсан Monkey King Bar зэрэг True Strike (заавал онох) нөлөөтэй item авбал evasion ажиллахгүй гэдгийг санаарай. Бусад evasion-тай давхардахдаа нэмэгдэх үр нөлөө нь буурдаг.",
+  "goodFor": [
+    "troll_warlord",
+    "faceless_void",
+    "terrorblade",
+    "spectre",
+    "morphling"
+  ],
+  "tips": [
+    "Физик керри ихтэй дайсны эсрэг үр дүнтэй.",
+    "Monkey King Bar-тай дайсны эсрэг evasion ажиллахгүй.",
+    "Butterfly руу явж байгаа бол эхлээд энэ хэсгийг аваарай."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "key": "javelin",
+  "category": "equipment",
+  "summary": "Javelin бол 900 алтны бүрэлдэхүүн хэсэг бөгөөд довтолгоо бүрт evasion-ийг нэвтлэх, нэмэлт ид шидийн хохирол өгөх магадлал олгодог.",
+  "abilities": [
+    {
+      "title": "Pierce",
+      "description": "Довтолгоо бүрт 25% магадлалтайгаар evasion-ийг нэвтэлж, 60 нэмэлт ид шидийн хохирол учруулна."
+    }
+  ],
+  "usage": "Javelin-ийг ихэвчлэн Maelstrom, Monkey King Bar, Bloodthorn зэрэг item-д угсрахаар авдаг. Pierce нь нэмэлт хохирол өгөхөөс гадна evasion-тэй дайсны (Phantom Assassin, Butterfly эзэмшигч, Windranger-ийн Windrun) эсрэг тодорхой хэмжээнд тус болдог.\n\nДангаараа зөөж явахад ч Pierce ажилладаг тул лайнд эсвэл фармлахад хохирол нэмнэ. Гэхдээ evasion-ийг бүрэн даван туулахад 25% магадлал хангалтгүй тул шаардлагатай бол Monkey King Bar руу сайжруул.",
+  "goodFor": [
+    "troll_warlord",
+    "luna",
+    "gyrocopter",
+    "juggernaut",
+    "sven"
+  ],
+  "tips": [
+    "Maelstrom руу явж байгаа бол Javelin-ийг эхэлж авбал фармын хурд нэмэгдэнэ.",
+    "Pierce-ийн хохирол ид шидийн тул дайсны хуягаас үл хамаарна."
+  ]
+}

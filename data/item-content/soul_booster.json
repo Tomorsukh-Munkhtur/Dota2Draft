@@ -1,0 +1,19 @@
+{
+  "key": "soul_booster",
+  "category": "armor",
+  "summary": "Soul Booster нь +425 HP, +425 мана өгдөг томоохон бүрэлдэхүүн item. Octarine Core, Bloodstone, Khanda, Crella's Crozier-ийн суурь болдог.",
+  "abilities": [],
+  "usage": "Soul Booster-ийг ихэвчлэн Octarine Core, Bloodstone, Khanda эсвэл Crella's Crozier угсрах замдаа авдаг. HP болон мана хоёуланг нь өгдөг тул чадвараа олон удаа хэрэглэдэг, урт тулаанд оролцдог баатруудад тохиромжтой.\n\nPoint Booster, Vitality Booster, Energy Booster-оос бүрддэг тул эдгээрийг нэг нэгээр нь цуглуулж, алтаа аажмаар зарцуулж болно. Дангаар нь удаан хадгалахаас илүү дараагийн бүрэн item руугаа хурдан угсраарай.",
+  "goodFor": [
+    "storm_spirit",
+    "leshrac",
+    "death_prophet",
+    "zuus",
+    "tinker"
+  ],
+  "tips": [
+    "Octarine Core эсвэл Bloodstone руу явахдаа эхлээд энэ хэсгийг угсраарай.",
+    "Point Booster, Vitality Booster, Energy Booster гэсэн гурван хэсгийг тус тусад нь авч болно.",
+    "HP болон мана хоёуланг нь нэмдэг тул чадвартаа найддаг баатарт илүү тохиромжтой."
+  ]
+}

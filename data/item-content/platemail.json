@@ -1,0 +1,18 @@
+{
+  "key": "platemail",
+  "category": "secret_shop",
+  "summary": "Platemail бол +10 хуяг өгдөг 1400 алтны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Platemail нь Lotus Orb, Assault Cuirass, Shiva's Guard-ийн найрлагад ордог. Дайсан физик хохирол их учруулдаг керритэй үед хуяг нь амьд үлдэхэд маш чухал тул эдгээр эд зүйл рүү явж байгаа бол Platemail-ийг эхэлж авч болно.\n\nSecret Shop-д зарагддаг тул courier-ээр авчруулж болно. Нийтлэг алдаа: зөвхөн хуягийн төлөө Platemail-тай удаан явах — бүтэн эд зүйл болгож идэвхтэй чадвар, аура зэрэг нэмэлт давуу талыг аваарай.",
+  "goodFor": [
+    "slardar",
+    "dragon_knight",
+    "tidehunter",
+    "abyssal_underlord",
+    "mars"
+  ],
+  "tips": [
+    "Физик хохирол их учруулдаг керрийн эсрэг +10 хуяг нь хамгийн энгийн хамгаалалт.",
+    "Assault Cuirass эсвэл Shiva's Guard хийх гэж байгаа бол Platemail-ийг эхэлж авбал тэсвэр шууд нэмэгдэнэ."
+  ]
+}

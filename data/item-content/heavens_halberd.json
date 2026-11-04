@@ -1,0 +1,24 @@
+{
+  "key": "heavens_halberd",
+  "category": "weapons",
+  "summary": "Heaven's Halberd нь хуяг, HP нөхөн сэргэлт, 25% evasion өгч, дайсныг түр хугацаанд довтолж чадахгүй болгодог (disarm) идэвхтэй чадвартай item.",
+  "abilities": [
+    {
+      "title": "Disarm",
+      "description": "Зорилтыг 3.5 секундын турш довтолж чадахгүй болгоно."
+    }
+  ],
+  "usage": "Heaven's Halberd нь дайсны физик хохирол өгдөг керри (Phantom Assassin, Troll Warlord, Ursa, Juggernaut гэх мэт) тулааныг давамгайлж байгаа үед офлэйн баатрууд авдаг хамгаалалтын item. Evasion, хуяг нь физик довтолгоог багасгаж, Disarm нь дайсны керрийг тулааны хамгийн чухал мөчид 3.5 секунд довтлохгүй болгоно.\n\nDisarm-ийг керри Black King Bar хэрэглэхээс өмнө эсвэл BKB-ийн хугацаа дууссаны дараа хэрэглэ. Чадвараар хохирол өгдөг баатрын эсрэг Disarm ач холбогдол багатай тул эсрэг багийн бүрэлдэхүүнийг харж ав.",
+  "goodFor": [
+    "mars",
+    "legion_commander",
+    "centaur",
+    "slardar",
+    "bristleback"
+  ],
+  "tips": [
+    "Disarm-ийг керрийн хамгийн хүчтэй мөчид, жишээ нь Ursa-ийн Enrage эсвэл Troll Warlord-ын Battle Trance идэвхтэй үед хэрэглэ.",
+    "Evasion-ийг Monkey King Bar, Javelin, Bloodthorn зэрэг item нэвтэлж чадна гэдгийг сана.",
+    "Хуяг, evasion хоёулаа физик хохиролд л тус болдог тул ид шидийн хохиролтой дайсны эсрэг өөр item сонго."
+  ]
+}

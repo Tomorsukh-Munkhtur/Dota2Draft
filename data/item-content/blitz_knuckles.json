@@ -1,0 +1,13 @@
+{
+  "key": "blitz_knuckles",
+  "category": "equipment",
+  "summary": "Blitz Knuckles нь +35 довтолгооны хурд өгдөг бүрдэл эд зүйл. Shadow Blade, Oblivion Staff, Monkey King Bar зэрэг эд зүйлсийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Blitz Knuckles-ийг ганцаар нь авах нь ховор бөгөөд ихэвчлэн Shadow Blade (Claymore, Shadow Amulet-тэй), Oblivion Staff (Orchid Malevolence руу явах замд), эсвэл Monkey King Bar-ийн бүрдэл болгон авдаг. 1000 алтаар их хэмжээний довтолгооны хурд өгдөг тул довтолгоонд түшиглэдэг баатарт эрт авахад мэдэгдэхүйц тус болно.\n\nЯмар том эд зүйл хийх гэж байгаагаа урьдчилан шийдээд авах хэрэгтэй, учир нь ганцаар нь слот эзэлж барих нь үр ашиггүй.",
+  "goodFor": ["storm_spirit", "spirit_breaker", "clinkz"],
+  "tips": [
+    "Claymore болон Shadow Amulet-тэй нийлүүлж Shadow Blade хийнэ.",
+    "Oblivion Staff-ын бүрдэл хэсэг тул Orchid Malevolence, Bloodthorn руу явах замын эхлэл болно.",
+    "Demon Edge болон Javelin-тэй нийлүүлж Monkey King Bar хийнэ."
+  ]
+}

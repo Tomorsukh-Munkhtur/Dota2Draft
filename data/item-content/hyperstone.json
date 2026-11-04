@@ -1,0 +1,17 @@
+{
+  "key": "hyperstone",
+  "category": "secret_shop",
+  "summary": "Hyperstone бол +60 довтолгооны хурд өгдөг, 2000 алтны Secret Shop-ын бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Hyperstone-ийг ихэвчлэн Mjollnir, Assault Cuirass, Moon Shard-д угсрахаар авдаг. Их хэмжээний довтолгооны хурд өгдөг тул керриүдэд фарм болон барилга нураах хурдыг шууд нэмэгдүүлнэ.\n\nSecret Shop-оос зарагддаг тул курьераар захиалах нь хялбар. Moon Shard нь хоёр Hyperstone-оос бүрддэг тул хожуу шатанд их довтолгооны хурд хэрэгтэй керриүд хоёуланг нь цуглуулдаг.",
+  "goodFor": [
+    "troll_warlord",
+    "luna",
+    "gyrocopter",
+    "juggernaut"
+  ],
+  "tips": [
+    "Mjollnir эсвэл Assault Cuirass руу явж буй бол Hyperstone-ийг эхэлж авбал фарм шууд хурдасна.",
+    "Довтолгооны хурд нь цохилт бүрд идэвхждэг (on-hit) эффект, чадвартай баатарт илүү үр ашигтай."
+  ]
+}

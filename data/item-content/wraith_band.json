@@ -1,0 +1,19 @@
+{
+  "key": "wraith_band",
+  "category": "accessories",
+  "summary": "Wraith Band нь Agility голдуу бүх атрибут, довтолгооны хурд, хуяг өгдөг хямд, өгөөжтэй эхний item. Agility керри нар лайн дээр ихэвчлэн авдаг.",
+  "abilities": [],
+  "usage": "Wraith Band нь 505 алтаар Agility, бага зэрэг Strength, Intelligence, довтолгооны хурд, хуяг өгдөг тул тоглолтын эхэнд маш өгөөжтэй. Agility керри болон mid баатрууд лайнд крип цохих, дайсантай хохирол солилцох (trade) чадвараа сайжруулахын тулд нэг юм уу хоёрыг авдаг.\n\nТоглолтын хожуу үед inventory-д зай хэрэгтэй болоход зарж, том item-аар солих нь түгээмэл. Strength баатарт Bracer, Intelligence баатарт Null Talisman илүү тохиромжтой.",
+  "goodFor": [
+    "drow_ranger",
+    "sniper",
+    "luna",
+    "phantom_lancer",
+    "nevermore"
+  ],
+  "tips": [
+    "Agility баатарт хамгийн өгөөжтэй эхний item-уудын нэг.",
+    "Лайнд дайсантай солилцох хүчийг нэмж, хуяг өгнө.",
+    "Хожуу үед зай гаргахын тулд зарж болно."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "key": "ultimate_orb",
+  "category": "secret_shop",
+  "summary": "Ultimate Orb нь Secret Shop-д зарагддаг, бүх атрибутыг +15-аар нэмэгдүүлдэг үнэтэй бүрэлдэхүүн item. Linken's Sphere, Eye of Skadi, Ethereal Blade, Helm of the Overlord-ийн суурь.",
+  "abilities": [],
+  "usage": "Ultimate Orb-ийг ихэвчлэн Linken's Sphere, Eye of Skadi, Ethereal Blade эсвэл Helm of the Overlord угсрах замдаа авдаг. Бүх атрибутыг нэмдэг тул HP, мана, хуяг, довтолгооны хурд, довтолгооны хүч бүгд зэрэг өснө.\n\nҮнэ нь өндөр тул бүрэн item-ын эхний том алхам гэж үзэж, дараагийн хэсгүүдийг хурдан цуглуулаарай. Secret Shop-д зарагддаг тул courier-ээ ашиглан авчруулна.",
+  "goodFor": [
+    "medusa",
+    "morphling",
+    "viper",
+    "spectre"
+  ],
+  "tips": [
+    "Linken's Sphere эсвэл Eye of Skadi руу явахад эхний том хэсэг.",
+    "Бүх атрибутыг нэмдэг тул HP, мана, хуяг бүгд өснө.",
+    "Secret Shop-оос courier-ээр авчруулна."
+  ]
+}

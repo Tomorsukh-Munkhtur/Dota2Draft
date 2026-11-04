@@ -1,0 +1,19 @@
+{
+  "key": "tiara_of_selemene",
+  "category": "secret_shop",
+  "summary": "Tiara of Selemene нь Secret Shop-д зарагддаг, секундэд +6 мана нөхөн сэргэлт өгдөг бүрэлдэхүүн item. Scythe of Vyse, Octarine Core, Refresher Orb-ийн гол хэсэг.",
+  "abilities": [],
+  "usage": "Tiara of Selemene-г ихэвчлэн Scythe of Vyse, Octarine Core эсвэл Refresher Orb угсрах замдаа авдаг. Секундэд 6 мана нөхөн сэргэлт нь маш өндөр тул чадвараа байнга хэрэглэдэг mid болон саппорт баатруудын манын асуудлыг шийднэ.\n\nSecret Shop-д зарагддаг тул courier-ээ ашиглан авчруулаарай. Дангаар нь удаан хадгалахаас илүү бүрэн item болгож хувиргахад анхаараарай.",
+  "goodFor": [
+    "storm_spirit",
+    "tinker",
+    "skywrath_mage",
+    "puck",
+    "invoker"
+  ],
+  "tips": [
+    "Мана нөхөн сэргэлт өндөр тул чадвар их хэрэглэдэг баатарт тохиромжтой.",
+    "Scythe of Vyse руу явахдаа эхлээд энэ хэсгийг аваарай.",
+    "Secret Shop-оос courier-ээр авчруулна."
+  ]
+}

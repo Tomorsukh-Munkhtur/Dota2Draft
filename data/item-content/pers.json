@@ -1,0 +1,17 @@
+{
+  "key": "pers",
+  "category": "accessories",
+  "summary": "Perseverance бол Ring of Health, Void Stone-оос угсардаг, HP болон манагийн нөхөн сэргэлт өгдөг дунд шатны бүрэлдэхүүн хэсэг.",
+  "abilities": [],
+  "usage": "Perseverance нь Lotus Orb, Linken's Sphere, Battle Fury, Mage Slayer, Phylactery-ийн найрлагад ордог. Лайн дээр HP, мана хоёуланг нөхөж, fountain руу буцах хэрэгцээг багасгадаг тул мид, керри, offlane баатрууд эдгээр эд зүйл рүү явахдаа эрт угсардаг.\n\nPerseverance өөрөө идэвхтэй чадваргүй тул аль эд зүйл рүү явахаа тодорхой мэдэж авах нь чухал. Нийтлэг алдаа: Perseverance-ийг удаан хадгалж, бүтэн эд зүйл болгохгүй байх.",
+  "goodFor": [
+    "antimage",
+    "juggernaut",
+    "tidehunter",
+    "skywrath_mage"
+  ],
+  "tips": [
+    "Ring of Health-ийг эхэлж авбал HP нөхөн сэргэлт өгч лайнд илүү удаан тэсэх боломжтой.",
+    "Battle Fury хийх Anti-Mage-ийн хувьд Perseverance нь фармын эхний чухал алхам."
+  ]
+}

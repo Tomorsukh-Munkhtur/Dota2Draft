@@ -1,0 +1,13 @@
+{
+  "key": "enhancement_feverish",
+  "category": "enchantment",
+  "summary": "Feverish нь бүх чадвар, item-ийн cooldown-ыг 15%-иар богиносгодог Enchantment, гэхдээ мана зардлыг тань 7%-иар нэмнэ.",
+  "abilities": [],
+  "usage": "Ихэнх Enchantment-ийн тоо авсан tier-ээсээ хамаарч өсдөг бол Feverish-ийн утга нэг л (тогтмол) юм. 15% cooldown бууралт нь Black Hole, Ravage, Chronosphere зэрэг урт cooldown-той ultimate-тай баатарт тулаан бүрт ultimate-аа бэлэн байлгах боломж олгоно. Мана зардал 7%-иар өсдөг тул мана сайн хүрэлцдэг эсвэл мана нөхөн сэргэлт сайтай баатарт тохиромжтой. Спэллд суурилсан нейтрал item (Harmonizer, Spellslinger гэх мэт)-тэй хослуулбал маш сайн.",
+  "goodFor": ["enigma", "tidehunter", "faceless_void", "zuus", "magnataur", "earthshaker"],
+  "tips": [
+    "Тоо нь тогтмол — tier-ээс хамаарч өөрчлөгдөхгүй.",
+    "Урт cooldown-той ultimate-тай баатарт хамгийн их ашигтай.",
+    "Мана зардал өсдөг тул манагаа анхааралтай хянаж бай."
+  ]
+}

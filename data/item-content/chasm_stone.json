@@ -1,0 +1,12 @@
+{
+  "key": "chasm_stone",
+  "category": "miscellaneous",
+  "summary": "Chasm Stone нь чадваруудын нөлөөлөх талбайг (AoE) +40 нэгжээр томруулдаг бүрдэл эд зүйл. Shiva's Guard болон Gleipnir-ийн нэг хэсэг.",
+  "abilities": [],
+  "usage": "Chasm Stone нь талбайд нөлөөлдөг чадваруудын радиусыг нэмэгдүүлдэг тул олон дайсанд зэрэг хүрэх чадвартай баатруудад тус болно. Гэвч ганцаар нь авах нь ховор бөгөөд ихэвчлэн Shiva's Guard (Platemail, Splintmail-тэй) эсвэл Gleipnir (Rod of Atos, Point Booster-тэй) хийх замдаа авдаг.\n\nОлон Chasm Stone эсвэл түүний сайжруулалтуудын AoE бонус давхцдаггүй тул Shiva's Guard болон Gleipnir-ийг зэрэг барьсан ч AoE дахин нэмэгдэхгүй.",
+  "goodFor": ["skywrath_mage", "dragon_knight", "lina"],
+  "tips": [
+    "AoE бонус нь олон Chasm Stone болон түүний сайжруулалтаас давхцахгүй.",
+    "Shiva's Guard эсвэл Gleipnir хийх гэж байгаа бол бүрдэл хэсэг болгон түрүүлж авч болно."
+  ]
+}

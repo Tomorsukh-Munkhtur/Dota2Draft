@@ -1,0 +1,24 @@
+{
+  "key": "refresher",
+  "category": "magical",
+  "summary": "Refresher Orb нь HP болон манагийн нөхөн сэргэлт өгөх ба идэвхжүүлэхэд бүх чадварынхаа cooldown-ыг тэглэж, ультаа дахин шууд цутгах боломж олгодог.",
+  "abilities": [
+    {
+      "title": "Reset Cooldowns",
+      "description": "Бүх чадварынхаа cooldown-ыг тэглэнэ. Refresher Shard-тай cooldown хуваалцана. Энэ эд зүйлийн cooldown зөвхөн баатрын үндсэн цүнхэнд (main inventory) байх үед л явна."
+    }
+  ],
+  "usage": "Refresher Orb-ийг тулааныг шийддэг хүчтэй ульттай баатрууд — Enigma (Black Hole), Tidehunter (Ravage), Faceless Void (Chronosphere), Zeus (Thundergod's Wrath), Warlock — хожуу тоглоомд авдаг. Нэг багийн тулаанд ультаа хоёр удаа цутгах нь тулааныг бүрэн эргүүлж чадна.\n\nRefresher 325 мана шаарддаг тул ульт + Refresher + ульт хийхэд хангалттай мана байгаа эсэхийг шалга. Нийтлэг алдаа: Refresher-ийг backpack-д хийх — тэнд cooldown нь явахгүй; эсвэл эхний ульт ямар үр дүн өгснийг харалгүй яаран дарах.",
+  "goodFor": [
+    "enigma",
+    "tidehunter",
+    "faceless_void",
+    "zuus",
+    "warlock"
+  ],
+  "tips": [
+    "Ульт + Refresher + ульт хийхэд нийт хэр их мана хэрэгтэйг урьдчилан тооцоол.",
+    "Refresher Shard-тай cooldown хуваалцдаг тул хоёуланг нь дараалан ашиглах боломжгүй.",
+    "180 секундын cooldown-той тул зөвхөн чухал тулаанд ашигла."
+  ]
+}
