@@ -1,5 +1,6 @@
 # Тоглоомын өгөгдлийг (патч, skill, item, статистик) 3 цаг тутам шалгаж, өөрчлөгдсөн бол commit хийнэ.
 # Commit хийгдэхэд Vercel сайтыг автоматаар дахин deploy хийнэ.
+# Ажил амжилтгүй болбол GitHub repo-гийн эзэнд имэйл илгээнэ.
 name: Тоглоомын өгөгдөл шинэчлэх
 
 on:
@@ -14,6 +15,8 @@ on:
 
 permissions:
   contents: write
+  # Доорх "идэвхтэй байлгах" алхамд.
+  actions: write
 
 concurrency:
   group: game-data
@@ -24,9 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
@@ -45,3 +48,12 @@ jobs:
           git add data
           git commit -m "Тоглоомын өгөгдөл шинэчлэв (патч $(node -p "require('./data/meta.json').patch"))"
           git push
+
+      # Public repo-д 60 хоног идэвхгүй бол хуваарьт workflow автоматаар унтардаг.
+      # Өөрчлөлтгүй удаан хугацаа өнгөрсөн ч унтрахгүйн тулд workflow-г идэвхтэй гэж дахин тэмдэглэнэ.
+      - name: Идэвхтэй байлгах
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update-game-data.yml/enable"
