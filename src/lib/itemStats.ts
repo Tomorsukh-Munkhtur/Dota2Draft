@@ -1,12 +1,12 @@
 // dotaconstants-ийн item үзүүлэлтийн ("+ {value} Strength") англи загварыг монгол болгоно.
 const STAT_MN: Record<string, string> = {
-  "+ # Strength": "+# Хүч",
-  "+ # Agility": "+# Авхаалж",
-  "+ # Intelligence": "+# Ухаан",
+  "+ # Strength": "+# Strength",
+  "+ # Agility": "+# Agility",
+  "+ # Intelligence": "+# Intelligence",
   "+ # All Attributes": "+# Бүх үзүүлэлт",
   "+ # Selected Attribute": "+# Сонгосон үзүүлэлт",
   "+ # Primary Attribute": "+# Үндсэн үзүүлэлт",
-  "- #% Intelligence": "-#% Ухаан",
+  "- #% Intelligence": "-#% Intelligence",
   "+ # Health": "+# HP",
   "+ #% Health": "+#% HP",
   "+ # Health Regeneration": "+# HP нөхөн сэргэлт",

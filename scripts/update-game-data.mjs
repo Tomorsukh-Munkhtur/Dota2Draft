@@ -3,7 +3,7 @@
 // Ажиллуулах: npm run data:game   (--if-new-patch: патч өөрчлөгдөөгүй бол юу ч хийхгүй)
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { translatePatchNotes } from "./lib/gtranslate.mjs";
+import { translateHeroAbilities, translatePatchNotes } from "./lib/gtranslate.mjs";
 import { CDN, feed, fillTemplate, formatValues, htmlToText, pool } from "./lib/valve.mjs";
 
 const DATA = path.resolve("data");
@@ -102,6 +102,7 @@ if (process.argv.includes("--if-new-patch") && meta.patch === latest.patch_numbe
 }
 // Өмнө нь тасарсан ч гэсэн орчуулаагүй мөр үлдсэн бол орчуулна.
 await translatePatchNotes(DATA);
+await translateHeroAbilities(DATA);
 
 async function updateAll() {
   console.log(`Одоогийн патч: ${latest.patch_number}`);

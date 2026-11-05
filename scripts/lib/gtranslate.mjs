@@ -1,41 +1,95 @@
-// Патчийн тэмдэглэлийг Google Translate-ийн үнэгүй (албан бус) хаягаар монгол руу орчуулж
-// data/patch-notes-mn.json-д { англи: монгол } хэлбэрээр хадгална. Нэг удаа орчуулсныг дахин орчуулахгүй.
-// Баатар, чадвар, item-ийн нэрийг ⟦n⟧ орлуулагчаар хамгаалж, орчуулсны дараа буцааж тавина.
-// Админ засварласан орчуулга Supabase-д хадгалагдаж, энэ машин орчуулгаас давуу эрхтэй.
+// Патчийн тэмдэглэл, баатрын skill-ийн текстийг Google Translate-ийн үнэгүй (албан бус) хаягаар монгол руу
+// орчуулж { англи: монгол } хэлбэрээр хадгална (data/patch-notes-mn.json, data/abilities-mn.json).
+// Нэг удаа орчуулсныг дахин орчуулахгүй. Баатар, чадвар, item-ийн нэрийг ⟦n⟧ орлуулагчаар хамгаалж,
+// орчуулсны дараа буцааж тавина. Админ засварласан орчуулга Supabase-д хадгалагдаж, машин орчуулгаас давуу.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const ENDPOINT = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=mn&dt=t&q=";
 const MAX_LINES = 40;
 const MAX_CHARS = 3500;
-// Тогтсон нэр томьёо: null бол англиар нь үлдээнэ (Монгол тоглогчид ингэж хэрэглэдэг),
-// эс бөгөөс сайтын бусад хэсэгтэй ижил монгол үгээр солино ("Intelligence"-ийг "тагнуул" гэж орчуулахаас сэргийлнэ).
+
+const KEEP = [
+  // Нэр, газар.
+  "Aghanim's Scepter",
+  "Aghanim's Shard",
+  "Roshan",
+  "Tormentor",
+  "Madstone",
+  "Talent",
+  "Facet",
+  "Innate",
+  "Twin Gates",
+  "Twin Gate",
+  "Lotus Pool",
+  "Wisdom Rune",
+  "Bounty Rune",
+  "Power Rune",
+  "Outpost",
+  "Watcher",
+  "Observer Ward",
+  "Sentry Ward",
+  "Courier",
+  "Glyph",
+  "Strength",
+  "Agility",
+  "Intelligence",
+  "Universal",
+  // Монгол тоглогчид англиар нь хэрэглэдэг механикууд.
+  "Cooldown",
+  "cooldown",
+  "cooldowns",
+  "Stun",
+  "stun",
+  "stuns",
+  "stunned",
+  "Silence",
+  "silence",
+  "silences",
+  "silenced",
+  "Root",
+  "root",
+  "roots",
+  "rooted",
+  "Hex",
+  "hex",
+  "hexed",
+  "Break",
+  "Dispel",
+  "dispel",
+  "dispels",
+  "dispelled",
+  "Basic Dispel",
+  "Strong Dispel",
+  "Lifesteal",
+  "lifesteal",
+  "Spell Lifesteal",
+  "spell lifesteal",
+  "Evasion",
+  "evasion",
+  "Bash",
+  "bash",
+  "bashes",
+  "Debuff",
+  "debuff",
+  "debuffs",
+  "Buff",
+  "buff",
+  "buffs",
+  "Creep",
+  "creep",
+  "creeps",
+  "Creeps",
+];
+
+// Тогтсон нэр томьёо: null бол англиар нь үлдээнэ ("Intelligence"-ийг "тагнуул", "Health"-ийг "эрүүл мэнд"
+// гэж орчуулахаас сэргийлнэ), эс бөгөөс заасан үгээр солино.
 const GLOSSARY = {
-  "Aghanim's Scepter": null,
-  "Aghanim's Shard": null,
-  Roshan: null,
-  Tormentor: null,
-  Madstone: null,
-  Cooldown: null,
-  cooldown: null,
-  Talent: null,
-  Facet: null,
-  Innate: null,
-  "Twin Gates": null,
-  "Twin Gate": null,
-  "Lotus Pool": null,
-  "Wisdom Rune": null,
-  "Bounty Rune": null,
-  "Power Rune": null,
-  Outpost: null,
-  Watcher: null,
-  "Observer Ward": null,
-  "Sentry Ward": null,
-  Courier: null,
-  Glyph: null,
-  Strength: "Хүч",
-  Agility: "Авхаалж",
-  Intelligence: "Ухаан",
+  ...Object.fromEntries(KEEP.map((t) => [t, null])),
+  Health: "HP",
+  health: "HP",
+  "Max Health": "Max HP",
+  "max health": "max HP",
 };
 /** Энэ үгсийг агуулсан мөрийг GLOSSARY өөрчлөгдсөний дараа дахин орчуулахад ашиглана. */
 export const GLOSSARY_TERMS = Object.keys(GLOSSARY);
@@ -52,11 +106,22 @@ const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 function protector(terms, replace = {}) {
   const list = [...new Set(terms.filter((t) => t && t.length > 2))].sort((a, b) => b.length - a.length);
-  const re = new RegExp(`(?<![A-Za-z])(${list.map(escape).join("|")})(?![A-Za-z])`, "g");
+  const body = `(?<![A-Za-z])(${list.map(escape).join("|")})(?![A-Za-z])`;
+  const re = new RegExp(body, "g");
+  const reCi = new RegExp(body, "gi");
+  // Том үсгээр бичигдсэн үзүүлэлтийн нэрд ("MANA VOID DAMAGE") жинхэнэ бичлэгийг нь сэргээх.
+  const canonical = new Map(list.map((t) => [t.toLowerCase(), t]));
   return {
-    protect(text) {
+    protect(text, { label = false } = {}) {
       const saved = [];
-      const out = text.replace(re, (m) => `⟦${saved.push(replace[m] ?? m) - 1}⟧`);
+      if (!label) return { out: text.replace(re, (m) => `⟦${saved.push(replace[m] ?? m) - 1}⟧`), saved };
+      const out = text
+        .replace(reCi, (m) => {
+          const t = canonical.get(m.toLowerCase()) ?? m;
+          return `⟦${saved.push(replace[t] ?? t) - 1}⟧`;
+        })
+        .toLowerCase()
+        .replace(/^[a-z]/, (c) => c.toUpperCase());
       return { out, saved };
     },
     restore(text, saved) {
@@ -67,9 +132,7 @@ function protector(terms, replace = {}) {
 
 async function googleTranslate(text, attempt = 1) {
   try {
-    const res = await fetch(ENDPOINT + encodeURIComponent(text), {
-      signal: AbortSignal.timeout(20_000),
-    });
+    const res = await fetch(ENDPOINT + encodeURIComponent(text), { signal: AbortSignal.timeout(20_000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
     return json[0].map((s) => s[0]).join("");
@@ -80,31 +143,27 @@ async function googleTranslate(text, attempt = 1) {
   }
 }
 
-/** data/patches.json-ийн орчуулаагүй мөрүүдийг орчуулна. Алдаа гарвал үлдсэнийг дараагийн удаад үлдээнэ. */
-export async function translatePatchNotes(dataDir) {
-  const patches = await readJson(path.join(dataDir, "patches.json"), null);
-  if (!patches) return;
-  const cacheFile = path.join(dataDir, "patch-notes-mn.json");
-  const cache = await readJson(cacheFile, {});
+/** Олон мөртэй текстийг мөр мөрөөр нь (хоосон мөргүй) задлана — сайт ч мөр мөрөөр нь орчуулна. */
+export const splitLines = (text) =>
+  (text ?? "")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
 
-  const strings = new Set();
-  for (const p of patches.patches) {
-    // Ерөнхий хэсгийн гарчиг ("Twin Gates", "Tormentor") нь газрын нэр тул англиар нь үлдээнэ.
-    for (const g of p.general) g.lines.forEach((l) => strings.add(l.t));
-    for (const h of p.heroes) h.lines.forEach((l) => strings.add(l.t));
-    for (const it of [...p.items, ...p.neutralItems]) it.lines.forEach((l) => strings.add(l.t));
-    for (const c of p.neutralCreeps) c.lines.forEach((l) => strings.add(l.t));
-    // Item-гүй ерөнхий хэсгийн гарчиг ("Shop Reshuffle" гэх мэт).
-    for (const it of [...p.items, ...p.neutralItems]) if (!it.key && it.title) strings.add(it.title);
-  }
-  // Одоогийн патчуудад байхгүй болсон (хуучин том патчийн) мөрүүдийг хасна.
+/**
+ * `strings` (текст → { label }) дотроос кэшид байхгүйг орчуулж `file`-д хадгална.
+ * Одоогийн өгөгдөлд байхгүй болсон хуучин мөрүүдийг хасна. Алдаа гарвал үлдсэнийг дараагийн удаад үлдээнэ.
+ */
+async function translateInto(dataDir, file, strings, title) {
+  const cacheFile = path.join(dataDir, file);
+  const cache = await readJson(cacheFile, {});
   let pruned = 0;
   for (const key of Object.keys(cache))
     if (!strings.has(key)) {
       delete cache[key];
       pruned++;
     }
-  const missing = [...strings].filter((s) => s && !(s in cache));
+  const missing = [...strings.keys()].filter((s) => s && !(s in cache));
   const save = () =>
     writeFile(
       cacheFile,
@@ -112,7 +171,7 @@ export async function translatePatchNotes(dataDir) {
     );
   if (!missing.length) {
     if (pruned) await save();
-    return console.log("Патчийн орчуулга: шинэ мөр алга.");
+    return console.log(`${title}: шинэ мөр алга.`);
   }
 
   const heroes = await readJson(path.join(dataDir, "heroes.json"), []);
@@ -129,10 +188,10 @@ export async function translatePatchNotes(dataDir) {
     Object.fromEntries(Object.entries(GLOSSARY).filter(([, v]) => v)),
   );
 
-  console.log(`Патчийн орчуулга: ${missing.length} шинэ мөр…`);
+  console.log(`${title}: ${missing.length} шинэ мөр…`);
   let done = 0;
   try {
-    for (let i = 0; i < missing.length;) {
+    for (let i = 0; i < missing.length; ) {
       // Мөрүүдийг "\n"-ээр нийлүүлж нэг хүсэлтээр орчуулна.
       const batch = [];
       let chars = 0;
@@ -141,7 +200,7 @@ export async function translatePatchNotes(dataDir) {
         batch.push(missing[i++]);
       }
       if (!batch.length) batch.push(missing[i++]); // нэг мөр хэт урт бол дангаар нь
-      const prepared = batch.map((s) => protect(s.replace(/\s*\n\s*/g, " ")));
+      const prepared = batch.map((s) => protect(s.replace(/\s*\n\s*/g, " "), strings.get(s)));
       const translated = (await googleTranslate(prepared.map((p) => p.out).join("\n"))).split("\n");
       if (translated.length === batch.length) {
         batch.forEach((s, k) => (cache[s] = restore(translated[k].trim(), prepared[k].saved)));
@@ -151,11 +210,48 @@ export async function translatePatchNotes(dataDir) {
           cache[batch[k]] = restore((await googleTranslate(prepared[k].out)).trim(), prepared[k].saved);
       }
       done += batch.length;
+      if (done % 400 < batch.length) await save(); // урт ажиллагааны дунд хадгална
       await new Promise((r) => setTimeout(r, 700));
     }
   } catch (e) {
     console.warn(`  орчуулга тасарлаа (${done}/${missing.length}): ${e.message} — үлдсэнийг дараа орчуулна.`);
   }
   await save();
-  console.log(`Патчийн орчуулга: ${done} мөр орчууллаа.`);
+  console.log(`${title}: ${done} мөр орчууллаа.`);
+}
+
+const TEXT = {};
+const LABEL = { label: true };
+
+/** data/patches.json-ийн орчуулаагүй мөрүүдийг орчуулна → data/patch-notes-mn.json. */
+export async function translatePatchNotes(dataDir) {
+  const patches = await readJson(path.join(dataDir, "patches.json"), null);
+  if (!patches) return;
+  const strings = new Map();
+  for (const p of patches.patches) {
+    // Ерөнхий хэсгийн гарчиг ("Twin Gates", "Tormentor") нь газрын нэр тул англиар нь үлдээнэ.
+    for (const g of p.general) g.lines.forEach((l) => strings.set(l.t, TEXT));
+    for (const h of p.heroes) h.lines.forEach((l) => strings.set(l.t, TEXT));
+    for (const it of [...p.items, ...p.neutralItems]) it.lines.forEach((l) => strings.set(l.t, TEXT));
+    for (const c of p.neutralCreeps) c.lines.forEach((l) => strings.set(l.t, TEXT));
+    // Item-гүй ерөнхий хэсгийн гарчиг ("Shop Reshuffle" гэх мэт).
+    for (const it of [...p.items, ...p.neutralItems]) if (!it.key && it.title) strings.set(it.title, TEXT);
+  }
+  await translateInto(dataDir, "patch-notes-mn.json", strings, "Патчийн орчуулга");
+}
+
+/** data/hero-abilities.json-ийн skill тайлбар, тэмдэглэл, Scepter/Shard, үзүүлэлт, талантыг орчуулна → data/abilities-mn.json. */
+export async function translateHeroAbilities(dataDir) {
+  const kits = await readJson(path.join(dataDir, "hero-abilities.json"), null);
+  if (!kits) return;
+  const strings = new Map();
+  for (const kit of Object.values(kits)) {
+    for (const a of kit.abilities) {
+      for (const text of [a.desc, a.scepter, a.shard, ...(a.notes ?? [])])
+        splitLines(text).forEach((l) => strings.set(l, TEXT));
+      for (const v of a.values ?? []) if (v.label) strings.set(v.label, LABEL);
+    }
+    for (const t of kit.talents) t.options.forEach((o) => o && strings.set(o, TEXT));
+  }
+  await translateInto(dataDir, "abilities-mn.json", strings, "Skill-ийн орчуулга");
 }

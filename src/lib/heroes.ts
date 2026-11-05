@@ -112,3 +112,18 @@ export function getHero(slug: string): Hero | undefined {
 export function getHeroKit(slug: string): HeroKit | null {
   return readData<Record<string, HeroKit>>("hero-abilities.json", {})[slug] ?? null;
 }
+
+/** Skill-ийн тайлбар, тэмдэглэл, Scepter/Shard, үзүүлэлтийн нэр, талантыг орчуулсан хуулбар. Нэр нь англиар үлдэнэ. */
+export function translateKit(kit: HeroKit, tr: (en: string) => string): HeroKit {
+  return {
+    abilities: kit.abilities.map((a) => ({
+      ...a,
+      desc: tr(a.desc),
+      scepter: a.scepter && tr(a.scepter),
+      shard: a.shard && tr(a.shard),
+      notes: a.notes.map(tr),
+      values: a.values.map((v) => ({ ...v, label: tr(v.label) })),
+    })),
+    talents: kit.talents.map((t) => ({ ...t, options: t.options.map(tr) })),
+  };
+}

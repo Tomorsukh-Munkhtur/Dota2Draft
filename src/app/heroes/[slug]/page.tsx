@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import HeroLinkRow from "@/components/heroes/HeroLinkRow";
 import { AbilityList, TalentTree } from "@/components/heroes/HeroKitView";
+import LangToggle from "@/components/LangToggle";
 import PatchNotesList from "@/components/PatchNotesList";
 import { getHeroContent } from "@/lib/content";
 import {
@@ -16,9 +17,10 @@ import {
   getHeroKit,
   getHeroes,
   getItems,
+  translateKit,
 } from "@/lib/heroes";
 import { getMatchupMeta, heroPickRate, heroWinrate, vsRow, withRow } from "@/lib/matchups";
-import { getGameMeta, getHeroPatchNotes } from "@/lib/patch";
+import { getAbilityTranslator, getGameMeta, getHeroPatchNotes } from "@/lib/patch";
 
 const RENDER_VIDEO = "https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders";
 const COMPLEXITY = ["", "Тоглоход хялбар", "Дунд зэрэг", "Тоглоход хэцүү"];
@@ -53,6 +55,7 @@ async function HeroDetail({ slug }: { slug: string }) {
   const i = getHeroes().indexOf(hero);
   const content = await getHeroContent(slug);
   const kit = getHeroKit(slug);
+  const kitMn = kit && translateKit(kit, await getAbilityTranslator());
   const patchNotes = getHeroPatchNotes(slug);
   const { patch } = getGameMeta();
   const matchupMeta = getMatchupMeta();
@@ -115,15 +118,19 @@ async function HeroDetail({ slug }: { slug: string }) {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
         <div className="space-y-6">
-          {kit && (
+          {kit && kitMn && (
             <Card title="Чадварууд (skill)" note={`Valve-ийн албан ёсны тайлбар · патч ${patch ?? "?"}`}>
-              <AbilityList kit={kit} />
+              <LangToggle
+                note="Google Translate-ийн машин орчуулга"
+                mn={<AbilityList kit={kitMn} />}
+                en={<AbilityList kit={kit} />}
+              />
             </Card>
           )}
 
-          {kit && kit.talents.some((t) => t.options.length) && (
+          {kit && kitMn && kit.talents.some((t) => t.options.length) && (
             <Card title="Талант">
-              <TalentTree kit={kit} />
+              <LangToggle mn={<TalentTree kit={kitMn} />} en={<TalentTree kit={kit} />} />
             </Card>
           )}
 
@@ -141,12 +148,12 @@ async function HeroDetail({ slug }: { slug: string }) {
           </Card>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Card title="Ялдаг баатрууд">
+            <Card title="Good against" note={`${hero.name} эдгээрийг ялдаг`}>
               {beats.map((r) => (
                 <HeroLinkRow key={r.slug} {...r} />
               ))}
             </Card>
-            <Card title="Ялагддаг баатрууд">
+            <Card title="Counter heroes" note={`${hero.name}-ийн эсрэг сонгоход сайн`}>
               {losesTo.map((r) => (
                 <HeroLinkRow key={r.slug} {...r} />
               ))}
@@ -201,14 +208,14 @@ async function HeroDetail({ slug }: { slug: string }) {
             </Card>
           )}
 
-          <Card title="Хамтрах баатрууд">
+          <Card title="Synergy">
             {synergy.map((r) => (
               <HeroLinkRow key={r.slug} {...r} />
             ))}
           </Card>
 
           {content.similar.length > 0 && (
-            <Card title="Ойролцоо баатрууд">
+            <Card title="Similar heroes">
               {content.similar.map((sl) => (
                 <HeroLinkRow key={sl} slug={sl} />
               ))}
@@ -219,9 +226,9 @@ async function HeroDetail({ slug }: { slug: string }) {
             <dl className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
               {(
                 [
-                  ["Хүч", `${s.str} +${s.strGain}`],
-                  ["Авхаалж", `${s.agi} +${s.agiGain}`],
-                  ["Ухаан", `${s.int} +${s.intGain}`],
+                  ["Strength", `${s.str} +${s.strGain}`],
+                  ["Agility", `${s.agi} +${s.agiGain}`],
+                  ["Intelligence", `${s.int} +${s.intGain}`],
                   ["HP", s.health],
                   ["Мана", s.mana],
                   ["Хуяг", s.armor],

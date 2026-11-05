@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useReducer, useState } from "react";
 import { CM_STEPS, formatPct, suggest, type DraftData, type Side } from "@/lib/draft";
+import CmTimeline from "./CmTimeline";
 import { cmReducer, cmTeams, initialCm, other, sideOfStep } from "./cmState";
 import HeroGrid from "./HeroGrid";
 import Inspector from "./Inspector";
@@ -14,7 +15,6 @@ type FreeTarget = "ally" | "enemy" | "ban";
 type FreeState = Record<FreeTarget, number[]>;
 type Tab = "pick" | "ban" | "items";
 
-const SIDE_LABEL: Record<Side, string> = { radiant: "Radiant", dire: "Dire" };
 const TARGET_LABEL: Record<FreeTarget, string> = { ally: "Манай баг", enemy: "Эсрэг баг", ban: "Бан" };
 const EMPTY_FREE: FreeState = { ally: [], enemy: [], ban: [] };
 
@@ -91,6 +91,8 @@ export default function DraftBoard({ data }: { data: DraftData }) {
       setFree((f) => ({ ...f, [t]: [...f[t], hero] }));
       setFreeHistory((h) => [...h, t]);
     }
+    // Сонгосны дараа дараагийн алхмын саналыг харуулна.
+    setSelected(null);
   }
 
   function removeFree(hero: number) {
@@ -190,17 +192,6 @@ export default function DraftBoard({ data }: { data: DraftData }) {
         {mode === "cm" && (
           <>
             <label className="flex items-center gap-1.5 rounded-lg border border-line bg-panel px-2 py-1.5">
-              <span className="text-muted">Манай тал</span>
-              <select
-                value={mySide}
-                onChange={(e) => setMySide(e.target.value as Side)}
-                className="bg-transparent font-semibold outline-none"
-              >
-                <option value="radiant">Radiant</option>
-                <option value="dire">Dire</option>
-              </select>
-            </label>
-            <label className="flex items-center gap-1.5 rounded-lg border border-line bg-panel px-2 py-1.5">
               <span className="text-muted">Эхний пик</span>
               <select
                 value={cm.firstPick}
@@ -251,84 +242,8 @@ export default function DraftBoard({ data }: { data: DraftData }) {
         </div>
       </div>
 
-      {/* Багууд */}
-      {mode === "cm" ? (
-        <div className="grid gap-3 lg:grid-cols-[1fr_auto_1fr]">
-          {(["radiant", "dire"] as Side[]).map((side, i) => (
-            <div key={side} className={i === 0 ? "order-1" : "order-3"}>
-              <TeamPanel
-                data={data}
-                title={SIDE_LABEL[side]}
-                subtitle={side === mySide ? "Манай баг" : "Эсрэг баг"}
-                tone={side}
-                picks={teams[side].picks}
-                bans={teams[side].bans}
-                banSlots={7}
-                active={stepSide === side}
-                reserve={timerOn ? cm.reserve[side] : undefined}
-                onHero={onTeamHero}
-              />
-            </div>
-          ))}
-          <div className="order-2 flex min-w-[260px] flex-col items-center justify-center gap-2 rounded-lg border border-line bg-panel p-3">
-            {step && stepSide ? (
-              <>
-                <p className="text-xs text-muted">
-                  Алхам {cm.picks.length + 1}/{CM_STEPS.length} · {step.phase}-р{" "}
-                  {step.action === "ban" ? "бан" : "пик"} үе
-                </p>
-                <p className="text-center text-lg font-bold">
-                  <span className={stepSide === "radiant" ? "text-radiant" : "text-dire"}>
-                    {SIDE_LABEL[stepSide]}
-                  </span>{" "}
-                  {step.action === "ban" ? "БАН" : "ПИК"}
-                </p>
-                <p className="text-xs text-muted">
-                  {stepSide === mySide ? "Танай ээлж" : "Эсрэг багийн сонголтыг тэмдэглэнэ үү"}
-                </p>
-                {timerOn && (
-                  <p className="text-3xl font-bold tabular-nums text-gold">{cm.stepLeft}</p>
-                )}
-                {step.action === "ban" && (
-                  <button
-                    onClick={() => dispatch({ type: "act", hero: null })}
-                    className="text-xs text-muted underline hover:text-fg"
-                  >
-                    Бан алгасах
-                  </button>
-                )}
-              </>
-            ) : (
-              <p className="text-center font-bold text-gold">Драфт дууслаа!</p>
-            )}
-            <div className="mt-1 grid grid-cols-12 gap-0.5">
-              {CM_STEPS.map((s, i) => {
-                const side = s.order === "first" ? cm.firstPick : other(cm.firstPick);
-                const hero = cm.picks[i];
-                return (
-                  <div
-                    key={i}
-                    title={`${i + 1}. ${SIDE_LABEL[side]} ${s.action === "ban" ? "бан" : "пик"}`}
-                    className={`relative grid h-5 w-5 place-items-center overflow-hidden rounded-sm text-[9px] font-bold ${
-                      side === "radiant" ? "bg-radiant/25 text-radiant" : "bg-dire/25 text-dire"
-                    } ${i === cm.picks.length ? "ring-2 ring-gold" : ""}`}
-                  >
-                    {hero != null ? (
-                      <HeroThumb
-                        hero={data.heroes[hero]}
-                        width={20}
-                        className={`h-full w-full object-cover ${s.action === "ban" ? "grayscale" : ""}`}
-                      />
-                    ) : (
-                      (s.action === "ban" ? "Б" : "П")
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      ) : (
+      {/* Чөлөөт горимын багууд (CM-д зүүн талын самбар) */}
+      {mode === "free" && (
         <div className="grid gap-3 lg:grid-cols-[1fr_1fr]">
           <TeamPanel data={data} title="Манай баг" subtitle="дарж хасна" tone="radiant" picks={free.ally} onHero={onTeamHero} active={target === "ally"} />
           <TeamPanel data={data} title="Эсрэг баг" subtitle="дарж хасна" tone="dire" picks={free.enemy} onHero={onTeamHero} active={target === "enemy"} />
@@ -361,9 +276,29 @@ export default function DraftBoard({ data }: { data: DraftData }) {
         </div>
       )}
 
-      {/* Баатрууд + зөвлөмж */}
-      <div className="grid gap-4 lg:grid-cols-[1fr_400px]">
-        <div className="space-y-2">
+      {/* CM: самбар | баатрууд | зөвлөмж. Чөлөөт: баатрууд | зөвлөмж. */}
+      <div
+        className={`grid gap-4 ${
+          mode === "cm"
+            ? "lg:grid-cols-[252px_minmax(0,1fr)] xl:grid-cols-[252px_minmax(0,1fr)_380px]"
+            : "lg:grid-cols-[minmax(0,1fr)_400px]"
+        }`}
+      >
+        {mode === "cm" && (
+          // Самбарыг бүтнээр нь харуулна: дэлгэц хангалттай өндөр үед л доош гүйлгэхэд дагаж үлдэнэ.
+          <div className="lg:row-span-2 lg:self-start xl:row-span-1 [@media(min-height:840px)]:lg:sticky [@media(min-height:840px)]:lg:top-[84px]">
+            <CmTimeline
+              data={data}
+              cm={cm}
+              mySide={mySide}
+              timerOn={timerOn}
+              onHero={onTeamHero}
+              onCaptain={setMySide}
+              onSkipBan={() => dispatch({ type: "act", hero: null })}
+            />
+          </div>
+        )}
+        <div className="min-w-0 space-y-2">
           <div className="flex items-center gap-2">
             <input
               value={query}
@@ -396,7 +331,7 @@ export default function DraftBoard({ data }: { data: DraftData }) {
           </p>
         </div>
 
-        <aside className="space-y-4">
+        <aside className={`space-y-4 ${mode === "cm" ? "lg:col-start-2 xl:col-start-auto" : ""}`}>
           {selected !== null && (
             // Гар утсанд доороос гарч ирэх самбар, том дэлгэцэнд хажуугийн багана.
             <div className="fixed inset-x-0 bottom-0 z-50 max-h-[70vh] overflow-y-auto shadow-[0_-12px_40px_rgba(0,0,0,0.6)] lg:static lg:max-h-none lg:overflow-visible lg:shadow-none">
@@ -413,7 +348,8 @@ export default function DraftBoard({ data }: { data: DraftData }) {
               />
             </div>
           )}
-          <section className="rounded-lg border border-line bg-panel">
+          {/* Баатар сонгосон үед том дэлгэцэнд санал нь мэдээллээр солигдоно (гар утсанд мэдээлэл доороос гардаг). */}
+          <section className={`rounded-lg border border-line bg-panel ${selected !== null ? "lg:hidden" : ""}`}>
             <div className="flex border-b border-line text-sm">
               {(
                 [

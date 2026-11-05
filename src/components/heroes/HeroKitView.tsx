@@ -37,8 +37,8 @@ function Ability({ a }: { a: HeroAbility }) {
         <p className="whitespace-pre-line text-sm text-fg/85">{a.desc}</p>
         {a.values.length > 0 && (
           <dl className="grid gap-x-4 gap-y-0.5 text-xs sm:grid-cols-2">
-            {a.values.map((v) => (
-              <div key={v.label} className="flex justify-between gap-2">
+            {a.values.map((v, i) => (
+              <div key={i} className="flex justify-between gap-2">
                 <dt className="text-muted">{v.label}</dt>
                 <dd className="tabular-nums">{v.value}</dd>
               </div>
@@ -66,8 +66,8 @@ function Ability({ a }: { a: HeroAbility }) {
           <details className="text-xs text-muted">
             <summary className="cursor-pointer hover:text-fg">Нэмэлт тэмдэглэл ({a.notes.length})</summary>
             <ul className="mt-1 list-disc space-y-0.5 pl-5">
-              {a.notes.map((n) => (
-                <li key={n}>{n}</li>
+              {a.notes.map((n, i) => (
+                <li key={i}>{n}</li>
               ))}
             </ul>
           </details>

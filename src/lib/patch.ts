@@ -42,11 +42,31 @@ export async function getPatchTranslationOverrides(): Promise<Record<string, str
   }
 }
 
-/** Англи мөр → монгол: админы засвар, эс бөгөөс машин орчуулга, эс бөгөөс англиараа. */
-export async function getPatchTranslator() {
+/**
+ * Англи текст → монгол: мөр бүрийг админы засвар, эс бөгөөс машин орчуулга (`file`), эс бөгөөс англиар нь.
+ * Олон мөртэй текстийг (skill-ийн тайлбар) мөр мөрөөр нь орчуулна — scripts/lib/gtranslate.mjs-тэй ижил.
+ */
+async function makeTranslator(file: string) {
   const overrides = await getPatchTranslationOverrides();
-  const machine = readData<Record<string, string>>("patch-notes-mn.json", {});
-  return (en: string) => overrides[en] ?? machine[en] ?? en;
+  const machine = readData<Record<string, string>>(file, {});
+  return (en: string) =>
+    en
+      .split("\n")
+      .map((line) => {
+        const t = line.trim();
+        return t ? (overrides[t] ?? machine[t] ?? line) : line;
+      })
+      .join("\n");
+}
+
+/** Патчийн тэмдэглэлийн орчуулагч. */
+export function getPatchTranslator() {
+  return makeTranslator("patch-notes-mn.json");
+}
+
+/** Баатрын skill, талантын орчуулагч. */
+export function getAbilityTranslator() {
+  return makeTranslator("abilities-mn.json");
 }
 
 export type GameMeta = {

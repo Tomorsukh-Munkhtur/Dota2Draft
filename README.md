@@ -3,7 +3,7 @@
 Шинэ тоглогчдод зориулсан Dota 2-ын монгол сайт:
 
 - **Драфт туслах** (`/draft`) — Captain's Mode (7.40+ дараалал, цаг хэмжигчтэй) болон чөлөөт/Ranked All Pick горим. Баатар бүрт: хэнд ялдаг/ялагддаг, хэнтэй сайн хамтардаг, ойролцоо баатрууд, эсрэг авах item. Одоогийн драфтад тохирох пик ба бан санал болгоно.
-- **Баатрууд** (`/heroes`) — 127 баатрын skill, talent (Valve-ийн албан ёсны текст), монгол түүх, матчап, counter item, эсрэг тоглох зөвлөгөө, одоогийн том патчийн өөрчлөлтүүд.
+- **Баатрууд** (`/heroes`) — 127 баатрын skill, talent (Valve-ийн албан ёсны текст, Google Translate-ийн монгол орчуулгатай — `data/abilities-mn.json`, админ `/admin/skills`-ээс засна), монгол түүх, матчап, counter item, эсрэг тоглох зөвлөгөө, одоогийн том патчийн өөрчлөлтүүд.
 - **Item-ууд** (`/items`, `/items/neutral`) — дэлгүүрийн item, neutral item, enchantment бүрийн монгол танилцуулга, чадварын орчуулга, хэрэглэх заавар, тохирох баатрууд, жор, патчийн өөрчлөлт.
 - **Мэдээ** (`/news`) — админ `/admin` хэсгээс өөрөө бичиж нэмнэ. Steam-ийн албан мэдээг татаж засаад нийтэлж бас болно.
 - **Патчийн өөрчлөлт** (`/patch`, `/patch/<хувилбар>`) — одоогийн том патчийн дэд патч бүрийн баатар, item, neutral item-ийн өөрчлөлт. dota2.com-оос автоматаар татаж, Google Translate-ийн үнэгүй хаягаар монгол руу орчуулна (`data/patch-notes-mn.json`). Админ `/admin/patch` хэсгээс орчуулгыг засна — засвар нь машин орчуулгаас давуу.
@@ -46,13 +46,13 @@ Vercel дээр GitHub Actions шинэчилдэг. Локал сервер а�
 | Команд | Юу хийдэг |
 | --- | --- |
 | `npm run data:update` | Автомат шинэчлэлттэй ижил: шинэ патч гарсан бол `data:game`, статистик 24 цагаас хуучирсан бол `data:matchups` (`-- --force`: бүгдийг) |
-| `npm run data:game` | dota2.com datafeed-ээс патч, баатар, skill, talent, item (одоогийн жагсаалтыг OpenDota-гийн сүүлийн 45 хоногийн про тоглолтоос, дэлгүүрийн ангиллыг Valve-ийн `shops.txt`-ээс), патчийн тэмдэглэл татна. `--if-new-patch` өгвөл патч өөрчлөгдөөгүй үед юу ч хийхгүй. Төгсгөлд нь орчуулаагүй патчийн мөрүүдийг Google Translate-ээр орчуулна (`scripts/lib/gtranslate.mjs`; тогтсон нэр томьёо нь `GLOSSARY`-д) |
+| `npm run data:game` | dota2.com datafeed-ээс патч, баатар, skill, talent, item (одоогийн жагсаалтыг OpenDota-гийн сүүлийн 45 хоногийн про тоглолтоос, дэлгүүрийн ангиллыг Valve-ийн `shops.txt`-ээс), патчийн тэмдэглэл татна. `--if-new-patch` өгвөл патч өөрчлөгдөөгүй үед юу ч хийхгүй. Төгсгөлд нь орчуулаагүй патчийн мөр, skill-ийн текстийг Google Translate-ээр орчуулна (`scripts/lib/gtranslate.mjs`; тогтсон нэр томьёо нь `GLOSSARY`-д) |
 | `npm run data:matchups` | OpenDota-гийн ranked тоглолтуудаас (анхдагч 400k, `MATCHES=1000000`) ялалт/хамтын статистик тооцоолно |
 | `npm run news:sync` | Steam-ийн шинэ мэдээг ноорог болгон нэмнэ. `-- --translate` нэмбэл Claude API-аар орчуулна |
 
 ## Бүтэц
 
-- `data/` — бүх өгөгдөл JSON-оор: `heroes.json`, `hero-abilities.json`, `items.json`, `matchups.json`, `patch-notes.json`, `patches.json` (патч бүрийн өөрчлөлт), `patch-notes-mn.json` (машин орчуулга), `meta.json` (патч, шинэчилсэн огноо), `news.json`.
+- `data/` — бүх өгөгдөл JSON-оор: `heroes.json`, `hero-abilities.json`, `items.json`, `matchups.json`, `patch-notes.json`, `patches.json` (патч бүрийн өөрчлөлт), `patch-notes-mn.json`, `abilities-mn.json` (машин орчуулга), `meta.json` (патч, шинэчилсэн огноо), `news.json`.
 - `data/hero-content/<slug>.json`, `data/item-content/<key>.json` — монгол текстүүд. Гараар засаж болно.
 - `src/lib/data.ts` — JSON-ийг ажиллах үед уншина (файл солигдвол дахин уншина).
 - `src/lib/updater.ts`, `src/lib/autoUpdate.ts`, `src/app/api/game-data/update` — автомат шинэчлэлт.
