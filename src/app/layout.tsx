@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
+import { ActiveNavPill, NavPill } from "@/components/SiteNav";
 import { getMatchupMeta } from "@/lib/matchups";
 import { getGameMeta, shortDate } from "@/lib/patch";
 import "./globals.css";
@@ -17,47 +19,53 @@ export const metadata: Metadata = {
   description: "Dota 2-ын драфтын туслах, баатар, item-ийн заавар, мэдээ — монгол хэлээр.",
 };
 
-const NAV = [
-  { href: "/draft", label: "Драфт туслах" },
-  { href: "/heroes", label: "Баатрууд" },
-  { href: "/items", label: "Item-ууд" },
-  { href: "/items/neutral", label: "Neutral item" },
-  { href: "/news", label: "Мэдээ" },
-];
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const meta = getGameMeta();
   const matchups = getMatchupMeta();
   return (
     <html lang="mn" className={`${inter.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
-        <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
-          <div className="mx-auto flex h-14 max-w-[1500px] items-center gap-3 px-4 sm:gap-6">
-            <Link href="/" className="flex shrink-0 items-center gap-2 font-bold tracking-wide">
-              <Image src="/logo.webp" alt="Dota 2 Draft" width={36} height={36} priority className="h-9 w-9" />
-              <span className="hidden sm:inline">
-                Dota 2 <span className="text-gold">Draft</span>
-              </span>
-            </Link>
-            <nav className="flex gap-1 overflow-x-auto text-sm">
-              {NAV.map((n) => (
-                <Link
-                  key={n.href}
-                  href={n.href}
-                  className="whitespace-nowrap rounded px-2 py-1.5 text-muted transition hover:bg-panel-2 hover:text-fg sm:px-3"
-                >
-                  {n.label}
-                </Link>
-              ))}
-            </nav>
-            {meta.patch && (
-              <span
-                title={`Сайтын өгөгдөл Dota 2-ын ${meta.patch} патчийнх (${shortDate(meta.patchDate)})`}
-                className="ml-auto hidden shrink-0 rounded-full border border-line px-2.5 py-1 text-xs text-muted md:inline"
+      <body className="relative flex min-h-full flex-col">
+        {/* Зүүн дээд булангийн гэрлийн туяа — доорх агуулгыг бага зэрэг гэрэлтүүлнэ. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-48 -top-56 z-30 h-[620px] w-[820px] rounded-full bg-[radial-gradient(closest-side,rgba(70,100,255,0.38),rgba(120,64,255,0.14)_55%,transparent)] mix-blend-screen blur-2xl"
+        />
+        <header className="sticky top-0 z-40 bg-gradient-to-b from-bg/90 to-bg/50 backdrop-blur-xl">
+          <div className="mx-auto max-w-[1500px] px-4 py-3 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-6 lg:pt-7">
+            <div className="flex items-center justify-between gap-3 lg:contents">
+              <Link
+                href="/"
+                className="flex shrink-0 items-center gap-2 text-lg font-bold tracking-tight lg:col-start-1 lg:row-start-1 lg:justify-self-start"
               >
-                Патч <b className="text-gold">{meta.patch}</b>
-              </span>
-            )}
+                {/* Том дэлгэцэнд лого цэсний дунд байрлана. */}
+                <Image src="/logo.webp" alt="" width={32} height={32} priority className="h-8 w-8 lg:hidden" />
+                <span>
+                  Dota 2 <span className="text-gold">Draft</span>
+                </span>
+              </Link>
+              <div className="flex shrink-0 items-center gap-3 sm:gap-5 lg:col-start-3 lg:row-start-1 lg:justify-self-end">
+                {meta.patch && (
+                  <span
+                    title={`Сайтын өгөгдөл Dota 2-ын ${meta.patch} патчийнх (${shortDate(meta.patchDate)})`}
+                    className="hidden text-sm text-fg/65 sm:inline"
+                  >
+                    Патч <b className="text-gold">{meta.patch}</b>
+                  </span>
+                )}
+                <Link
+                  href="/draft"
+                  className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition hover:border-white/25 hover:bg-white/10 sm:px-5 sm:py-2.5"
+                >
+                  Драфт эхлүүлэх
+                </Link>
+              </div>
+            </div>
+            <div className="mt-3 lg:col-start-2 lg:row-start-1 lg:mt-0">
+              {/* usePathname динамик хуудсанд Suspense шаарддаг; fallback нь идэвхтэй цэсгүй ижил цэс. */}
+              <Suspense fallback={<NavPill pathname={null} />}>
+                <ActiveNavPill />
+              </Suspense>
+            </div>
           </div>
         </header>
         <main className="flex-1">{children}</main>
