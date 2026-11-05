@@ -1,6 +1,6 @@
 // Нүүр хуудасны слайд (баннер): Supabase-ийн `banners` хүснэгт, зураг нь `banners` storage bucket-д.
 import { cacheLife, cacheTag } from "next/cache";
-import { check, getSupabase } from "./supabase.ts";
+import { check, getSupabase, logSupabaseReadError } from "./supabase.ts";
 
 export const BANNERS_TAG = "banners";
 const BUCKET = "banners";
@@ -54,12 +54,18 @@ export async function listBanners(): Promise<Banner[]> {
 export async function getActiveBanners(): Promise<Banner[]> {
   "use cache";
   cacheTag(BANNERS_TAG);
-  cacheLife("hours");
-  if (!getSupabase()) return [];
+  if (!getSupabase()) {
+    cacheLife("hours");
+    return [];
+  }
   try {
-    return (await listBanners()).filter((b) => b.active);
+    const banners = (await listBanners()).filter((b) => b.active);
+    cacheLife("hours");
+    return banners;
   } catch (e) {
-    console.error(`[banners] уншиж чадсангүй: ${e instanceof Error ? e.message : e}`);
+    logSupabaseReadError("banners", e, "supabase/migrations/0002_banners_patch_translations.sql");
+    // Хүснэгт үүсэхэд удалгүй өөрөө шинэчлэгдэнэ.
+    cacheLife("minutes");
     return [];
   }
 }

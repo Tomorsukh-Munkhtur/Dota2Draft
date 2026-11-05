@@ -17,6 +17,8 @@ permissions:
   contents: write
   # Доорх "идэвхтэй байлгах" алхамд.
   actions: write
+  # Шинэ патч гарахад issue нээж эзэмшигчид имэйлээр мэдэгдэнэ.
+  issues: write
 
 concurrency:
   group: game-data
@@ -33,6 +35,11 @@ jobs:
         with:
           node-version: 24
 
+      # Шинэчлэлтийн дараа патч өөрчлөгдсөн эсэхийг харьцуулахад.
+      - name: Өмнөх патч
+        id: before
+        run: echo "patch=$(node -p "require('./data/meta.json').patch")" >> "$GITHUB_OUTPUT"
+
       # Скриптүүд зөвхөн Node-ийн суурь модулиудыг ашигладаг тул npm install хэрэггүй.
       - name: Өгөгдөл шинэчлэх
         run: node scripts/update-all.mjs ${{ inputs.force && '--force' || '' }}
@@ -48,6 +55,29 @@ jobs:
           git add data
           git commit -m "Тоглоомын өгөгдөл шинэчлэв (патч $(node -p "require('./data/meta.json').patch"))"
           git push
+
+      # Шинэ патч татсан бол repo-д issue нээнэ — GitHub эзэмшигчид имэйлээр мэдэгдэнэ.
+      - name: Шинэ патчийн мэдэгдэл
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OLD_PATCH: ${{ steps.before.outputs.patch }}
+          OWNER: ${{ github.repository_owner }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://dota2draft-nu.vercel.app' }}
+        run: |
+          NEW_PATCH=$(node -p "require('./data/meta.json').patch")
+          if [ "$NEW_PATCH" = "$OLD_PATCH" ]; then
+            echo "Патч өөрчлөгдөөгүй ($NEW_PATCH)."
+            exit 0
+          fi
+          cat > issue.md <<EOF
+          @$OWNER Dota 2-ын шинэ патч **$NEW_PATCH** гарч, сайтын өгөгдөл ($OLD_PATCH → $NEW_PATCH) автоматаар шинэчлэгдлээ.
+
+          Шинээр гарсан эсвэл өөрчлөгдсөн skill, патчийн тэмдэглэл, шинэ item админ батлах хүртэл сайтад **англиар** харагдана.
+          Админ хуудасны **"Анхаарах зүйлс"** хэсгээс шалгаж орчуулна уу: $SITE_URL/admin
+
+          Патчийн өөрчлөлт: $SITE_URL/patch
+          EOF
+          gh issue create --title "Шинэ патч $NEW_PATCH — орчуулгаа шалгаарай" --body-file issue.md
 
       # Public repo-д 60 хоног идэвхгүй бол хуваарьт workflow автоматаар унтардаг.
       # Өөрчлөлтгүй удаан хугацаа өнгөрсөн ч унтрахгүйн тулд workflow-г идэвхтэй гэж дахин тэмдэглэнэ.

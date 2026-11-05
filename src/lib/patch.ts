@@ -1,6 +1,6 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { readData } from "./data";
-import { check, getSupabase } from "./supabase.ts";
+import { check, getSupabase, logSupabaseReadError } from "./supabase.ts";
 
 export const PATCH_TR_TAG = "patch-translations";
 
@@ -30,14 +30,18 @@ export function getPatch(version: string): Patch | null {
 export async function getPatchTranslationOverrides(): Promise<Record<string, string>> {
   "use cache";
   cacheTag(PATCH_TR_TAG);
-  cacheLife("hours");
   const db = getSupabase();
-  if (!db) return {};
+  if (!db) {
+    cacheLife("hours");
+    return {};
+  }
   try {
     const rows = check(await db.from("patch_translations").select("en, mn")) as { en: string; mn: string }[];
+    cacheLife("hours");
     return Object.fromEntries(rows.map((r) => [r.en, r.mn]));
   } catch (e) {
-    console.error(`[patch] орчуулгын засвар уншиж чадсангүй: ${e instanceof Error ? e.message : e}`);
+    logSupabaseReadError("patch-translations", e, "supabase/migrations/0002_banners_patch_translations.sql");
+    cacheLife("minutes");
     return {};
   }
 }

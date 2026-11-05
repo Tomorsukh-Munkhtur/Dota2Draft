@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import ActionButton from "@/components/admin/ActionButton";
+import AttentionPanel from "@/components/admin/AttentionPanel";
 import LoginForm from "@/components/admin/LoginForm";
 import { adminConfigured, isAdmin } from "@/lib/admin";
 import { getMatchupMeta } from "@/lib/matchups";
@@ -97,7 +98,9 @@ async function AdminContent() {
 
       <GameDataCard />
 
-      <section className="grid gap-3 sm:grid-cols-3">
+      <AttentionPanel />
+
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Link href="/admin/banners" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
           <p className="font-bold">Нүүр хуудасны слайд →</p>
           <p className="text-sm text-muted">Баннерын зураг, гарчиг, холбоос нэмэх, дараалал өөрчлөх.</p>
@@ -106,9 +109,13 @@ async function AdminContent() {
           <p className="font-bold">Патчийн орчуулга →</p>
           <p className="text-sm text-muted">Автоматаар орчуулсан патчийн өөрчлөлтүүдийг засах.</p>
         </Link>
-        <Link href="/admin/skills" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
-          <p className="font-bold">Skill-ийн орчуулга →</p>
-          <p className="text-sm text-muted">Баатрын skill, талантын автомат орчуулгыг засах.</p>
+        <Link href="/admin/heroes" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
+          <p className="font-bold">Баатрын контент →</p>
+          <p className="text-sm text-muted">Баатар бүрийн тойм, түүх, skill, талант, эсрэг item, зөвлөгөөг засах.</p>
+        </Link>
+        <Link href="/admin/items" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
+          <p className="font-bold">Item-ийн контент →</p>
+          <p className="text-sm text-muted">Item бүрийн тайлбар, чадварын орчуулга, заавар, зөвлөгөө, тохирох баатрыг засах.</p>
         </Link>
       </section>
 

@@ -3,7 +3,9 @@ import path from "node:path";
 import { cacheLife, cacheTag } from "next/cache";
 import { getHeroContent } from "./content";
 import { GAME_DATA_TAG } from "./data";
+import { HERO_CONTENT_TAG } from "./heroContentStore";
 import { getHeroes, getItems, type Item, type ItemKind } from "./heroes";
+import { ITEM_CONTENT_TAG, getItemContentOverrides } from "./itemContentStore";
 
 export type ItemContent = {
   key: string;
@@ -17,8 +19,8 @@ export type ItemContent = {
 
 const CONTENT_DIR = path.join(process.cwd(), "data", "item-content");
 
-/** data/item-content/<key>.json — монгол танилцуулга, заавар. Байхгүй бол null. */
-export async function getItemContent(key: string): Promise<ItemContent | null> {
+/** data/item-content/<key>.json — анхны монгол танилцуулга, заавар (админы засваргүй). Байхгүй бол null. */
+export async function readItemContentFile(key: string): Promise<ItemContent | null> {
   "use cache";
   cacheLife("days");
   cacheTag(GAME_DATA_TAG);
@@ -29,11 +31,31 @@ export async function getItemContent(key: string): Promise<ItemContent | null> {
   }
 }
 
+/** Сайтад харагдах контент: файл дахь текст + админы засвар (Supabase). Аль аль нь байхгүй бол null. */
+export async function getItemContent(key: string): Promise<ItemContent | null> {
+  "use cache";
+  cacheLife("days");
+  cacheTag(GAME_DATA_TAG, ITEM_CONTENT_TAG);
+  const [base, overrides] = await Promise.all([readItemContentFile(key), getItemContentOverrides()]);
+  const o = overrides[key];
+  if (!o) return base;
+  const empty: ItemContent = {
+    key,
+    category: getItems()[key]?.category ?? "",
+    summary: "",
+    abilities: [],
+    usage: "",
+    goodFor: [],
+    tips: [],
+  };
+  return { ...(base ?? empty), ...o };
+}
+
 /** Жагсаалтын хуудсанд хэрэгтэй ангилал ба товч тайлбар. */
 export async function getItemSummaries(kind: ItemKind) {
   "use cache";
   cacheLife("days");
-  cacheTag(GAME_DATA_TAG);
+  cacheTag(GAME_DATA_TAG, ITEM_CONTENT_TAG);
   const list = itemsOfKind(kind);
   const contents = await Promise.all(list.map((it) => getItemContent(it.key)));
   return list.map((it, i) => ({
@@ -63,7 +85,7 @@ export function buildsInto(key: string): Item[] {
 export async function heroesCounteredBy(key: string) {
   "use cache";
   cacheLife("days");
-  cacheTag(GAME_DATA_TAG);
+  cacheTag(GAME_DATA_TAG, HERO_CONTENT_TAG);
   const all = await Promise.all(getHeroes().map((h) => getHeroContent(h.slug)));
   return all.flatMap((c) => {
     const hit = c.counterItems.find((x) => x.item === key);

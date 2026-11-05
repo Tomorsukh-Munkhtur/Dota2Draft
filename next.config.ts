@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Ажиллаж буй `npm run dev`-д саад болохгүйгээр туршилтын build-ийг өөр хавтсанд гаргахад
+  // (NEXT_DIST_DIR=.next-test). Анхдагч нь .next.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   cacheComponents: true,
   partialPrefetching: true,
   images: {

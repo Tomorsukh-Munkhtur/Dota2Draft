@@ -1,7 +1,12 @@
 // Патчийн тэмдэглэл, баатрын skill-ийн текстийг Google Translate-ийн үнэгүй (албан бус) хаягаар монгол руу
-// орчуулж { англи: монгол } хэлбэрээр хадгална (data/patch-notes-mn.json, data/abilities-mn.json).
-// Нэг удаа орчуулсныг дахин орчуулахгүй. Баатар, чадвар, item-ийн нэрийг ⟦n⟧ орлуулагчаар хамгаалж,
-// орчуулсны дараа буцааж тавина. Админ засварласан орчуулга Supabase-д хадгалагдаж, машин орчуулгаас давуу.
+// орчуулж { англи: монгол } хэлбэрээр хадгална. Баатар, чадвар, item-ийн нэрийг ⟦n⟧ орлуулагчаар хамгаалж,
+// орчуулсны дараа буцааж тавина.
+//
+// Хоёр төрлийн файл:
+//   data/*-mn.json         — сайтад харагддаг (анх бөөнөөр нь орчуулж зөвшөөрсөн) машин орчуулга.
+//   data/*-mn-suggest.json — түүнээс хойш шинээр гарсан мөрийн машин орчуулга: зөвхөн админд санал болгоно,
+//                            админ батлах хүртэл сайтад англиар харагдана.
+// Админы засвар/батламж Supabase-ийн patch_translations-д хадгалагдаж, хоёуланаас нь давуу эрхтэй.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -150,28 +155,36 @@ export const splitLines = (text) =>
     .map((l) => l.trim())
     .filter(Boolean);
 
-/**
- * `strings` (текст → { label }) дотроос кэшид байхгүйг орчуулж `file`-д хадгална.
- * Одоогийн өгөгдөлд байхгүй болсон хуучин мөрүүдийг хасна. Алдаа гарвал үлдсэнийг дараагийн удаад үлдээнэ.
- */
-async function translateInto(dataDir, file, strings, title) {
-  const cacheFile = path.join(dataDir, file);
-  const cache = await readJson(cacheFile, {});
-  let pruned = 0;
-  for (const key of Object.keys(cache))
+const writeSorted = (file, obj) =>
+  writeFile(file, JSON.stringify(Object.fromEntries(Object.entries(obj).sort(([a], [b]) => a.localeCompare(b))), null, 1));
+
+/** Одоогийн өгөгдөлд байхгүй болсон (хуучин патчийн) мөрүүдийг хасна. Хассан тоог буцаана. */
+function prune(dict, strings) {
+  let n = 0;
+  for (const key of Object.keys(dict))
     if (!strings.has(key)) {
-      delete cache[key];
-      pruned++;
+      delete dict[key];
+      n++;
     }
-  const missing = [...strings.keys()].filter((s) => s && !(s in cache));
-  const save = () =>
-    writeFile(
-      cacheFile,
-      JSON.stringify(Object.fromEntries(Object.entries(cache).sort(([a], [b]) => a.localeCompare(b))), null, 1),
-    );
+  return n;
+}
+
+/**
+ * `strings` (текст → { label }) дотроос зөвшөөрсөн (`approvedFile`) болон санал (`suggestFile`) файлд аль алинд нь
+ * байхгүйг орчуулж санал файлд хадгална. Алдаа гарвал үлдсэнийг дараагийн удаад үлдээнэ.
+ */
+async function translateInto(dataDir, approvedFile, suggestFile, strings, title) {
+  const approvedPath = path.join(dataDir, approvedFile);
+  const cacheFile = path.join(dataDir, suggestFile);
+  const approved = await readJson(approvedPath, {});
+  const cache = await readJson(cacheFile, {});
+  if (prune(approved, strings)) await writeSorted(approvedPath, approved);
+  const pruned = prune(cache, strings);
+  const missing = [...strings.keys()].filter((s) => s && !(s in approved) && !(s in cache));
+  const save = () => writeSorted(cacheFile, cache);
   if (!missing.length) {
-    if (pruned) await save();
-    return console.log(`${title}: шинэ мөр алга.`);
+    await save(); // файл байхгүй бол үүсгэнэ, хассан мөр байвал хадгална
+    return console.log(`${title}: шинэ мөр алга${pruned ? ` (${pruned} хуучин санал хасав)` : ""}.`);
   }
 
   const heroes = await readJson(path.join(dataDir, "heroes.json"), []);
@@ -217,13 +230,13 @@ async function translateInto(dataDir, file, strings, title) {
     console.warn(`  орчуулга тасарлаа (${done}/${missing.length}): ${e.message} — үлдсэнийг дараа орчуулна.`);
   }
   await save();
-  console.log(`${title}: ${done} мөр орчууллаа.`);
+  console.log(`${title}: ${done} шинэ мөрийг орчуулж админд санал болгов (батлах хүртэл сайтад англиар).`);
 }
 
 const TEXT = {};
 const LABEL = { label: true };
 
-/** data/patches.json-ийн орчуулаагүй мөрүүдийг орчуулна → data/patch-notes-mn.json. */
+/** data/patches.json-ийн шинэ мөрүүдийг орчуулна → data/patch-notes-mn-suggest.json. */
 export async function translatePatchNotes(dataDir) {
   const patches = await readJson(path.join(dataDir, "patches.json"), null);
   if (!patches) return;
@@ -237,10 +250,10 @@ export async function translatePatchNotes(dataDir) {
     // Item-гүй ерөнхий хэсгийн гарчиг ("Shop Reshuffle" гэх мэт).
     for (const it of [...p.items, ...p.neutralItems]) if (!it.key && it.title) strings.set(it.title, TEXT);
   }
-  await translateInto(dataDir, "patch-notes-mn.json", strings, "Патчийн орчуулга");
+  await translateInto(dataDir, "patch-notes-mn.json", "patch-notes-mn-suggest.json", strings, "Патчийн орчуулга");
 }
 
-/** data/hero-abilities.json-ийн skill тайлбар, тэмдэглэл, Scepter/Shard, үзүүлэлт, талантыг орчуулна → data/abilities-mn.json. */
+/** data/hero-abilities.json-ийн skill тайлбар, тэмдэглэл, Scepter/Shard, үзүүлэлт, талантын шинэ мөрийг орчуулна → data/abilities-mn-suggest.json. */
 export async function translateHeroAbilities(dataDir) {
   const kits = await readJson(path.join(dataDir, "hero-abilities.json"), null);
   if (!kits) return;
@@ -253,5 +266,5 @@ export async function translateHeroAbilities(dataDir) {
     }
     for (const t of kit.talents) t.options.forEach((o) => o && strings.set(o, TEXT));
   }
-  await translateInto(dataDir, "abilities-mn.json", strings, "Skill-ийн орчуулга");
+  await translateInto(dataDir, "abilities-mn.json", "abilities-mn-suggest.json", strings, "Skill-ийн орчуулга");
 }

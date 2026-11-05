@@ -197,7 +197,7 @@ async function updateAll() {
 
   // ---------------------------------------------------------------- item-ууд
   const since = `extract(epoch from now() - interval '${DAYS} days')`;
-  const [itemList, shops, purchases, neutralRows] = await Promise.all([
+  const [itemList, shops, purchases, neutralRows, latestNotes] = await Promise.all([
     feed("itemlist").then((j) => j.result.data.itemabilities),
     fetch(SHOPS).then((r) => r.text()).then(parseShops),
     explorer(`SELECT k AS item, count(*) AS n FROM player_matches pm JOIN matches m ON m.match_id = pm.match_id,
@@ -205,6 +205,7 @@ async function updateAll() {
     explorer(`SELECT e->>'item_neutral' AS item, e->>'item_neutral_enhancement' AS enh, count(*) AS n
       FROM player_matches pm JOIN matches m ON m.match_id = pm.match_id, unnest(pm.neutral_item_history) e
       WHERE m.start_time > ${since} GROUP BY 1, 2`),
+    feed("patchnotes", { version: latest.patch_number }),
   ]);
 
   const byName = new Map(itemList.map((i) => [i.name.replace(/^item_/, ""), i]));
@@ -225,6 +226,15 @@ async function updateAll() {
   for (const [key, n] of Object.entries(neutralUses)) {
     if (n < MIN_USES || EXCLUDE.has(key) || !byName.has(key)) continue;
     wanted.set(key, key.startsWith("enhancement_") ? "enchantment" : "neutral");
+  }
+  // Сүүлийн патчид дурдагдсан item-ууд: шинэ item-ийг про тоглогчид хараахан аваагүй ч шууд оруулна
+  // (монгол контентгүй тул админ орчуулах хүртэл англиар харагдаж, админы "Анхаарах зүйлс"-д гарна).
+  for (const entry of [...(latestNotes.items ?? []), ...(latestNotes.neutral_items ?? [])]) {
+    const key = entry.ability_id > 0 ? byId.get(entry.ability_id) : null;
+    const it = key ? byName.get(key) : null;
+    if (!it || wanted.has(key) || EXCLUDE.has(key) || key.startsWith("recipe_")) continue;
+    wanted.set(key, key.startsWith("enhancement_") ? "enchantment" : it.neutral_item_tier >= 0 ? "neutral" : "shop");
+    console.log(`  патчид дурдагдсан item нэмэв: ${key}`);
   }
   // Баатрын counter зөвлөгөөнд дурдагдсан item заавал байх ёстой (байхгүй бол анхааруулна).
   for (const file of await readdir(path.join(DATA, "hero-content")).catch(() => [])) {

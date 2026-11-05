@@ -11,6 +11,10 @@ import { runGameDataUpdate } from "@/lib/updater";
 import { BANNERS_TAG, deleteBanner, insertBanner, listBanners, updateBanner, uploadBannerImage } from "@/lib/banners";
 import { PATCH_TR_TAG } from "@/lib/patch";
 import { check, getSupabase } from "@/lib/supabase";
+import { HERO_CONTENT_TAG, saveHeroContentOverride } from "@/lib/heroContentStore";
+import { ITEM_CONTENT_TAG, saveItemContentOverride } from "@/lib/itemContentStore";
+import { REVIEWS_TAG, setReviewed } from "@/lib/reviews";
+import { getHero, getItems } from "@/lib/heroes";
 
 export type ActionState = { ok?: string; error?: string } | null;
 
@@ -223,4 +227,143 @@ export async function savePatchTranslation(en: string, mn: string): Promise<Acti
   }
   updateTag(PATCH_TR_TAG);
   return { ok: "Хадгаллаа." };
+}
+
+export type HeroContentPatch = {
+  summary?: string | null;
+  lore?: string | null;
+  counterItems?: { item: string; reason: string }[] | null;
+  counterTips?: string[] | null;
+  similar?: string[] | null;
+};
+
+/** Баатрын контентын (тойм, түүх, эсрэг item, зөвлөгөө, ойролцоо баатар) засвар. null бол анхны текст рүү буцна. */
+export async function saveHeroContent(slug: string, patch: HeroContentPatch): Promise<ActionState> {
+  await requireAdmin();
+  if (!getHero(slug)) return { error: "Баатар олдсонгүй." };
+  const items = getItems();
+  const fields: HeroContentPatch = {};
+  try {
+    for (const key of ["summary", "lore"] as const) {
+      if (!(key in patch)) continue;
+      const v = patch[key];
+      fields[key] = v == null || !v.trim() ? null : v.trim();
+    }
+    if ("counterItems" in patch) {
+      const list = patch.counterItems;
+      if (list == null) fields.counterItems = null;
+      else {
+        const clean = list
+          .map((c) => ({ item: String(c.item), reason: String(c.reason ?? "").trim() }))
+          .filter((c) => c.item || c.reason);
+        if (clean.length > 10) return { error: "Хамгийн ихдээ 10 item." };
+        const bad = clean.find((c) => !items[c.item]);
+        if (bad) return { error: `Item олдсонгүй: ${bad.item || "(сонгоогүй)"}` };
+        if (clean.some((c) => !c.reason)) return { error: "Item бүрт тайлбар бичнэ үү." };
+        fields.counterItems = clean;
+      }
+    }
+    if ("counterTips" in patch) {
+      const list = patch.counterTips;
+      if (list == null) fields.counterTips = null;
+      else {
+        const clean = list.map((t) => String(t).trim()).filter(Boolean);
+        if (clean.length > 12) return { error: "Хамгийн ихдээ 12 зөвлөгөө." };
+        fields.counterTips = clean;
+      }
+    }
+    if ("similar" in patch) {
+      const list = patch.similar;
+      if (list == null) fields.similar = null;
+      else {
+        const clean = [...new Set(list.map(String).filter((s) => s && s !== slug))];
+        if (clean.length > 8) return { error: "Хамгийн ихдээ 8 баатар." };
+        const bad = clean.find((s) => !getHero(s));
+        if (bad) return { error: `Баатар олдсонгүй: ${bad}` };
+        fields.similar = clean;
+      }
+    }
+    await saveHeroContentOverride(slug, fields);
+  } catch (e) {
+    return { error: errorText(e) };
+  }
+  updateTag(HERO_CONTENT_TAG);
+  refresh();
+  return { ok: "Хадгаллаа." };
+}
+
+export type ItemContentPatch = {
+  summary?: string | null;
+  usage?: string | null;
+  abilities?: { title: string; description: string }[] | null;
+  tips?: string[] | null;
+  goodFor?: string[] | null;
+};
+
+/** Item-ийн контентын (тойм, чадварын орчуулга, заавар, зөвлөгөө, тохирох баатар) засвар. null бол анхных руу буцна. */
+export async function saveItemContent(key: string, patch: ItemContentPatch): Promise<ActionState> {
+  await requireAdmin();
+  const item = getItems()[key];
+  if (!item) return { error: "Item олдсонгүй." };
+  const fields: ItemContentPatch = {};
+  try {
+    for (const f of ["summary", "usage"] as const) {
+      if (!(f in patch)) continue;
+      const v = patch[f];
+      fields[f] = v == null || !v.trim() ? null : v.trim();
+    }
+    if ("abilities" in patch) {
+      const list = patch.abilities;
+      if (list == null) fields.abilities = null;
+      else {
+        const titles = new Set(item.abilities.map((a) => a.title));
+        const clean = list
+          .map((a) => ({ title: String(a.title), description: String(a.description ?? "").trim() }))
+          .filter((a) => a.description);
+        const bad = clean.find((a) => !titles.has(a.title));
+        if (bad) return { error: `Ийм чадвар алга: ${bad.title}` };
+        fields.abilities = clean;
+      }
+    }
+    if ("tips" in patch) {
+      const list = patch.tips;
+      if (list == null) fields.tips = null;
+      else {
+        const clean = list.map((t) => String(t).trim()).filter(Boolean);
+        if (clean.length > 12) return { error: "Хамгийн ихдээ 12 зөвлөгөө." };
+        fields.tips = clean;
+      }
+    }
+    if ("goodFor" in patch) {
+      const list = patch.goodFor;
+      if (list == null) fields.goodFor = null;
+      else {
+        const clean = [...new Set(list.map(String).filter(Boolean))];
+        if (clean.length > 10) return { error: "Хамгийн ихдээ 10 баатар." };
+        const bad = clean.find((s) => !getHero(s));
+        if (bad) return { error: `Баатар олдсонгүй: ${bad}` };
+        fields.goodFor = clean;
+      }
+    }
+    await saveItemContentOverride(key, fields);
+  } catch (e) {
+    return { error: errorText(e) };
+  }
+  updateTag(ITEM_CONTENT_TAG);
+  refresh();
+  return { ok: "Хадгаллаа." };
+}
+
+/** "Анхаарах зүйлс"-ийн мөрийг шалгасан/шалгаагүй гэж тэмдэглэнэ. */
+export async function markReviewed(key: string, reviewed: boolean): Promise<ActionState> {
+  await requireAdmin();
+  if (!/^[\w:.-]{3,200}$/.test(key)) return { error: "Буруу түлхүүр." };
+  try {
+    await setReviewed(key, reviewed);
+  } catch (e) {
+    return { error: errorText(e) };
+  }
+  updateTag(REVIEWS_TAG);
+  refresh();
+  return { ok: reviewed ? "Шалгасан гэж тэмдэглэлээ." : "Буцаалаа." };
 }

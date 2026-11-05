@@ -20,12 +20,20 @@ async function Editor({ searchParams }: { searchParams: PageProps<"/admin/patch"
 
   const overrides = await getPatchTranslationOverrides();
   const machine = readData<Record<string, string>>("patch-notes-mn.json", {});
+  // Шинээр гарсан мөрийн Google санал (админ батлах хүртэл сайтад англиар).
+  const suggest = readData<Record<string, string>>("patch-notes-mn-suggest.json", {});
   const items = getItems();
   // Ижил англи мөр олон газар давтагдаж болно — орчуулга нь нэг тул нэг удаа харуулна.
   const seen = new Map<string, EditorLine>();
   const add = (en: string, context: string) => {
     if (!en || seen.has(en)) return;
-    seen.set(en, { en, mn: overrides[en] ?? machine[en] ?? "", edited: en in overrides, context });
+    seen.set(en, {
+      en,
+      mn: overrides[en] ?? machine[en] ?? suggest[en] ?? "",
+      edited: en in overrides,
+      inBaseline: en in machine,
+      context,
+    });
   };
   // Ерөнхий хэсгийн гарчиг ("Twin Gates" гэх мэт) англиар нь харагддаг тул орчуулахгүй.
   for (const g of patch.general) g.lines.forEach((l) => add(l.t, `Ерөнхий · ${g.title}`));
