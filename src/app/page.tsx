@@ -48,8 +48,16 @@ export default async function Home() {
           ))}
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(10,13,18,0.55),#0a0d12_75%)]" />
-        <div className="relative mx-auto max-w-[1200px] px-4 py-20 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent">Dota 2 · Монгол</p>
+        <div className="relative mx-auto max-w-[1200px] px-4 py-16 text-center">
+          <Image
+            src="/logo.webp"
+            alt="Dota 2 Draft"
+            width={160}
+            height={160}
+            priority
+            className="mx-auto mb-4 h-32 w-32 sm:h-40 sm:w-40"
+          />
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent">Dota 2 Draft</p>
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl">
             Драфтаа <span className="text-gold">ухаалаг</span> хий
           </h1>

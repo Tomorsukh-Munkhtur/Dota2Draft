@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { getMatchupMeta } from "@/lib/matchups";
 import { getGameMeta, shortDate } from "@/lib/patch";
@@ -11,8 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Dota 2 Монгол", template: "%s · Dota 2 Монгол" },
-  description: "Dota 2-ын драфтын туслах, баатруудын түүх, мэдээ — монгол хэлээр.",
+  title: { default: "Dota 2 Draft", template: "%s · Dota 2 Draft" },
+  applicationName: "Dota 2 Draft",
+  description: "Dota 2-ын драфтын туслах, баатар, item-ийн заавар, мэдээ — монгол хэлээр.",
 };
 
 const NAV = [
@@ -32,9 +34,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
           <div className="mx-auto flex h-14 max-w-[1500px] items-center gap-3 px-4 sm:gap-6">
             <Link href="/" className="flex shrink-0 items-center gap-2 font-bold tracking-wide">
-              <span className="grid h-7 w-7 place-items-center rounded bg-accent text-sm text-white">D2</span>
+              <Image src="/logo.webp" alt="Dota 2 Draft" width={36} height={36} priority className="h-9 w-9" />
               <span className="hidden sm:inline">
-                Dota 2 <span className="text-gold">Монгол</span>
+                Dota 2 <span className="text-gold">Draft</span>
               </span>
             </Link>
             <nav className="flex gap-1 overflow-x-auto text-sm">
