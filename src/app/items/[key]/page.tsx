@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import HeroLinkRow from "@/components/heroes/HeroLinkRow";
+import ItemBuildTree from "@/components/items/ItemBuildTree";
+import ItemHeader from "@/components/items/ItemHeader";
 import PatchNotesList from "@/components/PatchNotesList";
 import { getItems } from "@/lib/heroes";
 import { formatStat } from "@/lib/itemStats";
@@ -33,27 +33,15 @@ export async function generateMetadata({ params }: PageProps<"/items/[key]">): P
   return { title: item.name, description: content?.summary || `${item.name} — хэрэглэх заавар.` };
 }
 
-function Card({ title, children }: { title: string; children: ReactNode }) {
+function Card({ title, note, children }: { title: string; note?: string; children: ReactNode }) {
   return (
     <section className="rounded-lg border border-line bg-panel p-4">
-      <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gold">{title}</h2>
+      <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-gold">{title}</h2>
+        {note && <span className="text-[11px] text-muted">{note}</span>}
+      </div>
       {children}
     </section>
-  );
-}
-
-function ItemLink({ itemKey }: { itemKey: string }) {
-  const it = getItems()[itemKey];
-  if (!it) return <span className="text-sm text-muted">{itemKey}</span>;
-  return (
-    <Link
-      href={`/items/${it.key}`}
-      className="flex items-center gap-2 rounded px-1.5 py-1 text-sm transition hover:bg-panel-2"
-    >
-      <Image src={it.img} alt="" width={40} height={29} className="h-[29px] w-10 rounded-sm" />
-      <span className="min-w-0 flex-1 truncate">{it.name}</span>
-      {it.cost > 0 && <span className="text-xs text-gold/80 tabular-nums">{it.cost}</span>}
-    </Link>
   );
 }
 
@@ -80,50 +68,24 @@ async function ItemDetail({ itemKey }: { itemKey: string }) {
 
   return (
     <>
-      <Link href={neutralLike ? "/items/neutral" : "/items"} className="text-sm text-muted hover:text-fg">
-        ← {neutralLike ? "Бүх neutral item" : "Бүх item"}
-      </Link>
-      <header className="flex flex-wrap gap-5 rounded-xl border border-line bg-panel p-5">
-        <Image src={item.img} alt={item.name} width={128} height={94} className="h-[94px] w-32 rounded-lg" />
-        <div className="min-w-0 flex-1 space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-wider text-accent">{kindLabel}</p>
-          <h1 className="text-3xl font-black tracking-tight">{item.name}</h1>
-          <div className="flex flex-wrap gap-4 text-sm">
-            {item.cost > 0 && (
-              <span>
-                Үнэ: <b className="text-gold tabular-nums">{item.cost}</b> алт
-              </span>
-            )}
-            {item.cooldown && (
-              <span>
-                Cooldown: <b className="tabular-nums">{item.cooldown}с</b>
-              </span>
-            )}
-            {item.manaCost && (
-              <span>
-                Мана: <b className="text-int tabular-nums">{item.manaCost}</b>
-              </span>
-            )}
-            {patch && <span className="text-muted">Патч {patch}</span>}
-          </div>
-          {content?.summary && <p className="max-w-3xl text-fg/85">{content.summary}</p>}
-        </div>
-      </header>
+      <ItemHeader
+        item={item}
+        kindLabel={kindLabel}
+        summary={content?.summary}
+        patch={patch ?? null}
+        back={neutralLike ? { href: "/items/neutral", label: "Neutral items" } : { href: "/items", label: "Items" }}
+      />
 
       <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
         <div className="space-y-6">
-          {stats.length > 0 && (
-            <Card title="Өгөх үзүүлэлт">
-              <ul className="grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
-                {stats.map((a) => (
-                  <li key={a.key} className="tabular-nums">
-                    {formatStat(a.display, a.value)}
-                  </li>
-                ))}
-              </ul>
-              {item.kind === "enchantment" && (
-                <p className="mt-2 text-xs text-muted">«/»-аар тусгаарласан тоонууд нь урласан түвшнээс хамаарна.</p>
-              )}
+          {(item.components?.length || parents.length > 0) && (
+            <Card title="Бүрэлдэхүүн" note="Дээр: юунд ордог · Доор: бүрэлдэхүүн ба жор">
+              <ItemBuildTree
+                item={item}
+                components={(item.components ?? []).map((k) => getItems()[k]).filter((x) => x !== undefined)}
+                recipeCost={recipeCost}
+                parents={parents}
+              />
             </Card>
           )}
 
@@ -187,32 +149,25 @@ async function ItemDetail({ itemKey }: { itemKey: string }) {
         </div>
 
         <aside className="space-y-6">
-          {content && content.goodFor.length > 0 && (
-            <Card title="Тохирох баатрууд">
-              {content.goodFor.map((s) => (
-                <HeroLinkRow key={s} slug={s} />
-              ))}
-            </Card>
-          )}
-
-          {item.components && (
-            <Card title="Бүрэлдэхүүн">
-              {item.components.map((k, i) => (
-                <ItemLink key={`${k}${i}`} itemKey={k} />
-              ))}
-              {recipeCost > 0 && (
-                <p className="flex justify-between px-1.5 py-1 text-sm text-muted">
-                  <span>Жор (Recipe)</span>
-                  <span className="text-xs text-gold/80 tabular-nums">{recipeCost}</span>
-                </p>
+          {stats.length > 0 && (
+            <Card title="Өгөх үзүүлэлт">
+              <ul className="space-y-1 text-sm">
+                {stats.map((a) => (
+                  <li key={a.key} className="tabular-nums">
+                    {formatStat(a.display, a.value)}
+                  </li>
+                ))}
+              </ul>
+              {item.kind === "enchantment" && (
+                <p className="mt-2 text-xs text-muted">«/»-аар тусгаарласан тоонууд нь урласан түвшнээс хамаарна.</p>
               )}
             </Card>
           )}
 
-          {parents.length > 0 && (
-            <Card title="Юунд ордог">
-              {parents.map((p) => (
-                <ItemLink key={p.key} itemKey={p.key} />
+          {content && content.goodFor.length > 0 && (
+            <Card title="Тохирох баатрууд">
+              {content.goodFor.map((s) => (
+                <HeroLinkRow key={s} slug={s} />
               ))}
             </Card>
           )}

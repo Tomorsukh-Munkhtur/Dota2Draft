@@ -2,28 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense, type ReactNode } from "react";
+import { Suspense } from "react";
 import HeroLinkRow from "@/components/heroes/HeroLinkRow";
-import { AbilityList, TalentTree } from "@/components/heroes/HeroKitView";
-import LangToggle from "@/components/LangToggle";
+import HeroHeader from "@/components/heroes/HeroHeader";
+import HeroKitPanels from "@/components/heroes/HeroKitPanels";
 import PatchNotesList from "@/components/PatchNotesList";
+import Tabs from "@/components/Tabs";
 import { getHeroContent } from "@/lib/content";
-import {
-  ATTACK_LABEL,
-  ATTR_COLOR,
-  ATTR_LABEL,
-  ROLE_LABEL,
-  getHero,
-  getHeroKit,
-  getHeroes,
-  getItems,
-  translateKit,
-} from "@/lib/heroes";
+import { getHero, getHeroKit, getHeroes, getItems, translateKit } from "@/lib/heroes";
 import { getMatchupMeta, heroPickRate, heroWinrate, vsRow, withRow } from "@/lib/matchups";
 import { getAbilityTranslator, getGameMeta, getHeroPatchNotes } from "@/lib/patch";
-
-const RENDER_VIDEO = "https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders";
-const COMPLEXITY = ["", "Тоглоход хялбар", "Дунд зэрэг", "Тоглоход хэцүү"];
 
 export function generateStaticParams() {
   return getHeroes().map((h) => ({ slug: h.slug }));
@@ -35,18 +23,6 @@ export async function generateMetadata({ params }: PageProps<"/heroes/[slug]">):
   if (!hero) return {};
   const content = await getHeroContent(slug);
   return { title: hero.name, description: content.summary || `${hero.name} — түүх, skill, матчап, эсрэг item.` };
-}
-
-function Card({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
-  return (
-    <section className="rounded-lg border border-line bg-panel p-4">
-      <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-gold">{title}</h2>
-        {note && <span className="text-[11px] text-muted">{note}</span>}
-      </div>
-      {children}
-    </section>
-  );
 }
 
 async function HeroDetail({ slug }: { slug: string }) {
@@ -67,74 +43,25 @@ async function HeroDetail({ slug }: { slug: string }) {
   const synergy = withRow(i)
     .sort((a, b) => b.value - a.value)
     .slice(0, 8);
-  const s = hero.stats;
+
+  const empty = <p className="text-sm text-muted">Мэдээлэл алга</p>;
+  const heroList = (rows: { slug: string; value?: number; games?: number }[], hint: string) => (
+    <>
+      <p className="mb-2 text-[11px] text-muted">{hint}</p>
+      {rows.length ? rows.map((r) => <HeroLinkRow key={r.slug} {...r} />) : empty}
+    </>
+  );
 
   return (
     <>
-      <header className="relative overflow-hidden rounded-xl border border-line bg-panel">
-        <div className="grid items-center md:grid-cols-[1fr_380px]">
-          <div className="relative z-10 space-y-3 p-6">
-            <p className={`text-sm font-semibold uppercase tracking-wider ${ATTR_COLOR[hero.attr]}`}>
-              {ATTR_LABEL[hero.attr]} · {ATTACK_LABEL[hero.attackType] ?? hero.attackType}
-              {hero.complexity ? <span className="text-muted"> · {COMPLEXITY[hero.complexity]}</span> : null}
-            </p>
-            <h1 className="text-4xl font-black tracking-tight">{hero.name}</h1>
-            <div className="flex flex-wrap gap-1.5">
-              {hero.roles.map((r) => (
-                <span key={r} className="rounded-full bg-panel-2 px-2.5 py-0.5 text-xs text-muted">
-                  {ROLE_LABEL[r] ?? r}
-                </span>
-              ))}
-            </div>
-            {content.summary && <p className="max-w-xl text-fg/85">{content.summary}</p>}
-            <div className="flex gap-6 pt-1 text-sm">
-              <div>
-                <p className="text-xs text-muted">Ялалтын хувь</p>
-                <p className="text-xl font-bold tabular-nums">{heroWinrate(i).toFixed(1)}%</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted">Сонгогдох хувь</p>
-                <p className="text-xl font-bold tabular-nums">{heroPickRate(i).toFixed(1)}%</p>
-              </div>
-              {patch && (
-                <div>
-                  <p className="text-xs text-muted">Патч</p>
-                  <p className="text-xl font-bold">{patch}</p>
-                </div>
-              )}
-            </div>
-          </div>
-          <video
-            className="h-full max-h-[340px] w-full object-cover"
-            src={`${RENDER_VIDEO}/${hero.slug}.webm`}
-            poster={hero.img}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-      </header>
-
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-        <div className="space-y-6">
-          {kit && kitMn && (
-            <Card title="Чадварууд (skill)" note={`Valve-ийн албан ёсны тайлбар · патч ${patch ?? "?"}`}>
-              <LangToggle
-                note="Google Translate-ийн машин орчуулга"
-                mn={<AbilityList kit={kitMn} />}
-                en={<AbilityList kit={kit} />}
-              />
-            </Card>
-          )}
-
-          {kit && kitMn && kit.talents.some((t) => t.options.length) && (
-            <Card title="Талант">
-              <LangToggle mn={<TalentTree kit={kitMn} />} en={<TalentTree kit={kit} />} />
-            </Card>
-          )}
-
-          <Card title="Түүх">
+      <HeroHeader
+        hero={hero}
+        summary={content.summary}
+        winrate={heroWinrate(i)}
+        pickRate={heroPickRate(i)}
+        patch={patch ?? null}
+        lore={
+          <>
             {content.translated ? null : (
               <p className="mb-3 rounded bg-panel-2 px-3 py-2 text-xs text-muted">
                 Монгол орчуулга удахгүй нэмэгдэнэ. Доорх нь англи эх.
@@ -145,108 +72,98 @@ async function HeroDetail({ slug }: { slug: string }) {
                 <p key={k}>{p}</p>
               ))}
             </div>
-          </Card>
+          </>
+        }
+      />
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card title="Good against" note={`${hero.name} эдгээрийг ялдаг`}>
-              {beats.map((r) => (
-                <HeroLinkRow key={r.slug} {...r} />
-              ))}
-            </Card>
-            <Card title="Counter heroes" note={`${hero.name}-ийн эсрэг сонгоход сайн`}>
-              {losesTo.map((r) => (
-                <HeroLinkRow key={r.slug} {...r} />
-              ))}
-            </Card>
-          </div>
-          <p className="-mt-3 text-[11px] text-muted">
-            OpenDota-гийн {matchupMeta.matchCount.toLocaleString("en-US")} ranked тоглолтоос (
-            {matchupMeta.to.slice(0, 10)} хүртэл). Хувь нь хоёр баатрын ерөнхий хүчнээс хүлээгдэхээс хэр их
-            ялсныг харуулна.
-          </p>
+      {/* 2-р мөр: талант | чадварууд (зургаар нь сонгоно) */}
+      {kit && kitMn && (
+        <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
+          <HeroKitPanels kitMn={kitMn} kitEn={kit} patch={patch ?? null} />
         </div>
+      )}
 
-        <aside className="space-y-6">
-          {content.counterItems.length > 0 && (
-            <Card title="Эсрэг авах item">
-              <ul className="space-y-3">
-                {content.counterItems.map((c) => {
-                  const it = items[c.item];
-                  if (!it) return null;
-                  return (
-                    <li key={c.item} className="flex gap-3 text-sm">
-                      <Image src={it.img} alt={it.name} width={48} height={35} className="h-[35px] w-12 shrink-0 rounded" />
-                      <div>
-                        <p className="font-semibold text-gold">
-                          <Link href={`/items/${it.key}`} className="hover:underline">
-                            {it.name}
-                          </Link>{" "}
-                          <span className="text-xs font-normal text-muted">{it.cost}</span>
-                        </p>
-                        <p className="text-xs text-fg/80">{c.reason}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Card>
-          )}
-
-          {content.counterTips.length > 0 && (
-            <Card title="Эсрэг нь яаж тоглох вэ">
-              <ul className="list-disc space-y-1.5 pl-5 text-sm text-fg/85">
-                {content.counterTips.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </Card>
-          )}
-
-          {patchNotes.entries.length > 0 && (
-            <Card title={`${patchNotes.major} патчийн өөрчлөлт`} note="Valve · машин орчуулга">
-              <PatchNotesList entries={patchNotes.entries} />
-            </Card>
-          )}
-
-          <Card title="Synergy">
-            {synergy.map((r) => (
-              <HeroLinkRow key={r.slug} {...r} />
-            ))}
-          </Card>
-
-          {content.similar.length > 0 && (
-            <Card title="Similar heroes">
-              {content.similar.map((sl) => (
-                <HeroLinkRow key={sl} slug={sl} />
-              ))}
-            </Card>
-          )}
-
-          <Card title="Үндсэн үзүүлэлт" note="1-р түвшинд">
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-              {(
-                [
-                  ["Strength", `${s.str} +${s.strGain}`],
-                  ["Agility", `${s.agi} +${s.agiGain}`],
-                  ["Intelligence", `${s.int} +${s.intGain}`],
-                  ["HP", s.health],
-                  ["Мана", s.mana],
-                  ["Хуяг", s.armor],
-                  ["Довтолгоо", `${s.attackMin}–${s.attackMax}`],
-                  ["Довтолгооны зай", s.attackRange],
-                  ["Хурд", s.moveSpeed],
-                  ["Довтолгооны хурд", s.attackRate],
-                ] as [string, string | number][]
-              ).map(([k, v]) => (
-                <div key={k} className="contents">
-                  <dt className="text-muted">{k}</dt>
-                  <dd className="text-right tabular-nums">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </Card>
-        </aside>
+      {/* 3-р мөр: матчап | item, зөвлөгөө, патч */}
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Tabs
+          className="lg:min-h-[460px]"
+          tabs={[
+            { key: "counter", label: "Counter heroes", content: heroList(losesTo, `${hero.name}-ийн эсрэг сонгоход сайн`) },
+            { key: "good", label: "Good against", content: heroList(beats, `${hero.name} эдгээрийг ялдаг`) },
+            {
+              key: "similar",
+              label: "Similar heroes",
+              content: heroList(
+                content.similar.map((sl) => ({ slug: sl })),
+                "Ижил үүрэгтэй, ойролцоо тоглодог баатрууд",
+              ),
+            },
+            { key: "synergy", label: "Synergy", content: heroList(synergy, `${hero.name}-тэй сайн хамтардаг`) },
+          ]}
+        />
+        <Tabs
+          className="lg:min-h-[460px]"
+          tabs={[
+            {
+              key: "items",
+              label: "Эсрэг авах item",
+              content: content.counterItems.length ? (
+                <ul className="space-y-3">
+                  {content.counterItems.map((c) => {
+                    const it = items[c.item];
+                    if (!it) return null;
+                    return (
+                      <li key={c.item} className="flex gap-3 text-sm">
+                        <Image src={it.img} alt={it.name} width={48} height={35} className="h-[35px] w-12 shrink-0 rounded" />
+                        <div>
+                          <p className="font-semibold text-gold">
+                            <Link href={`/items/${it.key}`} className="hover:underline">
+                              {it.name}
+                            </Link>{" "}
+                            <span className="text-xs font-normal text-muted">{it.cost}</span>
+                          </p>
+                          <p className="text-xs text-fg/80">{c.reason}</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                empty
+              ),
+            },
+            {
+              key: "tips",
+              label: "Эсрэг нь яаж тоглох вэ",
+              content: content.counterTips.length ? (
+                <ul className="list-disc space-y-1.5 pl-5 text-sm text-fg/85">
+                  {content.counterTips.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              ) : (
+                empty
+              ),
+            },
+            {
+              key: "patch",
+              label: `${patchNotes.major || patch || ""} патчийн өөрчлөлт`.trim(),
+              content: patchNotes.entries.length ? (
+                <>
+                  <p className="mb-2 text-[11px] text-muted">Valve-ийн тэмдэглэл · машин орчуулга</p>
+                  <PatchNotesList entries={patchNotes.entries} />
+                </>
+              ) : (
+                <p className="text-sm text-muted">Энэ патчид өөрчлөгдөөгүй.</p>
+              ),
+            },
+          ]}
+        />
       </div>
+      <p className="-mt-3 text-[11px] text-muted">
+        Матчапын хувь: OpenDota-гийн {matchupMeta.matchCount.toLocaleString("en-US")} ranked тоглолтоос (
+        {matchupMeta.to.slice(0, 10)} хүртэл) — хоёр баатрын ерөнхий хүчнээс хүлээгдэхээс хэр их ялсныг харуулна.
+      </p>
     </>
   );
 }
@@ -254,10 +171,7 @@ async function HeroDetail({ slug }: { slug: string }) {
 export default function HeroPage({ params }: PageProps<"/heroes/[slug]">) {
   return (
     <div className="mx-auto max-w-[1200px] space-y-6 px-4 py-6">
-      <Link href="/heroes" className="text-sm text-muted hover:text-fg">
-        ← Бүх баатар
-      </Link>
-      <Suspense fallback={<div className="h-[340px] animate-pulse rounded-xl border border-line bg-panel" />}>
+      <Suspense fallback={<div className="h-[460px] animate-pulse rounded-2xl bg-panel ring-1 ring-white/10" />}>
         {params.then(({ slug }) => (
           <HeroDetail slug={slug} />
         ))}

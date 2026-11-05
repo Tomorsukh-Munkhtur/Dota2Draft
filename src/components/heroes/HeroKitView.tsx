@@ -13,7 +13,7 @@ function Tag({ children, tone = "muted" }: { children: string; tone?: "muted" | 
   return <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${cls}`}>{children}</span>;
 }
 
-function Ability({ a }: { a: HeroAbility }) {
+export function Ability({ a, showIcon = true }: { a: HeroAbility; showIcon?: boolean }) {
   const facts = [
     a.cooldown && `Cooldown: ${a.cooldown}с`,
     a.manaCost && `Мана: ${a.manaCost}`,
@@ -24,7 +24,7 @@ function Ability({ a }: { a: HeroAbility }) {
 
   return (
     <div className="flex gap-3 border-t border-line pt-4 first:border-0 first:pt-0">
-      <AbilityIcon src={a.img} name={a.name} />
+      {showIcon && <AbilityIcon src={a.img} name={a.name} />}
       <div className="min-w-0 flex-1 space-y-1.5">
         <div className="flex flex-wrap items-center gap-1.5">
           <h3 className="font-semibold">{a.name}</h3>
@@ -73,16 +73,6 @@ function Ability({ a }: { a: HeroAbility }) {
           </details>
         )}
       </div>
-    </div>
-  );
-}
-
-export function AbilityList({ kit }: { kit: HeroKit }) {
-  return (
-    <div className="space-y-4">
-      {kit.abilities.map((a) => (
-        <Ability key={a.id} a={a} />
-      ))}
     </div>
   );
 }
