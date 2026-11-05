@@ -3,7 +3,7 @@
 // scripts/ дотроос node-оор шууд импортлогддог тул энд "@/..." alias хэрэглэхгүй.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { check, getSupabase } from "./supabase.ts";
 
 export type NewsStatus = "draft" | "published";
 
@@ -87,23 +87,9 @@ const PATCH_COLUMNS: Record<keyof NewsItem, keyof NewsRow> = {
   publishedAt: "published_at",
 };
 
-let client: SupabaseClient | null | undefined;
-
-function supabase() {
-  if (client === undefined) {
-    const url = process.env.SUPABASE_URL;
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    client = url && key ? createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } }) : null;
-  }
-  return client;
-}
+const supabase = getSupabase;
 
 export const newsBackend = () => (supabase() ? "supabase" : "file");
-
-function check<T>(result: { data: T; error: { message: string } | null }) {
-  if (result.error) throw new Error(`Supabase: ${result.error.message}`);
-  return result.data;
-}
 
 // ---------------------------------------------------------------- локал файл
 const FILE = path.join(process.cwd(), "data", "news.json");

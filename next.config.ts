@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     // Баатар, item-ийн зургууд Valve-ийн CDN-ээс шууд ирдэг тул дахин боловсруулах шаардлагагүй.
     unoptimized: true,
   },
+  experimental: {
+    // Админаас баннерын зураг байршуулахад (Vercel-ийн хүсэлтийн дээд хэмжээ 4.5MB).
+    serverActions: { bodySizeLimit: "4mb" },
+  },
   // data/*.json-ийг ажиллах үед fs-ээр уншдаг тул Vercel-ийн serverless функцэд хамт оруулна.
   outputFileTracingIncludes: {
     "/*": ["./data/**/*.json"],

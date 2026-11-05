@@ -1,4 +1,53 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { readData } from "./data";
+import { check, getSupabase } from "./supabase.ts";
+
+export const PATCH_TR_TAG = "patch-translations";
+
+export type PatchLine = { t: string; i: number; a?: string | null };
+export type PatchEntry = { key: string | null; title: string | null; lines: PatchLine[] };
+export type Patch = {
+  patch: string;
+  date: string;
+  general: { title: string; lines: PatchLine[] }[];
+  heroes: { slug: string; lines: PatchLine[] }[];
+  items: PatchEntry[];
+  neutralItems: PatchEntry[];
+  neutralCreeps: { name: string; lines: PatchLine[] }[];
+};
+type PatchesFile = { major: string; latest: string; patches: Patch[] };
+
+/** Одоогийн том патчийн бүх дэд патч, шинэ нь эхэндээ. */
+export function getPatches(): PatchesFile {
+  return readData<PatchesFile>("patches.json", { major: "", latest: "", patches: [] });
+}
+
+export function getPatch(version: string): Patch | null {
+  return getPatches().patches.find((p) => p.patch === version) ?? null;
+}
+
+/** Админ засварласан орчуулгууд (Supabase). Хүснэгт байхгүй/алдаатай бол хоосон. */
+export async function getPatchTranslationOverrides(): Promise<Record<string, string>> {
+  "use cache";
+  cacheTag(PATCH_TR_TAG);
+  cacheLife("hours");
+  const db = getSupabase();
+  if (!db) return {};
+  try {
+    const rows = check(await db.from("patch_translations").select("en, mn")) as { en: string; mn: string }[];
+    return Object.fromEntries(rows.map((r) => [r.en, r.mn]));
+  } catch (e) {
+    console.error(`[patch] орчуулгын засвар уншиж чадсангүй: ${e instanceof Error ? e.message : e}`);
+    return {};
+  }
+}
+
+/** Англи мөр → монгол: админы засвар, эс бөгөөс машин орчуулга, эс бөгөөс англиараа. */
+export async function getPatchTranslator() {
+  const overrides = await getPatchTranslationOverrides();
+  const machine = readData<Record<string, string>>("patch-notes-mn.json", {});
+  return (en: string) => overrides[en] ?? machine[en] ?? en;
+}
 
 export type GameMeta = {
   patch?: string;

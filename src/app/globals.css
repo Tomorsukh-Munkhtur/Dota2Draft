@@ -18,11 +18,131 @@
   --color-int: #4aaee8;
   --color-all: #d6a74a;
   --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-exo), var(--font-inter), system-ui, sans-serif;
 }
 
+/* Бараан дэвсгэр + зургаан өнцөгт хээ, дээр нь Radiant ногоон, Dire улаан, цэнхэр, алтан бүдэг гэрлүүд. */
 body {
-  background: var(--color-bg);
   color: var(--color-fg);
+  background-color: #07090d;
+  background-image:
+    radial-gradient(900px 520px at 6% -8%, rgba(95, 191, 90, 0.13), transparent 62%),
+    radial-gradient(820px 520px at 100% 4%, rgba(224, 83, 63, 0.13), transparent 62%),
+    radial-gradient(760px 640px at 55% 55%, rgba(74, 174, 232, 0.07), transparent 65%),
+    radial-gradient(700px 500px at 10% 100%, rgba(227, 180, 92, 0.07), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+/* ---------- Gaming хэв маягийн хэсгүүд ---------- */
+
+/* Тасархай өнцөгтэй хэлбэр. */
+@utility clip-gaming {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+@utility clip-gaming-sm {
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+/* Драфтын гол товч: гэрэлтсэн улаан-улбар шар. Гэрэл (filter) нь гадна, хэлбэр (clip-path) нь дотор span-д. */
+.btn-draft {
+  display: inline-flex;
+  filter: drop-shadow(0 0 10px rgba(255, 92, 54, 0.5));
+  transition:
+    filter 0.2s,
+    transform 0.2s;
+}
+.btn-draft > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6a3d 0%, #e0442a 45%, #a3221a 100%);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+.btn-draft:hover {
+  filter: drop-shadow(0 0 18px rgba(255, 92, 54, 0.85)) brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* Хоёрдогч товч. */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-fg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Өнгөт градиент хүрээтэй карт. */
+.card-g {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-panel), var(--color-panel)) padding-box,
+    linear-gradient(135deg, rgba(95, 191, 90, 0.45), rgba(74, 174, 232, 0.25) 45%, rgba(224, 83, 63, 0.45)) border-box;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.card-g:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -12px rgba(74, 174, 232, 0.45);
+}
+
+/* Хэсгийн гарчиг: display фонт + өнгөт зураас. */
+.title-g {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.title-g::before {
+  content: "";
+  width: 4px;
+  height: 1.1em;
+  background: linear-gradient(var(--color-radiant), var(--color-int), var(--color-dire));
+}
+
+@keyframes carousel-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [style*="carousel-progress"] {
+    animation: none !important;
+    width: 100% !important;
+  }
+}
+
+/* Патчийн хуудасны Монгол/English сэлгүүр (LangSwitch). */
+[data-lang="mn"] .tr-en,
+[data-lang="en"] .tr-mn {
+  display: none;
 }
 
 ::selection {

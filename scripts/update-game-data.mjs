@@ -3,6 +3,7 @@
 // Ажиллуулах: npm run data:game   (--if-new-patch: патч өөрчлөгдөөгүй бол юу ч хийхгүй)
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { translatePatchNotes } from "./lib/gtranslate.mjs";
 import { CDN, feed, fillTemplate, formatValues, htmlToText, pool } from "./lib/valve.mjs";
 
 const DATA = path.resolve("data");
@@ -99,6 +100,8 @@ if (process.argv.includes("--if-new-patch") && meta.patch === latest.patch_numbe
 } else {
   await updateAll();
 }
+// Өмнө нь тасарсан ч гэсэн орчуулаагүй мөр үлдсэн бол орчуулна.
+await translatePatchNotes(DATA);
 
 async function updateAll() {
   console.log(`Одоогийн патч: ${latest.patch_number}`);
@@ -289,9 +292,45 @@ async function updateAll() {
   const notesText = (list) => (list ?? []).map((n) => htmlToText(n.note)).filter((t) => t && t !== "");
   const heroSlugById = new Map(heroes.map((h) => [h.id, h.slug]));
   const patchNotes = { major, patches: series.map((p) => p.patch_number), heroes: {}, items: {} };
+  // Патч бүрээр (патчийн өөрчлөлтийн хуудсанд): мөр бүр { t: текст, i: доголын түвшин, a?: skill-ийн нэр }.
+  const byPatch = [];
+  const noteLines = (list) =>
+    (list ?? []).map((n) => ({ t: htmlToText(n.note), i: n.indent_level ?? 1 })).filter((l) => l.t);
+  const itemEntries = (list) =>
+    (list ?? [])
+      .map((it) => {
+        const key = it.ability_id > 0 ? (byId.get(it.ability_id) ?? null) : null;
+        const name = key ? byName.get(key)?.name_loc : null;
+        return { key, title: it.title ? htmlToText(it.title) : (name ?? null), lines: noteLines(it.ability_notes) };
+      })
+      .filter((e) => e.lines.length);
 
   for (const p of series) {
     const data = await feed("patchnotes", { version: p.patch_number });
+    byPatch.push({
+      patch: p.patch_number,
+      date: new Date(p.patch_timestamp * 1000).toISOString(),
+      general: (data.general_notes ?? [])
+        .map((g) => ({ title: htmlToText(g.title ?? ""), lines: noteLines(g.generic) }))
+        .filter((g) => g.lines.length),
+      heroes: (data.heroes ?? [])
+        .map((h) => ({
+          slug: heroSlugById.get(h.hero_id) ?? null,
+          lines: [
+            ...noteLines(h.hero_notes),
+            ...(h.abilities ?? []).flatMap((a) =>
+              noteLines(a.ability_notes).map((l) => ({ ...l, a: abilityNames.get(a.ability_id) ?? null })),
+            ),
+            ...noteLines(h.talent_notes).map((l) => ({ ...l, a: "Talent" })),
+          ],
+        }))
+        .filter((h) => h.slug && h.lines.length),
+      items: itemEntries(data.items),
+      neutralItems: itemEntries(data.neutral_items),
+      neutralCreeps: (data.neutral_creeps ?? [])
+        .map((c) => ({ name: c.localized_name, lines: noteLines(c.neutral_creep_notes) }))
+        .filter((c) => c.lines.length),
+    });
     for (const h of data.heroes ?? []) {
       const slug = heroSlugById.get(h.hero_id);
       if (!slug) continue;
@@ -319,6 +358,7 @@ async function updateAll() {
   await write("lore_en.json", loreEn);
   await write("items.json", items);
   await write("patch-notes.json", patchNotes);
+  await write("patches.json", { major, latest: latest.patch_number, patches: byPatch.reverse() });
   await write(
     "meta.json",
     {

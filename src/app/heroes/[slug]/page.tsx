@@ -196,7 +196,7 @@ async function HeroDetail({ slug }: { slug: string }) {
           )}
 
           {patchNotes.entries.length > 0 && (
-            <Card title={`${patchNotes.major} патчийн өөрчлөлт`} note="Valve-ийн тэмдэглэл">
+            <Card title={`${patchNotes.major} патчийн өөрчлөлт`} note="Valve · машин орчуулга">
               <PatchNotesList entries={patchNotes.entries} />
             </Card>
           )}

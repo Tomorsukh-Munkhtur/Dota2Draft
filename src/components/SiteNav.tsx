@@ -1,62 +1,79 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type NavItem = { href: string; label: string; match: (path: string) => boolean };
 
-const LEFT: NavItem[] = [
-  { href: "/", label: "Нүүр", match: (p) => p === "/" },
-  { href: "/draft", label: "Драфт туслах", match: (p) => p.startsWith("/draft") },
+const LINKS: NavItem[] = [
   { href: "/heroes", label: "Баатрууд", match: (p) => p.startsWith("/heroes") },
-];
-
-const RIGHT: NavItem[] = [
-  { href: "/items", label: "Item-ууд", match: (p) => p.startsWith("/items") && !p.startsWith("/items/neutral") },
-  { href: "/items/neutral", label: "Neutral item", match: (p) => p.startsWith("/items/neutral") },
+  { href: "/items", label: "Items", match: (p) => p.startsWith("/items") && !p.startsWith("/items/neutral") },
+  { href: "/items/neutral", label: "Neutral items", match: (p) => p.startsWith("/items/neutral") },
   { href: "/news", label: "Мэдээ", match: (p) => p.startsWith("/news") },
 ];
 
-function Item({ item, pathname }: { item: NavItem; pathname: string | null }) {
-  const active = pathname !== null && item.match(pathname);
+function SwordsIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
-    <li>
-      <Link
-        href={item.href}
-        aria-current={active ? "page" : undefined}
-        className={`block whitespace-nowrap rounded-full px-3.5 py-2 text-sm transition lg:px-4 ${
-          active ? "bg-white/[0.08] text-white" : "text-fg/65 hover:text-white"
-        }`}
-      >
-        {item.label}
-      </Link>
-    </li>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className={className} aria-hidden>
+      <path d="M14.5 17.5 3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2M9.5 17.5 21 6V3h-3L6.5 14.5M11 19l-6-6M8 16l-4 4M5 21l-2-2" />
+    </svg>
   );
 }
 
-/** Төвийн pill цэс. pathname=null үед (Suspense fallback) идэвхтэй цэсгүй харагдана. */
-export function NavPill({ pathname }: { pathname: string | null }) {
+/** Үндсэн цэс. pathname=null үед (Suspense fallback) идэвхтэй цэсгүй харагдана. */
+export function MainNav({ pathname }: { pathname: string | null }) {
   return (
     <nav aria-label="Үндсэн цэс" className="min-w-0">
-      <ul className="flex items-center overflow-x-auto rounded-full border border-white/10 bg-white/[0.04] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md [scrollbar-width:none] lg:overflow-visible [&::-webkit-scrollbar]:hidden">
-        {LEFT.map((i) => (
-          <Item key={i.href} item={i} pathname={pathname} />
-        ))}
-        {/* Цэсний дундах лого — pill-ээс дээш цухуйна (зөвхөн том дэлгэцэнд). */}
-        <li aria-hidden className="relative hidden w-16 shrink-0 self-stretch lg:block">
-          <span className="absolute left-1/2 top-[-26px] grid h-14 w-14 -translate-x-1/2 place-items-center rounded-full border border-white/10 bg-[#0c1017] shadow-[0_0_28px_-2px_rgba(64,140,255,0.55)]">
-            <Image src="/logo.webp" alt="" width={36} height={36} className="h-9 w-9" />
-          </span>
+      <ul className="flex items-center gap-1 overflow-x-auto py-1 [scrollbar-width:none] sm:gap-2 lg:overflow-visible [&::-webkit-scrollbar]:hidden">
+        <li className="mr-1 shrink-0 sm:mr-2">
+          <Link href="/draft" className="btn-draft text-sm" aria-current={pathname?.startsWith("/draft") ? "page" : undefined}>
+            <span>
+              <SwordsIcon />
+              Драфт эхлүүлэх
+            </span>
+          </Link>
         </li>
-        {RIGHT.map((i) => (
-          <Item key={i.href} item={i} pathname={pathname} />
-        ))}
+        {LINKS.map((item) => {
+          const active = pathname !== null && item.match(pathname);
+          return (
+            <li key={item.href} className="shrink-0">
+              <Link
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`relative block whitespace-nowrap px-3 py-2 font-display text-sm font-semibold uppercase tracking-wide transition ${
+                  active ? "text-white" : "text-fg/60 hover:text-white"
+                }`}
+              >
+                {item.label}
+                {/* Идэвхтэй цэсний доорх гэрэлтсэн зураас. */}
+                <span
+                  className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-radiant via-int to-dire shadow-[0_0_10px_rgba(74,174,232,0.8)] transition-opacity ${
+                    active ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
 }
 
-export function ActiveNavPill() {
-  return <NavPill pathname={usePathname()} />;
+export function ActiveMainNav() {
+  return <MainNav pathname={usePathname()} />;
+}
+
+/** Гар утсанд драфт руу үргэлж харагдах товч (драфт хуудсан дээр нуугдана). */
+export function MobileDraftButton() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/draft")) return null;
+  return (
+    <Link href="/draft" aria-label="Драфт эхлүүлэх" className="btn-draft fixed bottom-4 right-4 z-50 lg:hidden">
+      <span className="!px-4 !py-3">
+        <SwordsIcon className="h-5 w-5" />
+        Драфт
+      </span>
+    </Link>
+  );
 }

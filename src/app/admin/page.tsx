@@ -97,6 +97,17 @@ async function AdminContent() {
 
       <GameDataCard />
 
+      <section className="grid gap-3 sm:grid-cols-2">
+        <Link href="/admin/banners" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
+          <p className="font-bold">Нүүр хуудасны слайд →</p>
+          <p className="text-sm text-muted">Баннерын зураг, гарчиг, холбоос нэмэх, дараалал өөрчлөх.</p>
+        </Link>
+        <Link href="/admin/patch" className="rounded-lg border border-line bg-panel p-4 transition hover:border-gold/60">
+          <p className="font-bold">Патчийн орчуулга →</p>
+          <p className="text-sm text-muted">Автоматаар орчуулсан патчийн өөрчлөлтүүдийг засах.</p>
+        </Link>
+      </section>
+
       <section className="space-y-3">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="text-lg font-bold">Мэдээ</h2>
