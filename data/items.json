@@ -373,29 +373,6 @@
   "lore": "A pair of tough-skinned boots that change to meet the demands of the wearer.",
   "notes": "Power Treads can be built using a Belt of Strength, Band of Elvenskin, or a Robe of the Magi."
  },
- "staff_of_wizardry": {
-  "id": 23,
-  "key": "staff_of_wizardry",
-  "name": "Staff of Wizardry",
-  "kind": "shop",
-  "cost": 1000,
-  "tier": null,
-  "category": "attributes",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_intellect",
-    "display": "+ {value} Intelligence",
-    "value": "10"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "A staff of magical powers passed down from the eldest mages.",
-  "notes": ""
- },
  "refresher": {
   "id": 110,
   "key": "refresher",
@@ -431,6 +408,29 @@
   "cooldown": 180,
   "manaCost": 325,
   "lore": "A powerful artifact created for wizards.",
+  "notes": ""
+ },
+ "staff_of_wizardry": {
+  "id": 23,
+  "key": "staff_of_wizardry",
+  "name": "Staff of Wizardry",
+  "kind": "shop",
+  "cost": 1000,
+  "tier": null,
+  "category": "attributes",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_intellect",
+    "display": "+ {value} Intelligence",
+    "value": "10"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "A staff of magical powers passed down from the eldest mages.",
   "notes": ""
  },
  "quelling_blade": {
@@ -504,42 +504,6 @@
   "lore": "A powerful artifact of mysterious origin, it creates barriers against magical forces.",
   "notes": "Barrier does not affect units that have been affected by Barrier within Pipe of Insight's cooldown.\nStacks multiplicatively with other sources of magic resistance."
  },
- "dragon_lance": {
-  "id": 236,
-  "key": "dragon_lance",
-  "name": "Dragon Lance",
-  "kind": "shop",
-  "cost": 2000,
-  "tier": null,
-  "category": "artifacts",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dragon_lance.png",
-  "components": [
-   "blade_of_alacrity",
-   "belt_of_strength"
-  ],
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_agility",
-    "display": "+ {value} Agility",
-    "value": "15"
-   },
-   {
-    "key": "bonus_strength",
-    "display": "+ {value} Strength",
-    "value": "10"
-   },
-   {
-    "key": "base_attack_range",
-    "display": "+ {value} Attack Range (Ranged Only)",
-    "value": "130"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "The forward charge of the wyvern host grants no quarter.",
-  "notes": "Attack Range bonuses from Monkey King Bar and Dragon Lance and its upgrades do not stack."
- },
  "lotus_orb": {
   "id": 226,
   "key": "lotus_orb",
@@ -587,6 +551,42 @@
   "manaCost": 175,
   "lore": "The jewel at its center still reflects a pale image of its creator.",
   "notes": "Targeted abilities from neutral items do not trigger Echo Shell."
+ },
+ "dragon_lance": {
+  "id": 236,
+  "key": "dragon_lance",
+  "name": "Dragon Lance",
+  "kind": "shop",
+  "cost": 2000,
+  "tier": null,
+  "category": "artifacts",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dragon_lance.png",
+  "components": [
+   "blade_of_alacrity",
+   "belt_of_strength"
+  ],
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_agility",
+    "display": "+ {value} Agility",
+    "value": "15"
+   },
+   {
+    "key": "bonus_strength",
+    "display": "+ {value} Strength",
+    "value": "10"
+   },
+   {
+    "key": "base_attack_range",
+    "display": "+ {value} Attack Range (Ranged Only)",
+    "value": "130"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "The forward charge of the wyvern host grants no quarter.",
+  "notes": "Attack Range bonuses from Monkey King Bar and Dragon Lance and its upgrades do not stack."
  },
  "manta": {
   "id": 147,
@@ -1170,6 +1170,47 @@
   "lore": "The staff of a renowned sorceress, lost for countless millennia.",
   "notes": "Multiple instances of this item do not stack."
  },
+ "octarine_core": {
+  "id": 235,
+  "key": "octarine_core",
+  "name": "Octarine Core",
+  "kind": "shop",
+  "cost": 5100,
+  "tier": null,
+  "category": "support",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png",
+  "components": [
+   "soul_booster",
+   "tiara_of_selemene"
+  ],
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_cooldown",
+    "display": "+ {value}% Cooldown Reduction",
+    "value": "25"
+   },
+   {
+    "key": "bonus_health",
+    "display": "+ {value} Health",
+    "value": "450"
+   },
+   {
+    "key": "bonus_mana",
+    "display": "+ {value} Mana",
+    "value": "450"
+   },
+   {
+    "key": "bonus_mana_regen",
+    "display": "+ {value} Mana Regeneration",
+    "value": "6"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "At the core of spellcraft are spectrums only the very gifted can sense.",
+  "notes": ""
+ },
  "belt_of_strength": {
   "id": 17,
   "key": "belt_of_strength",
@@ -1191,6 +1232,44 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "A valued accessory for improving vitality.",
+  "notes": ""
+ },
+ "ancient_janggo": {
+  "id": 185,
+  "key": "ancient_janggo",
+  "name": "Drum of Endurance",
+  "kind": "shop",
+  "cost": 1625,
+  "tier": null,
+  "category": "support",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
+  "components": [
+   "headdress",
+   "belt_of_strength",
+   "wind_lace"
+  ],
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Endurance",
+    "description": "Gives +35 attack speed and +13% movement speed to nearby allies for 6 seconds.\n\nRadius: 1200"
+   },
+   {
+    "type": "passive",
+    "title": "Swiftness Aura",
+    "description": "Grants 15 movement speed and 2.5 health regeneration to allies.\n\nRadius: 1200"
+   }
+  ],
+  "attrib": [
+   {
+    "key": "bonus_str",
+    "display": "+ {value} Strength",
+    "value": "8"
+   }
+  ],
+  "cooldown": 45,
+  "manaCost": null,
+  "lore": "A relic that enchants the bodies of those around it for swifter movement in times of crisis.",
   "notes": ""
  },
  "mjollnir": {
@@ -1234,85 +1313,6 @@
   "manaCost": 50,
   "lore": "Thor's magical hammer, made for him by the dwarves Brok and Eitri.",
   "notes": "Static Charge cannot trigger more than once per second.\nStatic Charge's shock deals magical damage centered on hero with the Static Charge. Static Charge's targets cannot be more than 900 range away.\nStatic Charge procs will not bounce to heroes that are invisible or hidden by Fog of War."
- },
- "octarine_core": {
-  "id": 235,
-  "key": "octarine_core",
-  "name": "Octarine Core",
-  "kind": "shop",
-  "cost": 5100,
-  "tier": null,
-  "category": "support",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png",
-  "components": [
-   "soul_booster",
-   "tiara_of_selemene"
-  ],
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_cooldown",
-    "display": "+ {value}% Cooldown Reduction",
-    "value": "25"
-   },
-   {
-    "key": "bonus_health",
-    "display": "+ {value} Health",
-    "value": "450"
-   },
-   {
-    "key": "bonus_mana",
-    "display": "+ {value} Mana",
-    "value": "450"
-   },
-   {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "6"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "At the core of spellcraft are spectrums only the very gifted can sense.",
-  "notes": ""
- },
- "ancient_janggo": {
-  "id": 185,
-  "key": "ancient_janggo",
-  "name": "Drum of Endurance",
-  "kind": "shop",
-  "cost": 1625,
-  "tier": null,
-  "category": "support",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png",
-  "components": [
-   "headdress",
-   "belt_of_strength",
-   "wind_lace"
-  ],
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Endurance",
-    "description": "Gives +35 attack speed and +13% movement speed to nearby allies for 6 seconds.\n\nRadius: 1200"
-   },
-   {
-    "type": "passive",
-    "title": "Swiftness Aura",
-    "description": "Grants 15 movement speed and 2.5 health regeneration to allies.\n\nRadius: 1200"
-   }
-  ],
-  "attrib": [
-   {
-    "key": "bonus_str",
-    "display": "+ {value} Strength",
-    "value": "8"
-   }
-  ],
-  "cooldown": 45,
-  "manaCost": null,
-  "lore": "A relic that enchants the bodies of those around it for swifter movement in times of crisis.",
-  "notes": ""
  },
  "swift_blink": {
   "id": 603,
@@ -1422,29 +1422,6 @@
   "lore": "Contains the ashes of powerful demons.",
   "notes": "Empty urns gain 2 charges.\nIf the allied unit is attacked by an enemy hero or Roshan, the effect is lost.\nDoes not trigger spell block or spell reflect."
  },
- "chasm_stone": {
-  "id": 1872,
-  "key": "chasm_stone",
-  "name": "Chasm Stone",
-  "kind": "shop",
-  "cost": 900,
-  "tier": null,
-  "category": "misc",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/chasm_stone.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "aoe_bonus",
-    "display": "+ {value} Area of Effect",
-    "value": "40"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "",
-  "notes": "AoE bonuses from multiple Chasm Stones or its upgrades do not stack."
- },
  "ward_sentry": {
   "id": 43,
   "key": "ward_sentry",
@@ -1468,28 +1445,28 @@
   "lore": "A form of plant originally grown in the garden of a fearful king.",
   "notes": ""
  },
- "sobi_mask": {
-  "id": 28,
-  "key": "sobi_mask",
-  "name": "Sage's Mask",
+ "chasm_stone": {
+  "id": 1872,
+  "key": "chasm_stone",
+  "name": "Chasm Stone",
   "kind": "shop",
-  "cost": 175,
+  "cost": 900,
   "tier": null,
   "category": "misc",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sobi_mask.png",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/chasm_stone.png",
   "components": null,
   "abilities": [],
   "attrib": [
    {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "0.7"
+    "key": "aoe_bonus",
+    "display": "+ {value} Area of Effect",
+    "value": "40"
    }
   ],
   "cooldown": null,
   "manaCost": null,
-  "lore": "A mask commonly used by mages and warlocks for various rituals.",
-  "notes": ""
+  "lore": "",
+  "notes": "AoE bonuses from multiple Chasm Stones or its upgrades do not stack."
  },
  "tpscroll": {
   "id": 46,
@@ -1513,6 +1490,29 @@
   "manaCost": 75,
   "lore": "What a hero truly needs.",
   "notes": "If multiple heroes teleport to the same location in succession, the channeling time will be increased for each successive hero.\nTeleport can be prevented or canceled by Root abilities."
+ },
+ "sobi_mask": {
+  "id": 28,
+  "key": "sobi_mask",
+  "name": "Sage's Mask",
+  "kind": "shop",
+  "cost": 175,
+  "tier": null,
+  "category": "misc",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sobi_mask.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_mana_regen",
+    "display": "+ {value} Mana Regeneration",
+    "value": "0.7"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "A mask commonly used by mages and warlocks for various rituals.",
+  "notes": ""
  },
  "moon_shard": {
   "id": 247,
@@ -1943,42 +1943,6 @@
   "lore": "Warning: There is no antidote if picked up by the wrong end.",
   "notes": ""
  },
- "sange": {
-  "id": 162,
-  "key": "sange",
-  "name": "Sange",
-  "kind": "shop",
-  "cost": 2100,
-  "tier": null,
-  "category": "artifacts",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
-  "components": [
-   "ogre_axe",
-   "belt_of_strength"
-  ],
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_strength",
-    "display": "+ {value} Strength",
-    "value": "16"
-   },
-   {
-    "key": "slow_resistance",
-    "display": "+ {value}% Slow Resistance",
-    "value": "25"
-   },
-   {
-    "key": "hp_regen_amp",
-    "display": "+ {value}% Health Restoration",
-    "value": "12"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "Sange is an unusually accurate weapon, seeking weak points automatically.",
-  "notes": ""
- },
  "sphere": {
   "id": 123,
   "key": "sphere",
@@ -2025,6 +1989,42 @@
   "manaCost": null,
   "lore": "This magical sphere once protected one of the most famous heroes in history.",
   "notes": "Targeted abilities from neutral items do not trigger Spellblock."
+ },
+ "sange": {
+  "id": 162,
+  "key": "sange",
+  "name": "Sange",
+  "kind": "shop",
+  "cost": 2100,
+  "tier": null,
+  "category": "artifacts",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sange.png",
+  "components": [
+   "ogre_axe",
+   "belt_of_strength"
+  ],
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_strength",
+    "display": "+ {value} Strength",
+    "value": "16"
+   },
+   {
+    "key": "slow_resistance",
+    "display": "+ {value}% Slow Resistance",
+    "value": "25"
+   },
+   {
+    "key": "hp_regen_amp",
+    "display": "+ {value}% Health Restoration",
+    "value": "12"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "Sange is an unusually accurate weapon, seeking weak points automatically.",
+  "notes": ""
  },
  "ghost": {
   "id": 37,
@@ -2084,29 +2084,6 @@
   "lore": "Elemental protection from magical assaults.",
   "notes": "Uses at most one charge per damage instance."
  },
- "robe": {
-  "id": 19,
-  "key": "robe",
-  "name": "Robe of the Magi",
-  "kind": "shop",
-  "cost": 450,
-  "tier": null,
-  "category": "attributes",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/robe.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_intellect",
-    "display": "+ {value} Intelligence",
-    "value": "6"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "This robe corrupts the soul of the user, but provides wisdom in return.",
-  "notes": ""
- },
  "kaya_and_sange": {
   "id": 273,
   "key": "kaya_and_sange",
@@ -2161,6 +2138,29 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "Two of three known items of unimaginable power that many believe were crafted at the same enchanter's forge.",
+  "notes": ""
+ },
+ "robe": {
+  "id": 19,
+  "key": "robe",
+  "name": "Robe of the Magi",
+  "kind": "shop",
+  "cost": 450,
+  "tier": null,
+  "category": "attributes",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/robe.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_intellect",
+    "display": "+ {value} Intelligence",
+    "value": "6"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "This robe corrupts the soul of the user, but provides wisdom in return.",
   "notes": ""
  },
  "travel_boots_2": {
@@ -2559,6 +2559,29 @@
   "lore": "Capturing the majestic call of an eagle, this mystical horn brings limitless dexterity to those who hear it.",
   "notes": ""
  },
+ "blades_of_attack": {
+  "id": 2,
+  "key": "blades_of_attack",
+  "name": "Blades of Attack",
+  "kind": "shop",
+  "cost": 450,
+  "tier": null,
+  "category": "weapons_armor",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blades_of_attack.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_damage",
+    "display": "+ {value} Damage",
+    "value": "9"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "The damage of these small, concealable blades should not be underestimated.",
+  "notes": ""
+ },
  "diffusal_blade": {
   "id": 174,
   "key": "diffusal_blade",
@@ -2600,29 +2623,6 @@
   "manaCost": 25,
   "lore": "An enchanted blade that allows the user to cut straight into the enemy's soul.",
   "notes": "Does not stack with other diffusal blades."
- },
- "blades_of_attack": {
-  "id": 2,
-  "key": "blades_of_attack",
-  "name": "Blades of Attack",
-  "kind": "shop",
-  "cost": 450,
-  "tier": null,
-  "category": "weapons_armor",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blades_of_attack.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_damage",
-    "display": "+ {value} Damage",
-    "value": "9"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "The damage of these small, concealable blades should not be underestimated.",
-  "notes": ""
  },
  "blink": {
   "id": 1,
@@ -3157,6 +3157,43 @@
   "lore": "Forged by a secret order in The Third Age of Praxa'cia to fell the False King.",
   "notes": ""
  },
+ "oblivion_staff": {
+  "id": 67,
+  "key": "oblivion_staff",
+  "name": "Oblivion Staff",
+  "kind": "shop",
+  "cost": 1625,
+  "tier": null,
+  "category": "basics",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/oblivion_staff.png",
+  "components": [
+   "blitz_knuckles",
+   "robe",
+   "sobi_mask"
+  ],
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_intellect",
+    "display": "+ {value} Intelligence",
+    "value": "10"
+   },
+   {
+    "key": "bonus_attack_speed",
+    "display": "+ {value} Attack Speed",
+    "value": "35"
+   },
+   {
+    "key": "bonus_mana_regen",
+    "display": "+ {value} Mana Regeneration",
+    "value": "1.25"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "Deceptively hidden as an ordinary staff, it is actually very powerful, much like the Eldritch who originally possessed it.",
+  "notes": ""
+ },
  "helm_of_the_dominator": {
   "id": 164,
   "key": "helm_of_the_dominator",
@@ -3198,43 +3235,6 @@
   "manaCost": 50,
   "lore": "The powerful headpiece of a dead necromancer.",
   "notes": "Cannot dominate more than one unit at a time. If a new unit is dominated, the old one will die.\nCan also Dominate enemy lane creeps and summoned units.\nSelling Helm of the Dominator will cause dominated units to die."
- },
- "oblivion_staff": {
-  "id": 67,
-  "key": "oblivion_staff",
-  "name": "Oblivion Staff",
-  "kind": "shop",
-  "cost": 1625,
-  "tier": null,
-  "category": "basics",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/oblivion_staff.png",
-  "components": [
-   "blitz_knuckles",
-   "robe",
-   "sobi_mask"
-  ],
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_intellect",
-    "display": "+ {value} Intelligence",
-    "value": "10"
-   },
-   {
-    "key": "bonus_attack_speed",
-    "display": "+ {value} Attack Speed",
-    "value": "35"
-   },
-   {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "1.25"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "Deceptively hidden as an ordinary staff, it is actually very powerful, much like the Eldritch who originally possessed it.",
-  "notes": ""
  },
  "sange_and_yasha": {
   "id": 154,
@@ -3475,6 +3475,29 @@
   "lore": "The most guarded relic among the cult of Vyse, it is the most coveted weapon among magi.",
   "notes": "The target will have a base movement speed of 140, but buffs granting maximum movement speed won't be disabled."
  },
+ "relic": {
+  "id": 54,
+  "key": "relic",
+  "name": "Sacred Relic",
+  "kind": "shop",
+  "cost": 3400,
+  "tier": null,
+  "category": "secretshop",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_damage",
+    "display": "+ {value} Damage",
+    "value": "55"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "An ancient weapon that often turns the tides of war.",
+  "notes": ""
+ },
  "falcon_blade": {
   "id": 596,
   "key": "falcon_blade",
@@ -3510,29 +3533,6 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "An enchanted blade that long ago raised a hopeless urchin from pauper to king.",
-  "notes": ""
- },
- "relic": {
-  "id": 54,
-  "key": "relic",
-  "name": "Sacred Relic",
-  "kind": "shop",
-  "cost": 3400,
-  "tier": null,
-  "category": "secretshop",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/relic.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_damage",
-    "display": "+ {value} Damage",
-    "value": "55"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "An ancient weapon that often turns the tides of war.",
   "notes": ""
  },
  "magic_wand": {
@@ -3639,6 +3639,44 @@
   "lore": "Weapon of choice among brutes, the bearer sacrifices his life energy to gain immense strength and power.",
   "notes": "The strength change will affect both maximum and current HP, but you cannot die from the change.\nThe strength change occurs over 0.6 seconds.\nActivating or deactivating Unholy Strength does not interrupt channeling."
  },
+ "soul_ring": {
+  "id": 178,
+  "key": "soul_ring",
+  "name": "Soul Ring",
+  "kind": "shop",
+  "cost": 805,
+  "tier": null,
+  "category": "basics",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/soul_ring.png",
+  "components": [
+   "ring_of_protection",
+   "gauntlets",
+   "gauntlets"
+  ],
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Sacrifice",
+    "description": "Consume 170 health to temporarily gain 170 mana. Lasts 10 seconds.\n\nIf the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+   }
+  ],
+  "attrib": [
+   {
+    "key": "bonus_strength",
+    "display": "+ {value} Strength",
+    "value": "6"
+   },
+   {
+    "key": "bonus_armor",
+    "display": "+ {value} Armor",
+    "value": "2"
+   }
+  ],
+  "cooldown": 30,
+  "manaCost": null,
+  "lore": "A ring that feeds on the souls of those who wear it.",
+  "notes": "If this mana is not used before the duration ends, the extra mana is lost."
+ },
  "arcane_boots": {
   "id": 180,
   "key": "arcane_boots",
@@ -3687,66 +3725,47 @@
   "lore": "Magi equipped with these boots are valued in battle.",
   "notes": "Does not work on Meepo clones."
  },
- "soul_ring": {
-  "id": 178,
-  "key": "soul_ring",
-  "name": "Soul Ring",
+ "wind_waker": {
+  "id": 610,
+  "key": "wind_waker",
+  "name": "Wind Waker",
   "kind": "shop",
-  "cost": 805,
+  "cost": 6800,
   "tier": null,
-  "category": "basics",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/soul_ring.png",
+  "category": "support",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png",
   "components": [
-   "ring_of_protection",
-   "gauntlets",
-   "gauntlets"
+   "cyclone",
+   "mystic_staff"
   ],
   "abilities": [
    {
     "type": "active",
-    "title": "Sacrifice",
-    "description": "Consume 170 health to temporarily gain 170 mana. Lasts 10 seconds.\n\nIf the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+    "title": "Cyclone",
+    "description": "Sweeps a target unit up into a cyclone, making them invulnerable for 2.5 seconds. Cyclone can be cast on yourself, enemy units or allied units. When cast on yourself, you can move the tornado at a speed of 300.\n\nEnemy units take 50 magical damage upon landing.\nDispel Type: Basic Dispel"
    }
   ],
   "attrib": [
    {
-    "key": "bonus_strength",
-    "display": "+ {value} Strength",
-    "value": "6"
+    "key": "bonus_movement_speed",
+    "display": "+ {value} Movement Speed",
+    "value": "30"
    },
    {
-    "key": "bonus_armor",
-    "display": "+ {value} Armor",
-    "value": "2"
-   }
-  ],
-  "cooldown": 30,
-  "manaCost": null,
-  "lore": "A ring that feeds on the souls of those who wear it.",
-  "notes": "If this mana is not used before the duration ends, the extra mana is lost."
- },
- "boots_of_elves": {
-  "id": 18,
-  "key": "boots_of_elves",
-  "name": "Band of Elvenskin",
-  "kind": "shop",
-  "cost": 450,
-  "tier": null,
-  "category": "attributes",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_elves.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
+    "key": "bonus_mana_regen",
+    "display": "+ {value} Mana Regeneration",
+    "value": "3"
+   },
    {
-    "key": "bonus_agility",
-    "display": "+ {value} Agility",
-    "value": "6"
+    "key": "bonus_intellect",
+    "display": "+ {value} Intelligence",
+    "value": "35"
    }
   ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "A tensile fabric often used for its light weight and ease of movement.",
-  "notes": ""
+  "cooldown": 19,
+  "manaCost": 175,
+  "lore": "Proof enough to some that unseen forces manipulate the happenings of the material plane.",
+  "notes": "Cyclone can dispel some buffs and debuffs.\nWhen cast on yourself, the cyclone can be moved anywhere at a speed of 360.\nCyclone duration is unaffected by status resistance."
  },
  "demon_edge": {
   "id": 51,
@@ -3814,47 +3833,28 @@
   "lore": "A deceptively swift blade imbued with resonant magic.",
   "notes": ""
  },
- "wind_waker": {
-  "id": 610,
-  "key": "wind_waker",
-  "name": "Wind Waker",
+ "boots_of_elves": {
+  "id": 18,
+  "key": "boots_of_elves",
+  "name": "Band of Elvenskin",
   "kind": "shop",
-  "cost": 6800,
+  "cost": 450,
   "tier": null,
-  "category": "support",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png",
-  "components": [
-   "cyclone",
-   "mystic_staff"
-  ],
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Cyclone",
-    "description": "Sweeps a target unit up into a cyclone, making them invulnerable for 2.5 seconds. Cyclone can be cast on yourself, enemy units or allied units. When cast on yourself, you can move the tornado at a speed of 300.\n\nEnemy units take 50 magical damage upon landing.\nDispel Type: Basic Dispel"
-   }
-  ],
+  "category": "attributes",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots_of_elves.png",
+  "components": null,
+  "abilities": [],
   "attrib": [
    {
-    "key": "bonus_movement_speed",
-    "display": "+ {value} Movement Speed",
-    "value": "30"
-   },
-   {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "3"
-   },
-   {
-    "key": "bonus_intellect",
-    "display": "+ {value} Intelligence",
-    "value": "35"
+    "key": "bonus_agility",
+    "display": "+ {value} Agility",
+    "value": "6"
    }
   ],
-  "cooldown": 19,
-  "manaCost": 175,
-  "lore": "Proof enough to some that unseen forces manipulate the happenings of the material plane.",
-  "notes": "Cyclone can dispel some buffs and debuffs.\nWhen cast on yourself, the cyclone can be moved anywhere at a speed of 360.\nCyclone duration is unaffected by status resistance."
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "A tensile fabric often used for its light weight and ease of movement.",
+  "notes": ""
  },
  "void_stone": {
   "id": 57,
@@ -3976,6 +3976,37 @@
   "lore": "Winged boots that grant omnipresence.",
   "notes": ""
  },
+ "hand_of_midas": {
+  "id": 65,
+  "key": "hand_of_midas",
+  "name": "Hand of Midas",
+  "kind": "shop",
+  "cost": 2200,
+  "tier": null,
+  "category": "basics",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png",
+  "components": [
+   "gloves"
+  ],
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Transmute",
+    "description": "Kills a non-hero target for 160 gold. Killing a neutral creep additionally grants a madstone bundle.\n\n Cannot be used on Ancient creeps."
+   }
+  ],
+  "attrib": [
+   {
+    "key": "bonus_attack_speed",
+    "display": "+ {value} Attack Speed",
+    "value": "40"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets.",
+  "notes": "The gold given is unreliable gold (you do not get the normal creep bounty).\nExperience gained by using Transmute is not shared."
+ },
  "consecrated_wraps": {
   "id": 1854,
   "key": "consecrated_wraps",
@@ -4018,37 +4049,6 @@
   "manaCost": null,
   "lore": "",
   "notes": "Charges cannot be gained for 4s after you take damage from a player-controlled source or Roshan.\nSelf-damage and HP Loss damage cannot remove charges.\nMovement speed buff does not stack."
- },
- "hand_of_midas": {
-  "id": 65,
-  "key": "hand_of_midas",
-  "name": "Hand of Midas",
-  "kind": "shop",
-  "cost": 2200,
-  "tier": null,
-  "category": "basics",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png",
-  "components": [
-   "gloves"
-  ],
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Transmute",
-    "description": "Kills a non-hero target for 160 gold. Killing a neutral creep additionally grants a madstone bundle.\n\n Cannot be used on Ancient creeps."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "bonus_attack_speed",
-    "display": "+ {value} Attack Speed",
-    "value": "40"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "Preserved through unknown magical means, the Hand of Midas is a weapon of greed, sacrificing animals to line the owner's pockets.",
-  "notes": "The gold given is unreliable gold (you do not get the normal creep bounty).\nExperience gained by using Transmute is not shared."
  },
  "crimson_guard": {
   "id": 242,
@@ -4454,59 +4454,6 @@
   "lore": "A glowing jewel formed out of assorted parts that somehow fit together perfectly.",
   "notes": "Restore does not affect units that have been affected by Restore or Guardian Greaves Mend within Mekansm's cooldown.\nMultiple instances of Mekansm Aura do not stack."
  },
- "bloodthorn": {
-  "id": 250,
-  "key": "bloodthorn",
-  "name": "Bloodthorn",
-  "kind": "shop",
-  "cost": 6400,
-  "tier": null,
-  "category": "support",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png",
-  "components": [
-   "orchid",
-   "oblivion_staff",
-   "javelin"
-  ],
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Soul Rend",
-    "description": "Silences a target for 5 seconds. At the end of the silence, an additional 60% of all damage taken during the silence will be dealt to the target as magical damage.\n\nAll attacks on the silenced target will deal additional damage equal to 50 if the attacker is a hero, and 25, if the attacker is a creep. Provides True Strike for your attacks and attacks from your controlled units against the silenced target."
-   },
-   {
-    "type": "passive",
-    "title": "Pierce",
-    "description": "Grants each attack a 40% chance to pierce through evasion and deal 60 bonus magical damage."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "bonus_intellect",
-    "display": "+ {value} Intelligence",
-    "value": "25"
-   },
-   {
-    "key": "bonus_attack_speed",
-    "display": "+ {value} Attack Speed",
-    "value": "70"
-   },
-   {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "4"
-   },
-   {
-    "key": "bonus_damage",
-    "display": "+ {value} Damage",
-    "value": "20"
-   }
-  ],
-  "cooldown": 15,
-  "manaCost": 150,
-  "lore": "A reviled blade that bites deeper with each wriggle of its victim's final throes.",
-  "notes": ""
- },
  "harpoon": {
   "id": 939,
   "key": "harpoon",
@@ -4562,6 +4509,59 @@
   "cooldown": 19,
   "manaCost": 50,
   "lore": "A perfect solution for the flight of foes.",
+  "notes": ""
+ },
+ "bloodthorn": {
+  "id": 250,
+  "key": "bloodthorn",
+  "name": "Bloodthorn",
+  "kind": "shop",
+  "cost": 6400,
+  "tier": null,
+  "category": "support",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png",
+  "components": [
+   "orchid",
+   "oblivion_staff",
+   "javelin"
+  ],
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Soul Rend",
+    "description": "Silences a target for 5 seconds. At the end of the silence, an additional 60% of all damage taken during the silence will be dealt to the target as magical damage.\n\nAll attacks on the silenced target will deal additional damage equal to 50 if the attacker is a hero, and 25, if the attacker is a creep. Provides True Strike for your attacks and attacks from your controlled units against the silenced target."
+   },
+   {
+    "type": "passive",
+    "title": "Pierce",
+    "description": "Grants each attack a 40% chance to pierce through evasion and deal 60 bonus magical damage."
+   }
+  ],
+  "attrib": [
+   {
+    "key": "bonus_intellect",
+    "display": "+ {value} Intelligence",
+    "value": "25"
+   },
+   {
+    "key": "bonus_attack_speed",
+    "display": "+ {value} Attack Speed",
+    "value": "70"
+   },
+   {
+    "key": "bonus_mana_regen",
+    "display": "+ {value} Mana Regeneration",
+    "value": "4"
+   },
+   {
+    "key": "bonus_damage",
+    "display": "+ {value} Damage",
+    "value": "20"
+   }
+  ],
+  "cooldown": 15,
+  "manaCost": 150,
+  "lore": "A reviled blade that bites deeper with each wriggle of its victim's final throes.",
   "notes": ""
  },
  "smoke_of_deceit": {
@@ -4762,43 +4762,6 @@
   "lore": "A hammer forged of pure mithril.",
   "notes": ""
  },
- "silver_edge": {
-  "id": 249,
-  "key": "silver_edge",
-  "name": "Silver Edge",
-  "kind": "shop",
-  "cost": 5700,
-  "tier": null,
-  "category": "weapons",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/silver_edge.png",
-  "components": [
-   "invis_sword",
-   "demon_edge"
-  ],
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Shadow Walk",
-    "description": "Makes you invisible for 17 seconds, or until you attack or cast a spell. While invisible, you move 20% faster and can move through units.\n\nAttacking to end the invisibility will deal 300 bonus physical damage, disable their passive abilities for 5 seconds, and cap their movement speed to 200."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "bonus_damage",
-    "display": "+ {value} Damage",
-    "value": "70"
-   },
-   {
-    "key": "bonus_attack_speed",
-    "display": "+ {value} Attack Speed",
-    "value": "35"
-   }
-  ],
-  "cooldown": 23,
-  "manaCost": 75,
-  "lore": "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
-  "notes": ""
- },
  "blade_mail": {
   "id": 127,
   "key": "blade_mail",
@@ -4840,6 +4803,43 @@
   "manaCost": 25,
   "lore": "A razor-sharp coat of mail, it is the choice of selfless martyrs in combat.",
   "notes": "Damage Return is calculated before any kind of reduction.\nReturned damage type is the same as it was received.\nDamage done by this item is considered reflected damage. Reflected damage does not provide any lifesteal and cannot be reflected."
+ },
+ "silver_edge": {
+  "id": 249,
+  "key": "silver_edge",
+  "name": "Silver Edge",
+  "kind": "shop",
+  "cost": 5700,
+  "tier": null,
+  "category": "weapons",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/silver_edge.png",
+  "components": [
+   "invis_sword",
+   "demon_edge"
+  ],
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Shadow Walk",
+    "description": "Makes you invisible for 17 seconds, or until you attack or cast a spell. While invisible, you move 20% faster and can move through units.\n\nAttacking to end the invisibility will deal 300 bonus physical damage, disable their passive abilities for 5 seconds, and cap their movement speed to 200."
+   }
+  ],
+  "attrib": [
+   {
+    "key": "bonus_damage",
+    "display": "+ {value} Damage",
+    "value": "70"
+   },
+   {
+    "key": "bonus_attack_speed",
+    "display": "+ {value} Attack Speed",
+    "value": "35"
+   }
+  ],
+  "cooldown": 23,
+  "manaCost": 75,
+  "lore": "Once used to slay an unjust king, only to have the kingdom erupt into civil war in the aftermath.",
+  "notes": ""
  },
  "broadsword": {
   "id": 3,
@@ -5018,6 +5018,29 @@
   "lore": "Light boots made from spider skin that tingles your senses.",
   "notes": ""
  },
+ "flask": {
+  "id": 39,
+  "key": "flask",
+  "name": "Healing Salve",
+  "kind": "shop",
+  "cost": 100,
+  "tier": null,
+  "category": "consumables",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/flask.png",
+  "components": null,
+  "abilities": [
+   {
+    "type": "use",
+    "title": "Salve",
+    "description": "Grants 30 health regeneration to the target for 13 seconds.\n\nIf the unit is attacked by an enemy hero or Roshan, the effect is lost.\n\nHeals for half the amount per second when cast on an ally."
+   }
+  ],
+  "attrib": [],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "A magical salve that can quickly mend even the deepest of wounds.",
+  "notes": ""
+ },
  "blood_grenade": {
   "id": 1123,
   "key": "blood_grenade",
@@ -5047,28 +5070,34 @@
   "lore": "Both the hunter and the hunted must pay the blood price.",
   "notes": ""
  },
- "flask": {
-  "id": 39,
-  "key": "flask",
-  "name": "Healing Salve",
+ "shadow_amulet": {
+  "id": 215,
+  "key": "shadow_amulet",
+  "name": "Shadow Amulet",
   "kind": "shop",
-  "cost": 100,
+  "cost": 900,
   "tier": null,
-  "category": "consumables",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/flask.png",
+  "category": "misc",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shadow_amulet.png",
   "components": null,
   "abilities": [
    {
-    "type": "use",
-    "title": "Salve",
-    "description": "Grants 30 health regeneration to the target for 13 seconds.\n\nIf the unit is attacked by an enemy hero or Roshan, the effect is lost.\n\nHeals for half the amount per second when cast on an ally."
+    "type": "active",
+    "title": "Fade",
+    "description": "Grants invisibility to you or a target allied hero for 3.5s. Movement speed during the invisibility is reduced by 35%."
    }
   ],
-  "attrib": [],
-  "cooldown": null,
+  "attrib": [
+   {
+    "key": "fade_time",
+    "display": "FADE TIME: {value}",
+    "value": "1.25"
+   }
+  ],
+  "cooldown": 18,
   "manaCost": null,
-  "lore": "A magical salve that can quickly mend even the deepest of wounds.",
-  "notes": ""
+  "lore": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
+  "notes": "Takes 1.25s of the 3.5s for the hero to fully fade into invisibility."
  },
  "enchanted_mango": {
   "id": 216,
@@ -5098,35 +5127,6 @@
   "manaCost": null,
   "lore": "The bittersweet flavors of Jidi Isle are irresistible to amphibians.",
   "notes": "Hold Control to use on a nearby allied hero."
- },
- "shadow_amulet": {
-  "id": 215,
-  "key": "shadow_amulet",
-  "name": "Shadow Amulet",
-  "kind": "shop",
-  "cost": 900,
-  "tier": null,
-  "category": "misc",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shadow_amulet.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Fade",
-    "description": "Grants invisibility to you or a target allied hero for 3.5s. Movement speed during the invisibility is reduced by 35%."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "fade_time",
-    "display": "FADE TIME: {value}",
-    "value": "1.25"
-   }
-  ],
-  "cooldown": 18,
-  "manaCost": null,
-  "lore": "A small talisman that clouds the senses of one's enemies when held perfectly still.",
-  "notes": "Takes 1.25s of the 3.5s for the hero to fully fade into invisibility."
  },
  "greater_crit": {
   "id": 141,
@@ -5263,34 +5263,6 @@
   "lore": "The cursed brooch of a fallen guardian who stalks forever between the veil of life and death.",
   "notes": "Counts as a Critical Strike for purposes of stacking with other sources of Critical Strike.\nPhantom Critical does not work against buildings."
  },
- "helm_of_iron_will": {
-  "id": 6,
-  "key": "helm_of_iron_will",
-  "name": "Helm of Iron Will",
-  "kind": "shop",
-  "cost": 975,
-  "tier": null,
-  "category": "weapons_armor",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/helm_of_iron_will.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_armor",
-    "display": "+ {value} Armor",
-    "value": "4"
-   },
-   {
-    "key": "bonus_regen",
-    "display": "+ {value} Health Regeneration",
-    "value": "4"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "The helmet of a legendary warrior who fell in battle.",
-  "notes": ""
- },
  "yasha": {
   "id": 170,
   "key": "yasha",
@@ -5326,6 +5298,34 @@
   "manaCost": null,
   "lore": "Yasha is regarded as the swiftest weapon ever created.",
   "notes": "Yasha-based movement speed bonuses from multiple items do not stack."
+ },
+ "helm_of_iron_will": {
+  "id": 6,
+  "key": "helm_of_iron_will",
+  "name": "Helm of Iron Will",
+  "kind": "shop",
+  "cost": 975,
+  "tier": null,
+  "category": "weapons_armor",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/helm_of_iron_will.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_armor",
+    "display": "+ {value} Armor",
+    "value": "4"
+   },
+   {
+    "key": "bonus_regen",
+    "display": "+ {value} Health Regeneration",
+    "value": "4"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "The helmet of a legendary warrior who fell in battle.",
+  "notes": ""
  },
  "gloves": {
   "id": 25,
@@ -5373,6 +5373,29 @@
   "lore": "",
   "notes": "Stacks multiplicatively with other sources of magic resistance."
  },
+ "orb_of_venom": {
+  "id": 181,
+  "key": "orb_of_venom",
+  "name": "Orb of Venom",
+  "kind": "shop",
+  "cost": 350,
+  "tier": null,
+  "category": "weapons_armor",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_venom.png",
+  "components": null,
+  "abilities": [
+   {
+    "type": "passive",
+    "title": "Poison Attack",
+    "description": "Poisons the target, dealing 12 magical damage per second. Lasts for 3 seconds."
+   }
+  ],
+  "attrib": [],
+  "cooldown": 9,
+  "manaCost": null,
+  "lore": "Envenoms your veapon with the venom of a venomous viper.",
+  "notes": "Does not stack with its upgrades."
+ },
  "invis_sword": {
   "id": 152,
   "key": "invis_sword",
@@ -5410,29 +5433,6 @@
   "manaCost": 75,
   "lore": "The blade of a fallen king, it allows you to move unseen and strike from the shadows.",
   "notes": "Has a 0.3 second fade time.\nIf the invisibility ends without attacking, the bonus damage is lost."
- },
- "orb_of_venom": {
-  "id": 181,
-  "key": "orb_of_venom",
-  "name": "Orb of Venom",
-  "kind": "shop",
-  "cost": 350,
-  "tier": null,
-  "category": "weapons_armor",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_venom.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Poison Attack",
-    "description": "Poisons the target, dealing 12 magical damage per second. Lasts for 3 seconds."
-   }
-  ],
-  "attrib": [],
-  "cooldown": 9,
-  "manaCost": null,
-  "lore": "Envenoms your veapon with the venom of a venomous viper.",
-  "notes": "Does not stack with its upgrades."
  },
  "ring_of_basilius": {
   "id": 88,
@@ -5711,29 +5711,6 @@
   "lore": "An impressive kit of trigger enhancements born in an aging assassin's idle mind.",
   "notes": ""
  },
- "crown": {
-  "id": 261,
-  "key": "crown",
-  "name": "Crown",
-  "kind": "shop",
-  "cost": 450,
-  "tier": null,
-  "category": "attributes",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/crown.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_all_stats",
-    "display": "+ {value} All Attributes",
-    "value": "4"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "A stately crown created to ensure a well-meaning but ungifted heir could fend off usurpers and govern with a strong hand.",
-  "notes": ""
- },
  "energy_booster": {
   "id": 59,
   "key": "energy_booster",
@@ -5755,6 +5732,29 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "This lapis gemstone is commonly added to the collection of wizards seeking to improve their presence in combat.",
+  "notes": ""
+ },
+ "crown": {
+  "id": 261,
+  "key": "crown",
+  "name": "Crown",
+  "kind": "shop",
+  "cost": 450,
+  "tier": null,
+  "category": "attributes",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/crown.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_all_stats",
+    "display": "+ {value} All Attributes",
+    "value": "4"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "A stately crown created to ensure a well-meaning but ungifted heir could fend off usurpers and govern with a strong hand.",
   "notes": ""
  },
  "phylactery": {
@@ -6052,29 +6052,6 @@
   "lore": "So powerful, it cannot have a single owner.",
   "notes": "If Divine Rapier is dropped and picked up by an enemy of its original owner, it cannot be dropped again except by death.\nSpell Amplification from multiple Rapiers does not stack."
  },
- "circlet": {
-  "id": 20,
-  "key": "circlet",
-  "name": "Circlet",
-  "kind": "shop",
-  "cost": 155,
-  "tier": null,
-  "category": "attributes",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/circlet.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "bonus_all_stats",
-    "display": "+ {value} All Attributes",
-    "value": "2"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "An elegant circlet designed for human princesses.",
-  "notes": ""
- },
  "faerie_fire": {
   "id": 237,
   "key": "faerie_fire",
@@ -6145,6 +6122,29 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "A powerful staff used by a master warrior.",
+  "notes": ""
+ },
+ "circlet": {
+  "id": 20,
+  "key": "circlet",
+  "name": "Circlet",
+  "kind": "shop",
+  "cost": 155,
+  "tier": null,
+  "category": "attributes",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/circlet.png",
+  "components": null,
+  "abilities": [],
+  "attrib": [
+   {
+    "key": "bonus_all_stats",
+    "display": "+ {value} All Attributes",
+    "value": "2"
+   }
+  ],
+  "cooldown": null,
+  "manaCost": null,
+  "lore": "An elegant circlet designed for human princesses.",
   "notes": ""
  },
  "overwhelming_blink": {
@@ -7067,29 +7067,6 @@
   "lore": "",
   "notes": ""
  },
- "giant_maul": {
-  "id": 1643,
-  "key": "giant_maul",
-  "name": "Giant's Maul",
-  "kind": "neutral",
-  "cost": 0,
-  "tier": 4,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/giant_maul.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Crushing Blow",
-    "description": "Empowers the next attack to be a critical hit dealing 150% damage. Hitting an enemy with an empowered attack temporarily decreases their movement speed by 10%, attack speed by 15%, and cast speed by 20% for 3 seconds."
-   }
-  ],
-  "attrib": [],
-  "cooldown": 15,
-  "manaCost": null,
-  "lore": "Crude but smashingly effective.",
-  "notes": ""
- },
  "searing_signet": {
   "id": 1604,
   "key": "searing_signet",
@@ -7112,6 +7089,29 @@
   "manaCost": null,
   "lore": "To torture a magic user, one must devise means far beyond the mundane.",
   "notes": "Will not ignite enemies that are more than 2000 range away."
+ },
+ "giant_maul": {
+  "id": 1643,
+  "key": "giant_maul",
+  "name": "Giant's Maul",
+  "kind": "neutral",
+  "cost": 0,
+  "tier": 4,
+  "category": null,
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/giant_maul.png",
+  "components": null,
+  "abilities": [
+   {
+    "type": "passive",
+    "title": "Crushing Blow",
+    "description": "Empowers the next attack to be a critical hit dealing 150% damage. Hitting an enemy with an empowered attack temporarily decreases their movement speed by 10%, attack speed by 15%, and cast speed by 20% for 3 seconds."
+   }
+  ],
+  "attrib": [],
+  "cooldown": 15,
+  "manaCost": null,
+  "lore": "Crude but smashingly effective.",
+  "notes": ""
  },
  "possessed_mask": {
   "id": 577,
@@ -7475,29 +7475,6 @@
   "lore": "",
   "notes": "Player controlled targets includes heroes and any creep summoned or converted by them."
  },
- "psychic_headband": {
-  "id": 675,
-  "key": "psychic_headband",
-  "name": "Psychic Headband",
-  "kind": "neutral",
-  "cost": 0,
-  "tier": 3,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/psychic_headband.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "active",
-    "title": "Psychic Push",
-    "description": "Pushes the target unit away from you 400 distance."
-   }
-  ],
-  "attrib": [],
-  "cooldown": 15,
-  "manaCost": null,
-  "lore": "A failed experiment in finer telekinetic control, still fit for other ends.",
-  "notes": "Does not trigger spell block or spell reflect."
- },
  "pogo_stick": {
   "id": 840,
   "key": "pogo_stick",
@@ -7520,6 +7497,29 @@
   "manaCost": null,
   "lore": "An antique plaything found in the ruins of an Ozenja circus bazaar.",
   "notes": ""
+ },
+ "psychic_headband": {
+  "id": 675,
+  "key": "psychic_headband",
+  "name": "Psychic Headband",
+  "kind": "neutral",
+  "cost": 0,
+  "tier": 3,
+  "category": null,
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/psychic_headband.png",
+  "components": null,
+  "abilities": [
+   {
+    "type": "active",
+    "title": "Psychic Push",
+    "description": "Pushes the target unit away from you 400 distance."
+   }
+  ],
+  "attrib": [],
+  "cooldown": 15,
+  "manaCost": null,
+  "lore": "A failed experiment in finer telekinetic control, still fit for other ends.",
+  "notes": "Does not trigger spell block or spell reflect."
  },
  "riftshadow_prism": {
   "id": 1718,
