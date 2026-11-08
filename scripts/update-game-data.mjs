@@ -243,7 +243,8 @@ async function updateAll() {
       if (!wanted.has(item)) console.warn(`  анхаар: ${file} дахь counter item "${item}" одоогийн тоглоомд алга`);
   }
 
-  const keys = [...wanted.keys()];
+  // Тогтмол дараалал: OpenDota-гийн хариуны дараалал өдөр бүр өөр байдаг тул items.json-ийн diff дэмий томордог.
+  const keys = [...wanted.keys()].sort();
   const itemData = await pool(keys, 6, async (key) => (await feed("itemdata", { item_id: byName.get(key).id })).result.data.items[0]);
 
   function parseItemAbilities(desc, specials) {

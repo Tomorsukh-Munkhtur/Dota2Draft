@@ -55,7 +55,7 @@ export default function HeroKitPanels({ kitMn, kitEn, patch }: { kitMn: HeroKit;
           <h2 className="text-sm font-semibold uppercase tracking-wider text-gold">Чадварууд (skill)</h2>
           <div className="flex items-center gap-2">
             <span className="hidden text-[11px] text-muted sm:inline">
-              {lang === "mn" ? "Google Translate-ийн машин орчуулга" : `Valve-ийн албан ёсны тайлбар · патч ${patch ?? "?"}`}
+              {lang === "mn" ? "Монгол орчуулга" : `Valve-ийн албан ёсны тайлбар · патч ${patch ?? "?"}`}
             </span>
             <LangSwitch lang={lang} setLang={setLang} />
           </div>

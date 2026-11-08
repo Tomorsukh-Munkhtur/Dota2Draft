@@ -39,7 +39,8 @@ export function Ability({ a, showIcon = true }: { a: HeroAbility; showIcon?: boo
           <dl className="grid gap-x-4 gap-y-0.5 text-xs sm:grid-cols-2">
             {a.values.map((v, i) => (
               <div key={i} className="flex justify-between gap-2">
-                <dt className="text-muted">{v.label}</dt>
+                {/* Valve зарим нэрэнд <font color=…> тэмдэглэгээ оруулдаг — текстээр нь харуулахгүй. */}
+                <dt className="text-muted">{v.label.replace(/<[^>]+>/g, "")}</dt>
                 <dd className="tabular-nums">{v.value}</dd>
               </div>
             ))}
