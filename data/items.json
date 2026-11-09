@@ -190,58 +190,6 @@
   "lore": "A relic that enchants the bodies of those around it for swifter movement in times of crisis.",
   "notes": ""
  },
- "angels_demise": {
-  "id": 1808,
-  "key": "angels_demise",
-  "name": "Khanda",
-  "kind": "shop",
-  "cost": 5600,
-  "tier": null,
-  "category": "support",
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/angels_demise.png",
-  "components": [
-   "phylactery",
-   "soul_booster"
-  ],
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Empower Spell",
-    "description": "The next Unit Target spell you cast on an enemy deals a separate 250 additional damage, disables their passives, and slows their movement speed by 30% for 4s."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "bonus_health",
-    "display": "+ {value} Health",
-    "value": "450"
-   },
-   {
-    "key": "bonus_mana",
-    "display": "+ {value} Mana",
-    "value": "450"
-   },
-   {
-    "key": "bonus_all_stats",
-    "display": "+ {value} All Attributes",
-    "value": "8"
-   },
-   {
-    "key": "bonus_health_regen",
-    "display": "+ {value} Health Regeneration",
-    "value": "7"
-   },
-   {
-    "key": "bonus_mana_regen",
-    "display": "+ {value} Mana Regeneration",
-    "value": "3"
-   }
-  ],
-  "cooldown": 9,
-  "manaCost": null,
-  "lore": "A blade sharp enough to slice through magic itself.",
-  "notes": "The slow debuff is dispellable.\nThe break debuff is not dispellable."
- },
  "arcane_blink": {
   "id": 604,
   "key": "arcane_blink",
