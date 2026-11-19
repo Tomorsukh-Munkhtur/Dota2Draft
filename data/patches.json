@@ -130,7 +130,7 @@
        "i": 1
       },
       {
-       "t": "Leashes that do not expressly pierce debuff immunity (such as Slark's Pounce) will no longer prevent movement-based abilities from being executed even if they are applied after the target becomes debuff immune",
+       "t": "Leashes that do not expressly pierce debuff immunity (such as Slark's Pounce) will no longer prevent movement-based abilities from being executed",
        "i": 1
       },
       {
@@ -3598,6 +3598,11 @@
        "a": "Liquid Courage"
       },
       {
+       "t": "Ability is added to the HUD to denote cooldown. When Aghanim's Shard is purchased, the debuff is used for the passive cooldown instead",
+       "i": 2,
+       "a": "Liquid Courage"
+      },
+      {
        "t": "Aghanim's Shard cooldown decreased from 20s to 15s",
        "i": 1,
        "a": "Liquid Courage"
@@ -3648,7 +3653,7 @@
        "a": "Primal Split"
       },
       {
-       "t": "Fire Brewling grabs the target and pulls it 400/500/600/700 in the selected direction, while dealing 50/100/150/200 damage to it if it's an enemy. Pull Duration: 0.5s. Cast Range: 150. Mana Cost: 50. Cooldown: 8s",
+       "t": "Fire Brewling grabs the target and runs with it for 400/500/600/700 units in the selected direction, while dealing 50/100/150/200 damage to it if it's an enemy. Pull Duration: 0.5s. Cast Range: 150. Mana Cost: 50. Cooldown: 8s",
        "i": 2,
        "a": "Primal Split"
       },
@@ -4098,10 +4103,6 @@
      "slug": "nyx_assassin",
      "lines": [
       {
-       "t": "Base Health Regen decreased by 1.0",
-       "i": 1
-      },
-      {
        "t": "Removed Mana Burn Innate ability",
        "i": 1
       },
@@ -4146,19 +4147,9 @@
        "a": "Mind Flare"
       },
       {
-       "t": "Max Mana as Damage decreased from 25/30/35/40% to 20/25/30/35%",
-       "i": 1,
-       "a": "Mind Flare"
-      },
-      {
        "t": "Mana Burn Percentage increased from 9/12/15/18% to 12.5/15/17.5/20%",
        "i": 1,
        "a": "Mind Flare"
-      },
-      {
-       "t": "Bonus Damage decreased from 300/400/500 to 300/380/460",
-       "i": 1,
-       "a": "Vendetta"
       },
       {
        "t": "No longer provides 1% max health and 1% max mana restoration",
@@ -4246,7 +4237,7 @@
        "a": "Will-O-Wisp"
       },
       {
-       "t": "Ignis Faatus is no longer immune to damage from certain types of units",
+       "t": "Ignis Fatuus is no longer immune to damage from certain types of units",
        "i": 1,
        "a": "Will-O-Wisp"
       },
@@ -5688,7 +5679,7 @@
        "a": "Raptor Dance"
       },
       {
-       "t": "No longer lifesteals vs creeps",
+       "t": "Can no longer lifesteal from creeps",
        "i": 1,
        "a": "Raptor Dance"
       }

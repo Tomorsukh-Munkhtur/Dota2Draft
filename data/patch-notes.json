@@ -2794,6 +2794,10 @@
      },
      {
       "ability": "Liquid Courage",
+      "text": "Ability is added to the HUD to denote cooldown. When Aghanim's Shard is purchased, the debuff is used for the passive cooldown instead"
+     },
+     {
+      "ability": "Liquid Courage",
       "text": "Aghanim's Shard cooldown decreased from 20s to 15s"
      },
      {
@@ -2834,7 +2838,7 @@
      },
      {
       "ability": "Primal Split",
-      "text": "Fire Brewling grabs the target and pulls it 400/500/600/700 in the selected direction, while dealing 50/100/150/200 damage to it if it's an enemy. Pull Duration: 0.5s. Cast Range: 150. Mana Cost: 50. Cooldown: 8s"
+      "text": "Fire Brewling grabs the target and runs with it for 400/500/600/700 units in the selected direction, while dealing 50/100/150/200 damage to it if it's an enemy. Pull Duration: 0.5s. Cast Range: 150. Mana Cost: 50. Cooldown: 8s"
      },
      {
       "ability": "Talent",
@@ -3236,10 +3240,6 @@
     "lines": [
      {
       "ability": null,
-      "text": "Base Health Regen decreased by 1.0"
-     },
-     {
-      "ability": null,
       "text": "Removed Mana Burn Innate ability"
      },
      {
@@ -3276,15 +3276,7 @@
      },
      {
       "ability": "Mind Flare",
-      "text": "Max Mana as Damage decreased from 25/30/35/40% to 20/25/30/35%"
-     },
-     {
-      "ability": "Mind Flare",
       "text": "Mana Burn Percentage increased from 9/12/15/18% to 12.5/15/17.5/20%"
-     },
-     {
-      "ability": "Vendetta",
-      "text": "Bonus Damage decreased from 300/400/500 to 300/380/460"
      },
      {
       "ability": "Burrow",
@@ -3362,7 +3354,7 @@
      },
      {
       "ability": "Will-O-Wisp",
-      "text": "Ignis Faatus is no longer immune to damage from certain types of units"
+      "text": "Ignis Fatuus is no longer immune to damage from certain types of units"
      },
      {
       "ability": "Talent",
@@ -4653,7 +4645,7 @@
      },
      {
       "ability": "Raptor Dance",
-      "text": "No longer lifesteals vs creeps"
+      "text": "Can no longer lifesteal from creeps"
      }
     ]
    }
