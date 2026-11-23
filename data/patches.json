@@ -707,7 +707,7 @@
        "a": "Blade Fury"
       },
       {
-       "t": "Keeps attacking units even if the stop/hold command is issued and while stunned. Buildings are not automatically attacked",
+       "t": "Keeps attacking units even if the stop/hold command is issued. Buildings are not automatically attacked",
        "i": 3,
        "a": "Blade Fury"
       },
@@ -5664,7 +5664,7 @@
        "a": "Raptor Dance"
       },
       {
-       "t": "Base Damage increased from 40/70/100 to 40/80/120",
+       "t": "Base Damage increased from 40/70/100 to 50/100/150",
        "i": 1,
        "a": "Raptor Dance"
       },
@@ -5743,7 +5743,7 @@
        "i": 2
       },
       {
-       "t": "Global Cast Range. No Mana Cost. No cooldown",
+       "t": "Global Cast Range. No Mana Cost. Cooldown: 30s",
        "i": 2
       },
       {

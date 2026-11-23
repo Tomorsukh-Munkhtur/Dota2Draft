@@ -227,7 +227,7 @@
      },
      {
       "ability": "Blade Fury",
-      "text": "Keeps attacking units even if the stop/hold command is issued and while stunned. Buildings are not automatically attacked"
+      "text": "Keeps attacking units even if the stop/hold command is issued. Buildings are not automatically attacked"
      },
      {
       "ability": "Blade Fury",
@@ -4633,7 +4633,7 @@
      },
      {
       "ability": "Raptor Dance",
-      "text": "Base Damage increased from 40/70/100 to 40/80/120"
+      "text": "Base Damage increased from 40/70/100 to 50/100/150"
      },
      {
       "ability": "Raptor Dance",
@@ -4697,7 +4697,7 @@
     "lines": [
      "Dropped from Tormentor on every death",
      "Use: Grand Call to Arms. Summons a wave of mega creeps on each of your lanes. The number of creeps depends on the current creep amount in a wave, but always summons at least 1 siege unit and 1 flagbearer on each lane",
-     "Global Cast Range. No Mana Cost. No cooldown",
+     "Global Cast Range. No Mana Cost. Cooldown: 30s",
      "Has 1 charge. Doesn't stack in inventory. Can be used from backpack"
     ]
    }
