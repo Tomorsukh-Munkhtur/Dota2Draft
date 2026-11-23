@@ -1,0 +1,25 @@
+{
+  "key": "ristuls_devotion",
+  "category": "defense",
+  "summary": "Vladmir's Offering-ийг сайжруулсан aura item: ойролцоох холбоотнуудад lifesteal, spell lifesteal, нэмэлт хохирол, хуяг өгдөг, багийн тулааны хүчтэй item.",
+  "abilities": [
+    {
+      "title": "Ristul's Aura",
+      "description": "1200 радиус доторх холбоотнуудад 20% lifesteal, 18% spell lifesteal, 18% нэмэлт хохирол, 1 mana нөхөн сэргэлт, 2 хуяг өгнө.\n\nCreep руу довтлоход lifesteal 12%, creep-ийн эсрэг spell lifesteal 3.6% хүртэл буурна. Buckler-ийн Buckler Aura-тай давхцахгүй."
+    }
+  ],
+  "usage": "Үнэ: 3800 алт (Vladmir's Offering + Splintmail + Voodoo Mask). Өөрт нь +8 хуяг, +1 mana нөхөн сэргэлт өгнө.\n\nSpell lifesteal нэмэгдсэн тул зөвхөн довтолгоогоор бус, чадвараар хохирол өгдөг баатруудтай багт ч ашигтай. Дуудсан нэгжүүдтэй (summon) баатрууд болон багаар тулалддаг offlaner-уудад тохирно.",
+  "goodFor": [
+    "beastmaster",
+    "lycan",
+    "chen",
+    "centaur",
+    "mars",
+    "enchantress"
+  ],
+  "tips": [
+    "Aura 1200 радиустай тул багийн тулаанд холбоотнуудтайгаа ойр бай.",
+    "Дуудсан нэгжүүд ч aura-гаас ашиг хүртэнэ.",
+    "Buckler-тай давхцахгүй тул багт хэн нь Buckler авахыг тохиролц."
+  ]
+}

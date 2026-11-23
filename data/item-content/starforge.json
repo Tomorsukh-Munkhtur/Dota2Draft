@@ -1,0 +1,28 @@
+{
+  "key": "starforge",
+  "category": "support",
+  "summary": "Meteor Hammer болон Ultimate Orb-ийг нэгтгэсэн item: бүх атрибут, spell amplification өгч, Meteor Hammer-ийг хүчирхэгжүүлэн, таны disable дуусах бүрд дайсныг шатаадаг.",
+  "abilities": [
+    {
+      "title": "Meteor Hammer",
+      "description": "CHANNEL - 2 секунд channel хийсний дараа 0.5 секундэд солир унаж, 400 AoE доторх дайснуудыг 0.75 секунд stun хийн 150 хохирол өгнө. Дараа нь 6 секундийн турш секунд тутам 60 хохирол өгнө. Барилга бус нэгжүүд нэмэлт max HP-ийнхаа 15%-тай тэнцэх хохирол авч, 6 секунд 15% удааширна. Барилгад 75% хохирол өгнө. Mana зардал: 175."
+    },
+    {
+      "title": "Celestial Flare",
+      "description": "Таны аливаа disable дайсны нэгж дээр дуусмагц тэр нэгж 3 секундийн турш секунд тутам 60 хохирлоор шатаж, 15% удаан хөдөлнө. Аливаа чадвар эсвэл item-ийн Stun, Hex, Hypnosis, Cyclone, Taunt, Fear, Sleep болон Banish-ээс идэвхжинэ. Meteor Hammer-ийн шаталттай давхцана. Барилгад үйлчлэхгүй."
+    }
+  ],
+  "usage": "Үнэ: 6000 алт (Meteor Hammer + Ultimate Orb + жор 450). +24 Strength, +24 Agility, +40 Intelligence, +6% Spell Amplification, +20% mana нөхөн сэргэлтийн өсгөлт өгнө.\n\nDisable ихтэй баатруудад хамгийн тохиромжтой: stun, hex дуусах бүрд Celestial Flare нэмэлт хохирол болон удаашрал өгнө. Meteor Hammer нь max HP-ээс тооцох хохиролтой болсон тул HP ихтэй дайсны эсрэг ч хүчтэй.",
+  "goodFor": [
+    "lion",
+    "shadow_shaman",
+    "earthshaker",
+    "tidehunter",
+    "rubick"
+  ],
+  "tips": [
+    "Stun, hex хийх бүрд Celestial Flare идэвхжинэ, олон disable-тэй баатарт ав.",
+    "Meteor Hammer-ийг дайсан stun-д орсон эсвэл хөдлөх боломжгүй үед хэрэглэ.",
+    "Mana зардал 175 болсон тул mana-гаа хэмнэ."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "key": "mind_breaker",
+  "category": "neutral",
+  "summary": "Tier 4-ийн нейтрал артефакт: дараагийн довтолгоогоор дайсныг silence-д оруулдаг, caster баатруудын эсрэг carry-уудын хүчтэй item.",
+  "abilities": [
+    {
+      "title": "Silence Strike",
+      "description": "Дараагийн довтолгоо тань дайсныг 2 секундийн турш silence-д оруулна. Cooldown: 14 секунд. Silence-ийн хугацаа Item Potency-оос хамаарна.\n\nDormant Curio-той урласан бол silence 2.6 секунд үргэлжилнэ."
+    }
+  ],
+  "usage": "Mind Breaker нь дайсны баатрыг чадвараа хэрэглэхээс нь сэргийлж, зугтах эсвэл хариу тулалдах боломжийг нь хаана. Ялангуяа blink, зугтах чадвартай caster баатруудын эсрэг хүчтэй.\n\nДайсан руу дайрахдаа эхний довтолгоогоор silence хийгээд, дараа нь хохирлоо өгвөл дайсан хариу үйлдэл хийж чадахгүй.",
+  "goodFor": [
+    "phantom_assassin",
+    "slark",
+    "juggernaut",
+    "troll_warlord",
+    "faceless_void",
+    "spectre"
+  ],
+  "tips": [
+    "Эхний довтолгоогоор silence хийж, дайсныг зугтах чадвараа хэрэглэхээс сэргийл.",
+    "Illusion-ууд Item Potency багатай тул silence-ийн хугацаа богино байна.",
+    "14 секундийн cooldown-той тул зөв бай сонгож хэрэглэ."
+  ]
+}

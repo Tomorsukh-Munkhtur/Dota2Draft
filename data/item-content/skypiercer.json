@@ -1,0 +1,28 @@
+{
+  "key": "skypiercer",
+  "category": "weapons",
+  "summary": "Heaven's Halberd, Sange болон Talisman of Evasion-ийг нэгтгэсэн item: Strength, evasion, удаашралын эсэргүүцэл өгч, дайсны баатрын ойролцоо Disarm-ийн cooldown хурдан сэргэдэг.",
+  "abilities": [
+    {
+      "title": "Disarm",
+      "description": "Байг 3 секундийн турш довтлох боломжгүй болгоно. Хэрэглэх зай: 500. Mana зардал: 50. Cooldown: 15 секунд. Зөвхөн strong dispel-ээр арилна. Debuff Immunity-г нэвтлэхгүй. Heaven's Halberd-тай нийтлэг cooldown-тай."
+    },
+    {
+      "title": "Riposte",
+      "description": "Дайсны баатраас 500 зайд байх бүрд Disarm-ийн cooldown 125% хурдан сэргэнэ. Ойролцоох illusion болон fog of war дахь баатрууд ч идэвхжүүлнэ, харин үл үзэгдэх баатрууд идэвхжүүлэхгүй."
+    }
+  ],
+  "usage": "Үнэ: 6000 алт (Heaven's Halberd + Sange + Talisman of Evasion + жор 300). +35 Strength, +5 хуяг, +5 HP нөхөн сэргэлт, +25% удаашралын эсэргүүцэл, +20% HP сэргэлт, +25% evasion өгнө.\n\nДовтолгоогоор тоглодог дайсны carry-ийн эсрэг хүчтэй хамгаалалт: Disarm-аар түүнийг 3 секунд довтлох боломжгүй болгоно. Дайсны дунд удаан байдаг tank баатарт Riposte-ийн ачаар Disarm ойр ойрхон бэлэн болно.",
+  "goodFor": [
+    "mars",
+    "legion_commander",
+    "centaur",
+    "bristleback",
+    "dragon_knight"
+  ],
+  "tips": [
+    "Disarm-ийг дайсны гол carry дээр хэрэглэ.",
+    "Дайсны баатрын ойролцоо байх тусам Disarm хурдан сэргэнэ.",
+    "Debuff Immunity-тэй байд Disarm үйлчлэхгүй тул BKB дууссаны дараа хэрэглэ."
+  ]
+}
