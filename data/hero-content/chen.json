@@ -6,7 +6,7 @@
   "counterItems": [
     {"item": "spirit_vessel", "reason": "Spirit Vessel нь Hand of God болон Divine Favor-ийн эдгэрэлтийг бууруулж, Chen-ий багийн тулаанд амьд үлдэх чадварыг сулруулна."},
     {"item": "shivas_guard", "reason": "Shiva's Guard-ийн аура ойролцоох дайснуудын эдгэрэлтийг бууруулж, AoE хохирлоор Chen-ий крипүүдийг устгана."},
-    {"item": "mjollnir", "reason": "Mjollnir-ын аянга олон нэгж рүү үсэрч, Chen-ий 400 HP-тэй эрхшээлийн крипүүдийг хурдан устгана."},
+    {"item": "mjollnir", "reason": "Mjollnir-ын аянга олон нэгж рүү үсэрч, Chen-ий эрхшээлийн крипүүдийг (Zealot-оор HP нь өссөн ч) хурдан устгана."},
     {"item": "crimson_guard", "reason": "Crimson Guard нь Chen-ий крипүүдийн олон удаагийн цохилтын хохирлыг багаараа бууруулна."},
     {"item": "bfury", "reason": "Battle Fury-ийн хуваах цохилт (cleave) нь Chen-ий крипүүдийг нэг дор устгаж, тэдний дарамтыг арилгана."}
   ],
