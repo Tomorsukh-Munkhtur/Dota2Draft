@@ -35,7 +35,13 @@ export function SuggestionList({
                 <span className="flex flex-wrap gap-x-2 text-[10px] text-muted">
                   {parts.map((p) => (
                     <span key={`${p.kind}${p.hero}`}>
-                      {p.kind === "vs" ? "⚔" : "🤝"} {data.heroes[p.hero].name}{" "}
+                      {p.kind === "role" ? (
+                        <span title="Багт core эсвэл support хэт олон/цөөн болох тул оноог бууруулсан">🧩 Багийн бүтэц</span>
+                      ) : (
+                        <>
+                          {p.kind === "vs" ? "⚔" : "🤝"} {data.heroes[p.hero].name}
+                        </>
+                      )}{" "}
                       <span className={p.value >= 0 ? "text-good" : "text-bad"}>{formatPct(p.value)}</span>
                     </span>
                   ))}

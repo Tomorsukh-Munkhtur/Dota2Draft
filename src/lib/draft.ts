@@ -74,13 +74,51 @@ export type DraftData = {
   meta: { matchCount: number; to: string; patch: string | null };
 };
 
-export type Contribution = { hero: number; value: number; kind: "vs" | "with" };
+/** `role`: багийн бүрэлдэхүүний тэнцвэрийн торгууль (hero нь санал болгож буй баатар өөрөө). */
+export type Contribution = { hero: number; value: number; kind: "vs" | "with" | "role" };
 
 export type Suggestion = { hero: number; score: number; parts: Contribution[] };
 
+/** Valve-ийн үүргээр: зөвхөн Carry → core, зөвхөн Support → support, аль аль нь эсвэл аль нь ч биш → уян хатан. */
+export type RoleGroup = "core" | "support" | "flex";
+
+export function roleGroup(hero: DraftHero): RoleGroup {
+  const carry = hero.roles.includes("Carry");
+  const support = hero.roles.includes("Support");
+  return carry && !support ? "core" : support && !carry ? "support" : "flex";
+}
+
+const TEAM_SIZE = 5;
+/** 5 баатрын багт ихэвчлэн дор хаяж 2 core, 2 support хэрэгтэй; аль нэг нь 3-аас хэтэрвэл тэнцвэр алдагдана. */
+const MIN_CORES = 2;
+const MIN_SUPPORTS = 2;
+const MAX_SAME = 3;
+/** Нэг "хангагдахгүй үлдэх" үүрэг тутмын торгууль (%-ийн нэгжээр; матчапын давуу тал ихэвчлэн ±4%). */
+const ROLE_PENALTY = 3;
+
+/**
+ * `h`-ийг `allies` багт нэмбэл бүрэлдэхүүн тэнцвэрээ алдах эсэх (0 эсвэл сөрөг утга).
+ * Үлдсэн суудал болон уян хатан баатруудаар нөхөж чадахгүй core/support-ийн дутагдал, мөн нэг төрлийн
+ * хэт олон баатар тутамд ROLE_PENALTY хасна.
+ */
+export function roleBalance(data: DraftData, allies: number[], h: number): number {
+  if (allies.length >= TEAM_SIZE) return 0;
+  const team = [...allies, h].map((i) => roleGroup(data.heroes[i]));
+  const count = (g: RoleGroup) => team.filter((x) => x === g).length;
+  const cores = count("core");
+  const supports = count("support");
+  const flex = count("flex");
+  const left = TEAM_SIZE - team.length;
+  const missing = Math.max(0, MIN_CORES - cores) + Math.max(0, MIN_SUPPORTS - supports);
+  const uncovered = Math.max(0, missing - left - flex);
+  const excess = Math.max(0, cores - MAX_SAME) + Math.max(0, supports - MAX_SAME);
+  return -ROLE_PENALTY * (uncovered + excess);
+}
+
 /**
  * `allies` багт нэмэхэд хамгийн тохиромжтой баатрууд.
- * Оноо = эсрэг баатруудын эсрэг давуу тал + холбоотнуудтай хамтын нэмэгдэл + ерөнхий ялалтын хувийн бага жин.
+ * Оноо = эсрэг баатруудын эсрэг давуу тал + холбоотнуудтай хамтын нэмэгдэл + багийн бүрэлдэхүүний тэнцвэр
+ * + ерөнхий ялалтын хувийн бага жин.
  */
 export function suggest(data: DraftData, allies: number[], enemies: number[], taken: Set<number>, limit = 12) {
   const out: Suggestion[] = [];
@@ -90,6 +128,8 @@ export function suggest(data: DraftData, allies: number[], enemies: number[], ta
       ...enemies.map((e) => ({ hero: e, value: data.vs[h][e], kind: "vs" as const })),
       ...allies.map((a) => ({ hero: a, value: data.with[h][a], kind: "with" as const })),
     ];
+    const balance = roleBalance(data, allies, h);
+    if (balance) parts.push({ hero: h, value: balance, kind: "role" });
     const score = parts.reduce((s, p) => s + p.value, 0) + (data.winrate[h] - 50) * 0.5;
     out.push({ hero: h, score, parts });
   }
