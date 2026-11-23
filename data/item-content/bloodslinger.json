@@ -9,14 +9,7 @@
     }
   ],
   "usage": "Үнэ: 925 алт (Sage Mask + 2 Mantle of Intelligence + Blood Grenade + жор 420). +100 HP, +8 Intelligence, +1.25 mana нөхөн сэргэлт өгнө.\n\nBlood Grenade-тэй харьцуулахад хэрэглэх зай 900-аас 1200, удаашрал 15%-иас 30% болсон. Lane дээр дайсныг дарах, зугтаж буй дайсныг гүйцэх, эсвэл тулааныг холоос эхлүүлэхэд ашигтай. Эхэн үед mana-гийн асуудалтай support-уудад тохиромжтой эхний item.",
-  "goodFor": [
-    "lion",
-    "shadow_shaman",
-    "crystal_maiden",
-    "lich",
-    "jakiro",
-    "witch_doctor"
-  ],
+  "goodFor": ["lion", "shadow_shaman", "crystal_maiden", "lich", "jakiro", "witch_doctor"],
   "tips": [
     "1200 зайтай тул дайсныг stun хийхээс өмнө холоос удаашруулж ойртоорой.",
     "HP-ээр төлдөг тул HP бага үед хэрэглэхдээ болгоомжтой бай.",

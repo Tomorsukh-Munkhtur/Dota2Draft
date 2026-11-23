@@ -9,14 +9,7 @@
     }
   ],
   "usage": "Mind Breaker нь дайсны баатрыг чадвараа хэрэглэхээс нь сэргийлж, зугтах эсвэл хариу тулалдах боломжийг нь хаана. Ялангуяа blink, зугтах чадвартай caster баатруудын эсрэг хүчтэй.\n\nДайсан руу дайрахдаа эхний довтолгоогоор silence хийгээд, дараа нь хохирлоо өгвөл дайсан хариу үйлдэл хийж чадахгүй.",
-  "goodFor": [
-    "phantom_assassin",
-    "slark",
-    "juggernaut",
-    "troll_warlord",
-    "faceless_void",
-    "spectre"
-  ],
+  "goodFor": ["phantom_assassin", "slark", "juggernaut", "troll_warlord", "faceless_void", "spectre"],
   "tips": [
     "Эхний довтолгоогоор silence хийж, дайсныг зугтах чадвараа хэрэглэхээс сэргийл.",
     "Illusion-ууд Item Potency багатай тул silence-ийн хугацаа богино байна.",

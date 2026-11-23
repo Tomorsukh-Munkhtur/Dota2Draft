@@ -1,7 +1,7 @@
 {
   "key": "veil_of_discord",
   "category": "magical",
-  "summary": "Veil of Discord нь HP, Intelligence, чадварын амь сорох өгдөг бөгөөд идэвхжүүлэхэд дайсны баатруудыг чадвараас 10% илүү хохирол авдаг болгодог item.",
+  "summary": "Veil of Discord нь HP, Intelligence, чадварын амь сорох өгдөг бөгөөд идэвхжүүлэхэд дайсны баатруудыг чадвараас 8% илүү хохирол авдаг болгодог item.",
   "abilities": [
     {
       "title": "Spell Weakness",

@@ -9,13 +9,7 @@
     }
   ],
   "usage": "Stygian Desolator нь энгийн Desolator-оос илүү их хуяг бууруулдаг онцгой item байсан. 7.42 патчаар энэ item тоглоомоос хасагдсан тул одоогийн тоглолтод олж авах боломжгүй.\n\nХуяг бууруулах хэрэгтэй бол энгийн Desolator, Orb of Corrosion эсвэл Assault Cuirass зэрэг item-ийг сонгоорой.",
-  "goodFor": [
-    "templar_assassin",
-    "nevermore",
-    "clinkz",
-    "drow_ranger",
-    "viper"
-  ],
+  "goodFor": ["templar_assassin", "nevermore", "clinkz", "drow_ranger", "viper"],
   "tips": [
     "7.42 патчаар хасагдсан тул одоо олж авах боломжгүй.",
     "Хуяг бууруулахын тулд энгийн Desolator ав.",

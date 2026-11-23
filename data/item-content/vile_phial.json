@@ -9,13 +9,7 @@
     }
   ],
   "usage": "Vile Phial нь хурдан довтолдог эсвэл illusion ихтэй баатруудад хамгийн тохиромжтой, учир нь 4 stack-ийг хурдан цуглуулна. HP сэргэлтийн бууралт нь эдгээлт, lifesteal-тэй дайсны эсрэг ялангуяа хэрэгтэй.\n\nStack-ийг багийн өөр баатрууд ч үйлчилж чадах тул нэг байг олуулаа довтлоход илүү хурдан идэвхжинэ.",
-  "goodFor": [
-    "phantom_lancer",
-    "naga_siren",
-    "troll_warlord",
-    "weaver",
-    "clinkz"
-  ],
+  "goodFor": ["phantom_lancer", "naga_siren", "troll_warlord", "weaver", "clinkz"],
   "tips": [
     "Хурдан довтолдог эсвэл illusion-тэй баатар stack-ийг амархан цуглуулна.",
     "Эдгээлт, lifesteal ихтэй дайсны эсрэг сонгоход тохиромжтой.",

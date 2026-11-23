@@ -1,9 +1,9 @@
 {
   "key": "octarine_core",
   "category": "magical",
-  "summary": "Octarine Core нь cooldown-ыг 25%-иар бууруулж, 450 HP, 450 мана болон мана нөхөн сэргэлт өгдөг.",
+  "summary": "Octarine Core нь cooldown-ыг 20%-иар бууруулж, 450 HP, 450 мана болон мана нөхөн сэргэлт өгдөг.",
   "abilities": [],
-  "usage": "Octarine Core-ийг чадвараа олон дахин цутгах нь чухал баатрууд — Zeus, Invoker, Storm Spirit, Death Prophet, Leshrac зэрэг — тоглоомын дунд, хожуу шатанд авдаг. 25% cooldown бууралт нь ульт, дисаблаа илүү ойр ойрхон хэрэглэх боломж олгож, HP болон мана нь тэсвэрийг нэмнэ.\n\nSoul Booster, Tiara of Selemene болон жороос угсардаг. Нийтлэг алдаа: Blink Dagger, Black King Bar зэрэг гол эд зүйлсээ аваагүй байхад Octarine Core руу яарах — энэ нь үнэтэй бөгөөд тулаанд шууд нөлөөлөх чадвар багатай.",
+  "usage": "Octarine Core-ийг чадвараа олон дахин цутгах нь чухал баатрууд — Zeus, Invoker, Storm Spirit, Death Prophet, Leshrac зэрэг — тоглоомын дунд, хожуу шатанд авдаг. 20% cooldown бууралт нь ульт, дисаблаа илүү ойр ойрхон хэрэглэх боломж олгож, HP болон мана нь тэсвэрийг нэмнэ.\n\nSoul Booster, Tiara of Selemene болон жороос угсардаг. Нийтлэг алдаа: Blink Dagger, Black King Bar зэрэг гол эд зүйлсээ аваагүй байхад Octarine Core руу яарах — энэ нь үнэтэй бөгөөд тулаанд шууд нөлөөлөх чадвар багатай.",
   "goodFor": [
     "zuus",
     "invoker",

@@ -9,14 +9,7 @@
     }
   ],
   "usage": "Үнэ: 3800 алт (Vladmir's Offering + Splintmail + Voodoo Mask). Өөрт нь +8 хуяг, +1 mana нөхөн сэргэлт өгнө.\n\nSpell lifesteal нэмэгдсэн тул зөвхөн довтолгоогоор бус, чадвараар хохирол өгдөг баатруудтай багт ч ашигтай. Дуудсан нэгжүүдтэй (summon) баатрууд болон багаар тулалддаг offlaner-уудад тохирно.",
-  "goodFor": [
-    "beastmaster",
-    "lycan",
-    "chen",
-    "centaur",
-    "mars",
-    "enchantress"
-  ],
+  "goodFor": ["beastmaster", "lycan", "chen", "centaur", "mars", "enchantress"],
   "tips": [
     "Aura 1200 радиустай тул багийн тулаанд холбоотнуудтайгаа ойр бай.",
     "Дуудсан нэгжүүд ч aura-гаас ашиг хүртэнэ.",

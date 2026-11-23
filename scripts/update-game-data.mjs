@@ -196,8 +196,11 @@ async function updateAll() {
   console.log(`Баатар: ${heroes.length}`);
 
   // ---------------------------------------------------------------- item-ууд
+  // Одоогийн том патчийн бүх дэд патчийн тэмдэглэл: item-ийн жагсаалт болон доорх патчийн хуудсанд ашиглана.
+  const major = latest.patch_number.replace(/[a-z]+$/, "");
+  const series = patches.filter((p) => p.patch_number.replace(/[a-z]+$/, "") === major);
   const since = `extract(epoch from now() - interval '${DAYS} days')`;
-  const [itemList, shops, purchases, neutralRows, latestNotes] = await Promise.all([
+  const [itemList, shops, purchases, neutralRows, seriesNotes] = await Promise.all([
     feed("itemlist").then((j) => j.result.data.itemabilities),
     fetch(SHOPS).then((r) => r.text()).then(parseShops),
     explorer(`SELECT k AS item, count(*) AS n FROM player_matches pm JOIN matches m ON m.match_id = pm.match_id,
@@ -205,8 +208,11 @@ async function updateAll() {
     explorer(`SELECT e->>'item_neutral' AS item, e->>'item_neutral_enhancement' AS enh, count(*) AS n
       FROM player_matches pm JOIN matches m ON m.match_id = pm.match_id, unnest(pm.neutral_item_history) e
       WHERE m.start_time > ${since} GROUP BY 1, 2`),
-    feed("patchnotes", { version: latest.patch_number }),
+    Promise.all(series.map(async (p) => [p.patch_number, await feed("patchnotes", { version: p.patch_number })])).then(
+      (entries) => new Map(entries),
+    ),
   ]);
+  const latestNotes = seriesNotes.get(latest.patch_number);
 
   const byName = new Map(itemList.map((i) => [i.name.replace(/^item_/, ""), i]));
   const byId = new Map(itemList.map((i) => [i.id, i.name.replace(/^item_/, "")]));
@@ -236,11 +242,25 @@ async function updateAll() {
     wanted.set(key, key.startsWith("enhancement_") ? "enchantment" : it.neutral_item_tier >= 0 ? "neutral" : "shop");
     console.log(`  патчид дурдагдсан item нэмэв: ${key}`);
   }
+  // Энэ том патчаар тоглоомоос хасагдсан item ("Item removed from the game", "Item Cycled Out"): сүүлийн 45 хоногийн
+  // тоглолтод байсан эсвэл патчид дурдагдсан ч жагсаалтад харуулахгүй. Legacy болгож үлдээх тул патчийн хуудас нэр,
+  // зургийг нь харуулсаар байна. Дараагийн дэд патчаар буцаж орвол ("Item Cycled In") дахин харуулна.
+  const removed = new Set();
+  for (const p of series)
+    for (const entry of [...(seriesNotes.get(p.patch_number).items ?? []), ...(seriesNotes.get(p.patch_number).neutral_items ?? [])]) {
+      const key = entry.ability_id > 0 ? byId.get(entry.ability_id) : null;
+      const notes = (entry.ability_notes ?? []).map((n) => htmlToText(n.note));
+      if (!key) continue;
+      if (notes.some((t) => /item removed from the game|item cycled out/i.test(t))) removed.add(key);
+      else if (notes.some((t) => /item cycled in|item (re-)?added/i.test(t))) removed.delete(key);
+    }
+  for (const key of removed) if (byName.has(key)) wanted.set(key, "legacy");
+  if (removed.size) console.log(`  патчаар хасагдсан item (legacy): ${[...removed].join(", ")}`);
   // Баатрын counter зөвлөгөөнд дурдагдсан item заавал байх ёстой (байхгүй бол анхааруулна).
   for (const file of await readdir(path.join(DATA, "hero-content")).catch(() => [])) {
     const content = JSON.parse(await readFile(path.join(DATA, "hero-content", file), "utf8"));
     for (const { item } of content.counterItems)
-      if (!wanted.has(item)) console.warn(`  анхаар: ${file} дахь counter item "${item}" одоогийн тоглоомд алга`);
+      if (!wanted.has(item) || wanted.get(item) === "legacy") console.warn(`  анхаар: ${file} дахь counter item "${item}" одоогийн тоглоомд алга`);
   }
 
   // Тогтмол дараалал: OpenDota-гийн хариуны дараалал өдөр бүр өөр байдаг тул items.json-ийн diff дэмий томордог.
@@ -295,12 +315,12 @@ async function updateAll() {
     };
   });
   const count = (k) => Object.values(items).filter((x) => x.kind === k).length;
-  console.log(`Item: дэлгүүр ${count("shop")}, neutral ${count("neutral")}, enchantment ${count("enchantment")}`);
+  console.log(
+    `Item: дэлгүүр ${count("shop")}, neutral ${count("neutral")}, enchantment ${count("enchantment")}, хасагдсан ${count("legacy")}`,
+  );
   if (unknownTokens.size) console.warn(`  нэргүй үзүүлэлтийн тэмдэгт: ${[...unknownTokens].join(", ")}`);
 
   // ---------------------------------------------------------------- патчийн өөрчлөлтүүд (одоогийн том патчийн бүх дэд патч)
-  const major = latest.patch_number.replace(/[a-z]+$/, "");
-  const series = patches.filter((p) => p.patch_number.replace(/[a-z]+$/, "") === major);
   const notesText = (list) => (list ?? []).map((n) => htmlToText(n.note)).filter((t) => t && t !== "");
   const heroSlugById = new Map(heroes.map((h) => [h.id, h.slug]));
   const patchNotes = { major, patches: series.map((p) => p.patch_number), heroes: {}, items: {} };
@@ -318,7 +338,7 @@ async function updateAll() {
       .filter((e) => e.lines.length);
 
   for (const p of series) {
-    const data = await feed("patchnotes", { version: p.patch_number });
+    const data = seriesNotes.get(p.patch_number);
     byPatch.push({
       patch: p.patch_number,
       date: new Date(p.patch_timestamp * 1000).toISOString(),

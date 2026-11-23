@@ -82,11 +82,22 @@ function ItemCards({ entries, tr }: { entries: PatchEntry[]; tr: Tr }) {
     <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
       {entries.map((e, idx) => {
         const item = e.key ? items[e.key] : undefined;
-        const head = item ? (
-          <Link href={`/items/${item.key}`} className="flex items-center gap-3 p-2.5 transition hover:bg-white/[0.04]">
+        const label = item && (
+          <>
             <Image src={item.img} alt="" width={88} height={64} className="h-9 w-auto rounded-sm" />
             <span className="font-display font-bold uppercase tracking-wide">{item.name}</span>
+          </>
+        );
+        // Патчаар хасагдсан (legacy) item-д хуудас байхгүй тул холбоосгүй харуулна.
+        const head = item && item.kind !== "legacy" ? (
+          <Link href={`/items/${item.key}`} className="flex items-center gap-3 p-2.5 transition hover:bg-white/[0.04]">
+            {label}
           </Link>
+        ) : item ? (
+          <div className="flex items-center gap-3 p-2.5">
+            {label}
+            <span className="ml-auto rounded-full bg-bad/15 px-2 py-0.5 text-[11px] text-bad">хасагдсан</span>
+          </div>
         ) : (
           <p className="p-3 font-display font-bold uppercase tracking-wide">
             <T en={e.title ?? "Item"} tr={tr} />

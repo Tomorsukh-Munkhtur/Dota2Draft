@@ -9,13 +9,7 @@
     }
   ],
   "usage": "Greater Horn of Battle нь Tormentor-ийг алахад заавал унадаг шинэ item. Нэг удаа хэрэглэгддэг ч бүх lane-д зэрэг mega creep гаргах тул дайсны багийг гурван зүгт хамгаалалтад хуваана.\n\nДайсны гол баатрууд үхсэн эсвэл байхгүй үед, эсвэл барилга руу түрэхийн өмнөхөн хэрэглэвэл хамгийн их үр дүнтэй.",
-  "goodFor": [
-    "furion",
-    "lycan",
-    "broodmother",
-    "death_prophet",
-    "tinker"
-  ],
+  "goodFor": ["furion", "lycan", "broodmother", "death_prophet", "tinker"],
   "tips": [
     "Дайсны баатрууд үхсэн үед хэрэглэж, бүх lane-ийг зэрэг түр.",
     "Backpack-аас хэрэглэж болох тул inventory-гийн зай эзлэхгүй.",

@@ -4,13 +4,7 @@
   "summary": "900 алтны энгийн бүрэлдэхүүн item: бага зэргийн хохирол болон довтолгооны хурд өгдөг бөгөөд 7.42-оос Butterfly, Mask of Madness, Monkey King Bar-ын бүрэлдэхүүн болсон.",
   "abilities": [],
   "usage": "Quarterstaff нь +10 хохирол, +10 довтолгооны хурд өгнө. Дангаараа сул ч 7.42 патчаас эхлэн Butterfly, Mask of Madness болон Monkey King Bar-ын жорд ордог болсон тул эдгээр item руу явж буй carry-уудын эхний алхам болно.\n\nЭхэн үед хохирол болон довтолгооны хурдаа бага зэрэг өсгөж, farm хийх хурдаа нэмэхэд тустай.",
-  "goodFor": [
-    "phantom_assassin",
-    "troll_warlord",
-    "terrorblade",
-    "gyrocopter",
-    "juggernaut"
-  ],
+  "goodFor": ["phantom_assassin", "troll_warlord", "terrorblade", "gyrocopter", "juggernaut"],
   "tips": [
     "Butterfly, Mask of Madness эсвэл Monkey King Bar цуглуулж байгаа бол эхлээд Quarterstaff ав.",
     "Дангаараа удаан барих item биш тул удахгүй том item болгон нийлүүл.",

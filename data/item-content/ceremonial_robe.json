@@ -9,14 +9,7 @@
     }
   ],
   "usage": "Ceremonial Robe нь ид шидийн хохирол ихтэй чадвар болон stun, silence зэрэг disable-ийг илүү хүчтэй болгоно. Status resistance буурахаар таны disable-ууд урт үргэлжилнэ.\n\nAura учраас багийн тулаанд дайснуудтай ойр байх тусам ашигтай. Ид шидийн хохирлоор тоглодог mid болон support баатруудын сайн сонголт.",
-  "goodFor": [
-    "zuus",
-    "leshrac",
-    "skywrath_mage",
-    "lion",
-    "shadow_shaman",
-    "earthshaker"
-  ],
+  "goodFor": ["zuus", "leshrac", "skywrath_mage", "lion", "shadow_shaman", "earthshaker"],
   "tips": [
     "Aura 850 радиустай тул тулаанд дайснуудаас хэт хол бүү байрла.",
     "Ид шидийн хохирол ихтэй баг дотор хамгийн их ашиг өгнө.",

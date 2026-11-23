@@ -9,14 +9,7 @@
     }
   ],
   "usage": "Үнэ: 5950 алт (Phase Boots + Armlet of Mordiggian + жор 2000). Асаагаагүй байхад ч ойрын/холын зайн баатарт +55/45 хөдөлгөөний хурд, +40 хохирол, +30 довтолгооны хурд, +10 хуяг, +5 HP нөхөн сэргэлт өгнө.\n\nTroll Warlord, Lifestealer, Wraith King зэрэг ойрын зайн, HP-ээ нөхөж чаддаг core-уудад тохирно. Тулаан эхлэхэд асааж, тулааны дараа HP-ээ хэмнэхийн тулд унтраа. Олон гутлын хөдөлгөөний хурдны нэмэлт давхцахгүй тул өөр гутал нэмж барих хэрэггүй.",
-  "goodFor": [
-    "troll_warlord",
-    "life_stealer",
-    "skeleton_king",
-    "huskar",
-    "ursa",
-    "chaos_knight"
-  ],
+  "goodFor": ["troll_warlord", "life_stealer", "skeleton_king", "huskar", "ursa", "chaos_knight"],
   "tips": [
     "Тулааны өмнөхөн асаа: Strength нэмэгдэхэд HP чинь ч нэмэгдэнэ.",
     "HP бага үед удаашралын эсэргүүцэл суларна, тиймээс HP-ээ хянаж бай.",

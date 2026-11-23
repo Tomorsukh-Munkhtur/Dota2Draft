@@ -1,7 +1,7 @@
 {
   "key": "harpoon",
   "category": "armaments",
-  "summary": "Harpoon бол Echo Sabre болон Diadem-ийг нэгтгэсэн item бөгөөд их хэмжээний Strength, бүх атрибут, довтолгооны хүч өгч, дайсныг өөр рүүгээ татах идэвхтэй чадвартай.",
+  "summary": "Harpoon бол Echo Sabre болон Dragon Lance-ийг нэгтгэсэн item бөгөөд их хэмжээний Strength, Agility, довтолгооны хүч, ойрын зайн баатарт +25 довтолгооны зай өгч, дайсныг өөр рүүгээ татах идэвхтэй чадвартай.",
   "abilities": [
     {
       "title": "Draw Forth",

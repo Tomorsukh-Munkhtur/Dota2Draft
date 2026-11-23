@@ -13,14 +13,7 @@
     }
   ],
   "usage": "Үнэ: 5400 алт (Force Staff + Phylactery + жор 600). +8 Strength, +8 Agility, +20 Intelligence, +175 HP, +6 HP нөхөн сэргэлт, +3 mana нөхөн сэргэлт өгнө.\n\nНэгжид чиглэсэн чадвар ихтэй support-уудад тохирно: дайсан дээр stun эсвэл hex хийхэд нэмэлт хохирол, холбоотон дээр buff эсвэл эдгээлт хэрэглэхэд нэмэлт эдгээлт гарна. Force-оор холбоотноо аюулаас гаргахад ч эдгээлт дагалдана.",
-  "goodFor": [
-    "oracle",
-    "dazzle",
-    "lion",
-    "shadow_shaman",
-    "rubick",
-    "grimstroke"
-  ],
+  "goodFor": ["oracle", "dazzle", "lion", "shadow_shaman", "rubick", "grimstroke"],
   "tips": [
     "Холбоотноо Force-оор түлхэхэд Empower Spell-ийн эдгээлт cooldown-оос үл хамааран үйлчилнэ.",
     "Дайсны болон холбоотны нөлөө тусдаа cooldown-тай тул хоёуланг нь ээлжлэн ашигла.",

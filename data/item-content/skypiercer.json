@@ -13,13 +13,7 @@
     }
   ],
   "usage": "Үнэ: 6000 алт (Heaven's Halberd + Sange + Talisman of Evasion + жор 300). +35 Strength, +5 хуяг, +5 HP нөхөн сэргэлт, +25% удаашралын эсэргүүцэл, +20% HP сэргэлт, +25% evasion өгнө.\n\nДовтолгоогоор тоглодог дайсны carry-ийн эсрэг хүчтэй хамгаалалт: Disarm-аар түүнийг 3 секунд довтлох боломжгүй болгоно. Дайсны дунд удаан байдаг tank баатарт Riposte-ийн ачаар Disarm ойр ойрхон бэлэн болно.",
-  "goodFor": [
-    "mars",
-    "legion_commander",
-    "centaur",
-    "bristleback",
-    "dragon_knight"
-  ],
+  "goodFor": ["mars", "legion_commander", "centaur", "bristleback", "dragon_knight"],
   "tips": [
     "Disarm-ийг дайсны гол carry дээр хэрэглэ.",
     "Дайсны баатрын ойролцоо байх тусам Disarm хурдан сэргэнэ.",

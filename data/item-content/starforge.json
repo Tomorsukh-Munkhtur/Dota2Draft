@@ -13,13 +13,7 @@
     }
   ],
   "usage": "Үнэ: 6000 алт (Meteor Hammer + Ultimate Orb + жор 450). +24 Strength, +24 Agility, +40 Intelligence, +6% Spell Amplification, +20% mana нөхөн сэргэлтийн өсгөлт өгнө.\n\nDisable ихтэй баатруудад хамгийн тохиромжтой: stun, hex дуусах бүрд Celestial Flare нэмэлт хохирол болон удаашрал өгнө. Meteor Hammer нь max HP-ээс тооцох хохиролтой болсон тул HP ихтэй дайсны эсрэг ч хүчтэй.",
-  "goodFor": [
-    "lion",
-    "shadow_shaman",
-    "earthshaker",
-    "tidehunter",
-    "rubick"
-  ],
+  "goodFor": ["lion", "shadow_shaman", "earthshaker", "tidehunter", "rubick"],
   "tips": [
     "Stun, hex хийх бүрд Celestial Flare идэвхжинэ, олон disable-тэй баатарт ав.",
     "Meteor Hammer-ийг дайсан stun-д орсон эсвэл хөдлөх боломжгүй үед хэрэглэ.",
