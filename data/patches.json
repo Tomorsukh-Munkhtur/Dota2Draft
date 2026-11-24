@@ -1,7 +1,673 @@
 {
  "major": "7.42",
- "latest": "7.42",
+ "latest": "7.42a",
  "patches": [
+  {
+   "patch": "7.42a",
+   "date": "2026-11-24T08:00:00.000Z",
+   "general": [
+    {
+     "title": "Global Mechanics",
+     "lines": [
+      {
+       "t": "Vector-targeted abilities that are reflected will now reflect in the opposite direction of the initial cast (Walrus Kick, Nightmare, and Rebound. Dead Shot already did this)",
+       "i": 1
+      },
+      {
+       "t": "Damaging neutral creeps while under the effect of Smoke of Deceit will now make them attempt to flee",
+       "i": 1
+      }
+     ]
+    }
+   ],
+   "heroes": [
+    {
+     "slug": "juggernaut",
+     "lines": [
+      {
+       "t": "Max Stacks increased from 10 to 12",
+       "i": 1,
+       "a": "Bladeform"
+      },
+      {
+       "t": "Mana Cost decreased from 120 to 110",
+       "i": 1,
+       "a": "Healing Ward"
+      }
+     ]
+    },
+    {
+     "slug": "morphling",
+     "lines": [
+      {
+       "t": "Aghanim's Scepter no longer triggers additional casts on certain abilities",
+       "i": 1
+      },
+      {
+       "t": "Chen's Holy Persuasion",
+       "i": 2
+      },
+      {
+       "t": "Enchantress' Enchant",
+       "i": 2
+      },
+      {
+       "t": "Phantom Assassin's Phantom Strike",
+       "i": 2
+      },
+      {
+       "t": "Snapfire's Gobble Up",
+       "i": 2
+      },
+      {
+       "t": "Spirit Breaker's Charge of Darkness",
+       "i": 2
+      },
+      {
+       "t": "Spirit Breaker's Planar Pocket",
+       "i": 2
+      },
+      {
+       "t": "Underlord’s Fiend’s Gate Portal",
+       "i": 2
+      },
+      {
+       "t": "No longer allows Morphling to Multicast when morphed into Ogre Magi",
+       "i": 1,
+       "a": "Morph"
+      }
+     ]
+    },
+    {
+     "slug": "phantom_lancer",
+     "lines": [
+      {
+       "t": "Damage decreased from 17% + 2% per 3 levels to 15% + 2% per 3 levels",
+       "i": 1,
+       "a": "Illusory Armaments"
+      }
+     ]
+    },
+    {
+     "slug": "sand_king",
+     "lines": [
+      {
+       "t": "Aghanim's Scepter Stinger damage decreased from 75% to 70%",
+       "i": 1,
+       "a": "Burrowstrike"
+      }
+     ]
+    },
+    {
+     "slug": "sven",
+     "lines": [
+      {
+       "t": "Damage per Strength rescaled from 0.08 + 0.02 per level to 0.15 + 0.01 per level",
+       "i": 1,
+       "a": "Wrath of God"
+      },
+      {
+       "t": "Slow Resistance decreased from 40% to 30%",
+       "i": 1,
+       "a": "God's Strength"
+      }
+     ]
+    },
+    {
+     "slug": "lina",
+     "lines": [
+      {
+       "t": "Base Strength increased from 20 to 21",
+       "i": 1
+      },
+      {
+       "t": "Agility gain increased from 2.4 to 2.6",
+       "i": 1
+      },
+      {
+       "t": "Magic Resistance increased from 35% to 40%",
+       "i": 1,
+       "a": "Flame Cloak"
+      },
+      {
+       "t": "Duration increased from 7s to 8s",
+       "i": 1,
+       "a": "Flame Cloak"
+      }
+     ]
+    },
+    {
+     "slug": "shadow_shaman",
+     "lines": [
+      {
+       "t": "Cooldown increased from 14/13/12/11s to 15/14/13/12s",
+       "i": 1,
+       "a": "Shackles"
+      }
+     ]
+    },
+    {
+     "slug": "riki",
+     "lines": [
+      {
+       "t": "Base Agility decreased from 30 to 26",
+       "i": 1
+      },
+      {
+       "t": "Damage at level 1 decreased from 52-56 to 48-52",
+       "i": 2
+      },
+      {
+       "t": "Cooldown increased from 15/14/13/12s to 16/15/14/13s",
+       "i": 1,
+       "a": "Smoke Screen"
+      },
+      {
+       "t": "Bonus XP Hero Kill decreased from 130/260/390 to 100/200/300",
+       "i": 1,
+       "a": "Cloak and Dagger"
+      },
+      {
+       "t": "Bonus XP Assist decreased from 100 to 50",
+       "i": 1,
+       "a": "Cloak and Dagger"
+      }
+     ]
+    },
+    {
+     "slug": "enigma",
+     "lines": [
+      {
+       "t": "Level 20 Talent Eidolon Damage decreased from +30 to +25",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "necrolyte",
+     "lines": [
+      {
+       "t": "Cooldown decreased from 100s to 95s",
+       "i": 1,
+       "a": "Reaper's Scythe"
+      }
+     ]
+    },
+    {
+     "slug": "beastmaster",
+     "lines": [
+      {
+       "t": "Thunderhide Base Health decreased from 2200 to 2100",
+       "i": 1,
+       "a": "Summon Ancient Thunderhide"
+      },
+      {
+       "t": "Thunderhide Base Magic Resistance decreased from 35% to 30%",
+       "i": 1,
+       "a": "Summon Ancient Thunderhide"
+      },
+      {
+       "t": "Slam Slow Duration decreased from 4s (3s for heroes) to 2s",
+       "i": 1,
+       "a": "Summon Ancient Thunderhide"
+      }
+     ]
+    },
+    {
+     "slug": "faceless_void",
+     "lines": [
+      {
+       "t": "Bonus DPS per Stack increased from 6/8/10/12 to 9/10/11/12",
+       "i": 1,
+       "a": "Time Dilation"
+      }
+     ]
+    },
+    {
+     "slug": "skeleton_king",
+     "lines": [
+      {
+       "t": "Agility gain decreased from 1.7 to 1.5",
+       "i": 1
+      },
+      {
+       "t": "Mana Cost increased from 70/80/90/100 to 70/85/100/115",
+       "i": 1,
+       "a": "Bone Guard"
+      }
+     ]
+    },
+    {
+     "slug": "phantom_assassin",
+     "lines": [
+      {
+       "t": "Attack Damage decreased from 30/45/60/75% to 25/40/55/70%",
+       "i": 1,
+       "a": "Stifling Dagger"
+      },
+      {
+       "t": "Bonus Attack Speed decreased from 80/120/160/200 to 75/100/125/150",
+       "i": 1,
+       "a": "Phantom Strike"
+      }
+     ]
+    },
+    {
+     "slug": "dazzle",
+     "lines": [
+      {
+       "t": "Base Intelligence reduced from 25 to 23",
+       "i": 1
+      },
+      {
+       "t": "Damage at level 1 decreased from 47-53 to 46-52",
+       "i": 2
+      },
+      {
+       "t": "Aghanim's Shard bonus cast range and leash range decreased from 250/500 to 200/450",
+       "i": 1,
+       "a": "Nothl Projection"
+      },
+      {
+       "t": "Level 10 Talent Shadow Wave Cast Range decreased from +125 to +100",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "furion",
+     "lines": [
+      {
+       "t": "Level 10 Talent Wrath of Nature Base Damage increased from +25 to +30",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "omniknight",
+     "lines": [
+      {
+       "t": "Agility Gain decreased from 1.7 to 1.5",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "slug": "huskar",
+     "lines": [
+      {
+       "t": "Max Health Burn increased from 0.5% to 0.6%",
+       "i": 1,
+       "a": "Burning Spear"
+      },
+      {
+       "t": "Cooldown decreased from 16/14/12s to 15/13/11s",
+       "i": 1,
+       "a": "Life Break"
+      },
+      {
+       "t": "Magic Resistance while leaping increased from 60% to 80%",
+       "i": 1,
+       "a": "Life Break"
+      }
+     ]
+    },
+    {
+     "slug": "broodmother",
+     "lines": [
+      {
+       "t": "Mana cost increased from 100 to 100/125/150",
+       "i": 1,
+       "a": "Spawn Spiderlings"
+      }
+     ]
+    },
+    {
+     "slug": "gyrocopter",
+     "lines": [
+      {
+       "t": "Cooldown decreased from 25s to 24s",
+       "i": 1,
+       "a": "Flak Cannon"
+      }
+     ]
+    },
+    {
+     "slug": "lycan",
+     "lines": [
+      {
+       "t": "Now marks can only be applied by Lycan's units within 1200 units of him",
+       "i": 1,
+       "a": "Pack Hunter"
+      },
+      {
+       "t": "Still benefit from attacking marked units even outside of this radius",
+       "i": 2,
+       "a": "Pack Hunter"
+      },
+      {
+       "t": "Can now be dispelled",
+       "i": 1,
+       "a": "Pack Hunter"
+      }
+     ]
+    },
+    {
+     "slug": "brewmaster",
+     "lines": [
+      {
+       "t": "Movement Slow rescaled from 15/30/45/60% to 20/30/40/50%",
+       "i": 1,
+       "a": "Thunder Clap"
+      },
+      {
+       "t": "Attack Slow rescaled from 15/30/45/60 to 20/30/40/50",
+       "i": 1,
+       "a": "Thunder Clap"
+      }
+     ]
+    },
+    {
+     "slug": "shadow_demon",
+     "lines": [
+      {
+       "t": "Bonus Base Damage decreased from 20/35/50/65 to 15/30/45/60",
+       "i": 1,
+       "a": "Disruption"
+      }
+     ]
+    },
+    {
+     "slug": "lone_druid",
+     "lines": [
+      {
+       "t": "Moving Aghanim's Scepter from Lone Druid to Spirit Bear and vice versa puts the item on a 6s cooldown, preventing it from being used",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "slug": "chaos_knight",
+     "lines": [
+      {
+       "t": "Now is refreshed on Phantasm cast",
+       "i": 1,
+       "a": "Ahead, Armageddon"
+      },
+      {
+       "t": "Now can be used only once per Phantasm cast",
+       "i": 1,
+       "a": "Ahead, Armageddon"
+      }
+     ]
+    },
+    {
+     "slug": "meepo",
+     "lines": [
+      {
+       "t": "Base Movement Speed decreased from 310 to 305",
+       "i": 1
+      },
+      {
+       "t": "Agility gain decreased from 2.1 to 2.0",
+       "i": 1
+      },
+      {
+       "t": "Experience penalty time increased from 5s to 10s",
+       "i": 1,
+       "a": "Divided We Stand"
+      }
+     ]
+    },
+    {
+     "slug": "naga_siren",
+     "lines": [
+      {
+       "t": "Evasion per Naga increased from 4% + 0.1% per level to 5% + 0.1% per level",
+       "i": 1,
+       "a": "Eelskin"
+      },
+      {
+       "t": "Radius increased from 900 to 1200",
+       "i": 1,
+       "a": "Eelskin"
+      }
+     ]
+    },
+    {
+     "slug": "visage",
+     "lines": [
+      {
+       "t": "Intelligence gain decreased from 2.9 to 2.6",
+       "i": 1
+      },
+      {
+       "t": "Damage gain per level decreased from 3.1 to 3.0",
+       "i": 2
+      },
+      {
+       "t": "Cooldown increased from 45.75s - 0.75s per level to 45.5s - 0.5s per level",
+       "i": 1,
+       "a": "Silent as the Grave"
+      }
+     ]
+    },
+    {
+     "slug": "medusa",
+     "lines": [
+      {
+       "t": "Duration decreased from 5/5.5/6s to 4.5/5/5.5s",
+       "i": 1,
+       "a": "Stone Gaze"
+      }
+     ]
+    },
+    {
+     "slug": "troll_warlord",
+     "lines": [
+      {
+       "t": "Bonus Move Speed decreased from 15/25/35/45 to 15/20/25/30",
+       "i": 1,
+       "a": "Berserker's Rage"
+      },
+      {
+       "t": "Movement Speed Bonus decreased from 35% to 30%",
+       "i": 1,
+       "a": "Battle Trance"
+      }
+     ]
+    },
+    {
+     "slug": "centaur",
+     "lines": [
+      {
+       "t": "Level 10 Talent Health Regen increased from +4 to +4.5",
+       "i": 1,
+       "a": "Talent"
+      },
+      {
+       "t": "Level 20 Talent Stampede Cooldown Reduction increased from 25s to 30s",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "shredder",
+     "lines": [
+      {
+       "t": "Attacks that miss Timbersaw (due to evasion, blindness, or uphill disadvantage) now provide Reactive Armor stacks",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "slug": "bristleback",
+     "lines": [
+      {
+       "t": "Base Intelligence increased from 14 to 15",
+       "i": 1
+      },
+      {
+       "t": "Level 25 Talent Bristleback Damage Threshold Reduction increased from 30 to 35",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "abaddon",
+     "lines": [
+      {
+       "t": "Max Health Restoration Reduction decreased from 40% + 1% per level to 35% + 1% per level",
+       "i": 1,
+       "a": "Withering Mist"
+      },
+      {
+       "t": "Cooldown increased from 12/10/8/6s to 13/11/9/7s",
+       "i": 1,
+       "a": "Aphotic Shield"
+      },
+      {
+       "t": "Level 10 Talent Curse of Avernus DPS decreased from +25 to +20",
+       "i": 1,
+       "a": "Talent"
+      }
+     ]
+    },
+    {
+     "slug": "grimstroke",
+     "lines": [
+      {
+       "t": "Base Damage rescaled from 100/160/220/280 to 110/160/210/260",
+       "i": 1,
+       "a": "Stroke of Fate"
+      },
+      {
+       "t": "Cast Range rescaled from 700/800/900 to 800",
+       "i": 1,
+       "a": "Soulbind"
+      },
+      {
+       "t": "Illusion Bonus Movespeed decreased from 30% to 25%",
+       "i": 1,
+       "a": "Dark Portrait"
+      }
+     ]
+    },
+    {
+     "slug": "snapfire",
+     "lines": [
+      {
+       "t": "Cooldown decreased from 18/17/16/15s to 17/16/15/14s",
+       "i": 1,
+       "a": "Firesnap Cookie"
+      },
+      {
+       "t": "Mana Cost decreased from 70/80/90/100 to 60/65/70/75",
+       "i": 1,
+       "a": "Lil' Shredder"
+      }
+     ]
+    },
+    {
+     "slug": "primal_beast",
+     "lines": [
+      {
+       "t": "Slow Resistance per 100 Max Health decreased from 1% to 0.75%",
+       "i": 1,
+       "a": "Colossal"
+      }
+     ]
+    },
+    {
+     "slug": "kez",
+     "lines": [
+      {
+       "t": "Base Intelligence decreased from 20 to 18",
+       "i": 1
+      },
+      {
+       "t": "Intelligence gain increased from 1.7 to 1.9",
+       "i": 1
+      },
+      {
+       "t": "Damage increased from 60/120/180/240 to 80/140/200/260",
+       "i": 1,
+       "a": "Talon Toss"
+      }
+     ]
+    },
+    {
+     "slug": "largo",
+     "lines": [
+      {
+       "t": "Max Stacks rescaled from 5 to 4/5/6",
+       "i": 1,
+       "a": "Amphibian Rhapsody"
+      }
+     ]
+    }
+   ],
+   "items": [
+    {
+     "key": "bloodslinger",
+     "title": "Bloodslinger",
+     "lines": [
+      {
+       "t": "Sling Grenade Health Cost increased from 75 to 100",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "key": "skadi",
+     "title": "Eye of Skadi",
+     "lines": [
+      {
+       "t": "All Attributes bonus decreased from +35 to +32",
+       "i": 1
+      }
+     ]
+    },
+    {
+     "key": "horn_of_battle",
+     "title": "Horn of Battle",
+     "lines": [
+      {
+       "t": "Now correctly states that it summons Super Creeps when used, and Mega Creeps when all enemy barracks are destroyed",
+       "i": 1
+      }
+     ]
+    }
+   ],
+   "neutralItems": [
+    {
+     "key": "safety_bubble",
+     "title": "Safety Bubble",
+     "lines": [
+      {
+       "t": "Bubbled Up damage taken by barrier on illusions now is amplified by the illusion's incoming damage taken percentage",
+       "i": 1
+      }
+     ]
+    }
+   ],
+   "neutralCreeps": [
+    {
+     "name": "Radigull",
+     "lines": [
+      {
+       "t": "Eggstremism Fuse Duration increased from 2s to 2.5s",
+       "i": 1
+      }
+     ]
+    }
+   ]
+  },
   {
    "patch": "7.42",
    "date": "2026-11-18T08:00:00.000Z",

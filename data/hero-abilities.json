@@ -1622,7 +1622,7 @@
     "piercesImmunity": null,
     "dispellable": null,
     "cooldown": "60",
-    "manaCost": "120",
+    "manaCost": "110",
     "values": [
      {
       "label": "MAX HEALTH PER SECOND",
@@ -1695,7 +1695,7 @@
     "values": [
      {
       "label": "MAX STACKS",
-      "value": "10"
+      "value": "12"
      },
      {
       "label": "BASE AGILITY PER STACK",
@@ -2667,7 +2667,7 @@
     "values": [
      {
       "label": "MIN DAMAGE",
-      "value": "17%"
+      "value": "15%"
      }
     ]
    },
@@ -3420,7 +3420,7 @@
      "Does not trigger spell block or spell reflect."
     ],
     "lore": "Crixalis often lies in wait, burrowing under the surface to ambush his adversaries.",
-    "scepter": "Increases Cast Range. Sand King leaves behind a trail of spines, that, after a 0.8s delay, create Stinger attack areas along the path, that apply 75% of Stinger damage to enemies hit.",
+    "scepter": "Increases Cast Range. Sand King leaves behind a trail of spines, that, after a 0.8s delay, create Stinger attack areas along the path, that apply 70% of Stinger damage to enemies hit.",
     "shard": "",
     "ultimate": false,
     "innate": false,
@@ -4007,7 +4007,7 @@
      },
      {
       "label": "SLOW RESISTANCE",
-      "value": "40%"
+      "value": "30%"
      }
     ]
    },
@@ -4034,7 +4034,7 @@
     "values": [
      {
       "label": "DAMAGE PER STRENGTH",
-      "value": "0.08"
+      "value": "0.15"
      }
     ]
    }
@@ -5546,11 +5546,11 @@
     "values": [
      {
       "label": "DURATION",
-      "value": "7"
+      "value": "8"
      },
      {
       "label": "MAGIC RESISTANCE",
-      "value": "35%"
+      "value": "40%"
      },
      {
       "label": "SPELL AMP",
@@ -6233,7 +6233,7 @@
     "damageType": "magical",
     "piercesImmunity": false,
     "dispellable": "strong",
-    "cooldown": "14 / 13 / 12 / 11",
+    "cooldown": "15 / 14 / 13 / 12",
     "manaCost": "125 / 140 / 155 / 170",
     "values": [
      {
@@ -7140,7 +7140,7 @@
     "damageType": null,
     "piercesImmunity": false,
     "dispellable": "no",
-    "cooldown": "15 / 14 / 13 / 12",
+    "cooldown": "16 / 15 / 14 / 13",
     "manaCost": "75",
     "values": [
      {
@@ -7288,11 +7288,11 @@
      },
      {
       "label": "BONUS XP HERO KILL",
-      "value": "130 / 260 / 390"
+      "value": "100 / 200 / 300"
      },
      {
       "label": "BONUS XP ASSIST",
-      "value": "100"
+      "value": "50"
      }
     ]
    }
@@ -7536,7 +7536,7 @@
     "level": 20,
     "options": [
      "+200 Midnight Pulse Radius",
-     "+30 Eidolon Damage"
+     "+25 Eidolon Damage"
     ]
    },
    {
@@ -8264,7 +8264,7 @@
     "damageType": "magical",
     "piercesImmunity": false,
     "dispellable": "no",
-    "cooldown": "100",
+    "cooldown": "95",
     "manaCost": "250 / 375 / 500",
     "values": [
      {
@@ -8734,7 +8734,8 @@
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/beastmaster_summon_thunderhide.png",
     "desc": "Beastmaster calls forth an Ancient Thunderhide to fight alongside him. The Thunderhide can Slam the ground to damage and slow nearby enemies, and beats its Thunderhide Drum as Beastmaster or Beastmaster's units attack, increasing their damage and max health.",
     "notes": [
-     "A newly summoned Thunderhide's Slam starts on a 5 second cooldown."
+     "A newly summoned Thunderhide's Slam starts on a 5 second cooldown.",
+     "The Thunderhide's Slam slows enemies for 2 seconds."
     ],
     "lore": "",
     "scepter": "",
@@ -8752,7 +8753,7 @@
     "values": [
      {
       "label": "THUNDERHIDE BASE HEALTH",
-      "value": "2200"
+      "value": "2100"
      },
      {
       "label": "THUNDERHIDE ATTACK DAMAGE",
@@ -9376,7 +9377,7 @@
      },
      {
       "label": "BONUS DPS PER STACK",
-      "value": "6 / 8 / 10 / 12"
+      "value": "9 / 10 / 11 / 12"
      }
     ]
    },
@@ -9594,7 +9595,7 @@
     "piercesImmunity": true,
     "dispellable": null,
     "cooldown": "45",
-    "manaCost": "70 / 80 / 90 / 100",
+    "manaCost": "70 / 85 / 100 / 115",
     "values": [
      {
       "label": "SKELETON DURATION",
@@ -9985,7 +9986,7 @@
     "key": "phantom_assassin_stifling_dagger",
     "name": "Stifling Dagger",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/phantom_assassin_stifling_dagger.png",
-    "desc": "Throws a dagger slowing the enemy unit's movement speed, dealing 65 / 70 / 75 / 80+30 / 45 / 60 / 75% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities.",
+    "desc": "Throws a dagger slowing the enemy unit's movement speed, dealing 65 / 70 / 75 / 80+25 / 40 / 55 / 70% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities.",
     "notes": [
      "If an attack effect is chance-based, the chance of its application will be the same as its chance to occur.",
      "Spell-immune enemies are not affected by Stifling Dagger's slow.",
@@ -10019,7 +10020,7 @@
      },
      {
       "label": "ATTACK DAMAGE",
-      "value": "30 / 45 / 60 / 75%"
+      "value": "25 / 40 / 55 / 70%"
      }
     ]
    },
@@ -10046,7 +10047,7 @@
     "values": [
      {
       "label": "BONUS ATTACK SPEED",
-      "value": "80 / 120 / 160 / 200"
+      "value": "75 / 100 / 125 / 150"
      },
      {
       "label": "DURATION",
@@ -11660,7 +11661,7 @@
     ],
     "lore": "The allure of the Nothl Realm is intoxicating, but Dazzle never forgets his purpose for being there.",
     "scepter": "",
-    "shard": "Increases Nothl Projection's cast range by 250 and leash range by 500.",
+    "shard": "Increases Nothl Projection's cast range by 200 and leash range by 450.",
     "ultimate": true,
     "innate": false,
     "fromScepter": false,
@@ -11704,7 +11705,7 @@
     "level": 10,
     "options": [
      "+15% Poison Touch Slow",
-     "+125 Shadow Wave Cast Range"
+     "+100 Shadow Wave Cast Range"
     ]
    },
    {
@@ -12531,7 +12532,7 @@
     "level": 10,
     "options": [
      "-10s Nature's Call Cooldown",
-     "+25 Wrath of Nature Base Damage"
+     "+30 Wrath of Nature Base Damage"
     ]
    },
    {
@@ -13905,7 +13906,7 @@
      },
      {
       "label": "MAX HEALTH BURN",
-      "value": "0.5%"
+      "value": "0.6%"
      },
      {
       "label": "DURATION",
@@ -13981,7 +13982,7 @@
     "key": "huskar_life_break",
     "name": "Life Break",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/huskar_life_break.png",
-    "desc": "Huskar draws upon his health to break an enemy's life, leaping at a target to shatter a percentage of that hero's current health and slow both their movement and attack speed. While leaping, Huskar is Debuff Immune with 60% magic resistance.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Huskar draws upon his health to break an enemy's life, leaping at a target to shatter a percentage of that hero's current health and slow both their movement and attack speed. While leaping, Huskar is Debuff Immune with 80% magic resistance.\n\nDISPEL TYPE: Basic Dispel",
     "notes": [
      "If Huskar is disabled during the charge or the target moves more than 1400 units in 0.015 seconds, the charge stops.",
      "Slow works on Spell Immune units.",
@@ -13998,7 +13999,7 @@
     "damageType": "magical",
     "piercesImmunity": true,
     "dispellable": "yes",
-    "cooldown": "16 / 14 / 12",
+    "cooldown": "15 / 13 / 11",
     "manaCost": null,
     "values": [
      {
@@ -14483,7 +14484,7 @@
     "piercesImmunity": false,
     "dispellable": "yes",
     "cooldown": "9 / 8 / 7",
-    "manaCost": "100",
+    "manaCost": "100 / 125 / 150",
     "values": [
      {
       "label": "LIFETIME",
@@ -17008,7 +17009,7 @@
     "damageType": "physical",
     "piercesImmunity": true,
     "dispellable": "no",
-    "cooldown": "25",
+    "cooldown": "24",
     "manaCost": "50 / 60 / 70 / 80",
     "values": [
      {
@@ -18660,7 +18661,7 @@
     "key": "lycan_pack_hunter",
     "name": "Pack Hunter",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/lycan_pack_hunter.png",
-    "desc": "Lycan and units under his control mark units on attack for 6 seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to 5% of its attack damage per stack, and heals the attacker for 3% of its attack damage per stack.",
+    "desc": "Lycan and units under his control mark units on attack for 6 seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to 5% of its attack damage per stack, and heals the attacker for 3% of its attack damage per stack. Only units within 1200 range of Lycan can apply new marks.\n\nDISPEL TYPE: Basic Dispel",
     "notes": [
      "Each unit can apply 1 mark per enemy.",
      "Marked units are revealed through fog of war and invisibility.",
@@ -18683,6 +18684,10 @@
      {
       "label": "MARK DURATION",
       "value": "6"
+     },
+     {
+      "label": "MARK RANGE",
+      "value": "1200"
      },
      {
       "label": "BONUS DAMAGE PER STACK",
@@ -18812,11 +18817,11 @@
      },
      {
       "label": "MOVEMENT SLOW",
-      "value": "15 / 30 / 45 / 60%"
+      "value": "20 / 30 / 40 / 50%"
      },
      {
       "label": "ATTACK SLOW",
-      "value": "15 / 30 / 45 / 60"
+      "value": "20 / 30 / 40 / 50"
      },
      {
       "label": "DURATION",
@@ -19085,7 +19090,7 @@
      },
      {
       "label": "BONUS BASE DAMAGE",
-      "value": "20 / 35 / 50 / 65"
+      "value": "15 / 30 / 45 / 60"
      },
      {
       "label": "ILLUSION DAMAGE TAKEN",
@@ -19433,7 +19438,8 @@
      "Spirit Bear has 0 base attributes, 0 base armor, and % base magic resistance. Attributes from buffs or items fully affect the bear as they would for Universal heroes.",
      "Spirit Bear cannot gain experience. The Spirit Bear levels up when Lone Druid levels up.",
      "Spirit Bear has its own Aghanim's Scepter and Shard upgrades.",
-     "Spirit Bear receives a copy of Lone Druid's Neutral Item that has an independent cooldown."
+     "Spirit Bear receives a copy of Lone Druid's Neutral Item that has an independent cooldown.",
+     "Aghanim's Scepter goes on a 6 second cooldown when moved between Lone Druid and the Spirit Bear, unless near a shop."
     ],
     "lore": "Sylla's lifelong companion is symbiotic with his spirit and heart, coming to aid him in any time of need.",
     "scepter": "",
@@ -19679,7 +19685,7 @@
     "key": "chaos_knight_armageddon",
     "name": "Ahead, Armageddon",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/chaos_knight_armageddon.png",
-    "desc": "For each second Chaos Knight keeps moving without stopping or attacking, Armageddon gains bonus movement speed. The bonus drains away while stopping, and lost when attacking.\n\nWhile at least one of Chaos Knight's phantasms is alive, Ahead, Armageddon can be activated to charge over terrain, building up to a max speed before releasing. Chaos Knight and the illusions will attack units they charge over.",
+    "desc": "For each second Chaos Knight keeps moving without stopping or attacking, Armageddon gains bonus movement speed. The bonus drains away while stopping, and lost when attacking.\n\nWhile at least one of Chaos Knight's phantasms is alive, Ahead, Armageddon can be activated to charge over terrain, building up to a max speed before releasing. Chaos Knight and the illusions will attack units they charge over. Can only be activated once per cast of Phantasm, and is refreshed when Phantasm is cast.",
     "notes": [
      "Being stunned, hexed, feared, taunted or rooted during the windup cancels the charge.",
      "Ahead, Armageddon is only available when at least 1 of Chaos Knight's illusions created with the active cast of Phantasm is alive.",
@@ -19984,7 +19990,7 @@
     "key": "meepo_divided_we_stand",
     "name": "Divided We Stand",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/meepo_divided_we_stand.png",
-    "desc": "Meepo summons another Meepo, which levels up and shares items with the main Meepo. Ability cooldowns are independent, but items share cooldowns between Meepos, except Teleport Scrolls.\n\nDamage, attack speed, health, mana, regeneration, mana burn, and proc chance bonuses from items are distributed equally among the amount of Meepos, making them 50 / 66 / 75 / 80% less effective.\n\nIf any Meepo dies, they all die.\n\nExperience gained by any Meepo is decreased proportionally by the number of Meepos that have gained experience in the last 5s.",
+    "desc": "Meepo summons another Meepo, which levels up and shares items with the main Meepo. Ability cooldowns are independent, but items share cooldowns between Meepos, except Teleport Scrolls.\n\nDamage, attack speed, health, mana, regeneration, mana burn, and proc chance bonuses from items are distributed equally among the amount of Meepos, making them 50 / 66 / 75 / 80% less effective.\n\nIf any Meepo dies, they all die.\n\nExperience gained by any Meepo is decreased proportionally by the number of Meepos that have gained experience in the last 10s.",
     "notes": [],
     "lore": "Do I know you?",
     "scepter": "",
@@ -21712,7 +21718,7 @@
     "key": "naga_siren_eelskin",
     "name": "Eelskin",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/naga_siren_eelskin.png",
-    "desc": "Naga Siren has bonus evasion, increased per every other Naga Siren within 900 radius.",
+    "desc": "Naga Siren has bonus evasion, increased per every other Naga Siren within 1200 radius.",
     "notes": [],
     "lore": "",
     "scepter": "",
@@ -21730,7 +21736,7 @@
     "values": [
      {
       "label": "EVASION PER NAGA",
-      "value": "4%"
+      "value": "5%"
      }
     ]
    },
@@ -22526,7 +22532,7 @@
     "damageType": null,
     "piercesImmunity": false,
     "dispellable": "no",
-    "cooldown": "45.75",
+    "cooldown": "45.5",
     "manaCost": "50",
     "values": [
      {
@@ -22547,7 +22553,7 @@
      },
      {
       "label": "COOLDOWN",
-      "value": "45.75"
+      "value": "45.5"
      }
     ]
    },
@@ -23100,7 +23106,7 @@
      },
      {
       "label": "DURATION",
-      "value": "5 / 5.5 / 6"
+      "value": "4.5 / 5 / 5.5"
      },
      {
       "label": "SLOW",
@@ -23332,7 +23338,7 @@
     "values": [
      {
       "label": "BONUS MOVE SPEED",
-      "value": "15 / 25 / 35 / 45"
+      "value": "15 / 20 / 25 / 30"
      },
      {
       "label": "ENSNARE CHANCE",
@@ -23403,7 +23409,7 @@
      },
      {
       "label": "MOVEMENT SPEED",
-      "value": "35%"
+      "value": "30%"
      },
      {
       "label": "STATUS RESISTANCE",
@@ -23645,7 +23651,7 @@
    {
     "level": 10,
     "options": [
-     "+4 Health Regen",
+     "+4.5 Health Regen",
      "+15 Movement Speed"
     ]
    },
@@ -23660,7 +23666,7 @@
     "level": 20,
     "options": [
      "+45 Retaliate Damage",
-     "-25s Stampede Cooldown"
+     "-30s Stampede Cooldown"
     ]
    },
    {
@@ -24026,7 +24032,8 @@
     "desc": "Each time Timbersaw is attacked, he gains increased health regen and armor. Hero attacks are counted as 4x the amount.",
     "notes": [
      "Break disables the gaining of new stacks.",
-     "Break does not disable the bonuses from existing stacks."
+     "Break does not disable the bonuses from existing stacks.",
+     "Attacks that miss Timbersaw due to evasion, blindness or uphill disadvantage still grant stacks."
     ],
     "lore": "The saw-suit is equipped to react to the slightest touch with fortified defenses.",
     "scepter": "Reactive Armor can now be activated to get max stacks and 150 damage barrier. Grants Timbersaw 100 + 75 barrier amount per second for each enemy hero within 450 radius of Timbersaw up to a maximum of 800. After 8 seconds, Timbersaw deals damage to every hero within 450 radius equal to 200 + his remaining barrier amount and loses all of his barrier.",
@@ -24476,7 +24483,7 @@
    {
     "level": 25,
     "options": [
-     "-30 Bristleback Damage Threshold",
+     "-35 Bristleback Damage Threshold",
      "+18 Warpath Damage Per Stack"
     ]
    }
@@ -25079,7 +25086,7 @@
     "damageType": "magical",
     "piercesImmunity": null,
     "dispellable": "yes",
-    "cooldown": "12 / 10 / 8 / 6",
+    "cooldown": "13 / 11 / 9 / 7",
     "manaCost": "110 / 120 / 130 / 140",
     "values": [
      {
@@ -25158,7 +25165,7 @@
     "values": [
      {
       "label": "MAX HEALTH RESTORATION REDUCTION",
-      "value": "40%"
+      "value": "35%"
      }
     ]
    },
@@ -25202,7 +25209,7 @@
    {
     "level": 10,
     "options": [
-     "+25 Curse of Avernus DPS",
+     "+20 Curse of Avernus DPS",
      "+125 Mist Coil Cast Range"
     ]
    },
@@ -28854,7 +28861,7 @@
     "values": [
      {
       "label": "BASE DAMAGE",
-      "value": "100 / 160 / 220 / 280"
+      "value": "110 / 160 / 210 / 260"
      },
      {
       "label": "BONUS DMG PER HERO",
@@ -29006,7 +29013,7 @@
      },
      {
       "label": "ILLUSION MOVESPEED BONUS",
-      "value": "30%"
+      "value": "25%"
      }
     ]
    },
@@ -29606,7 +29613,7 @@
     "damageType": "magical",
     "piercesImmunity": null,
     "dispellable": "strong",
-    "cooldown": "18 / 17 / 16 / 15",
+    "cooldown": "17 / 16 / 15 / 14",
     "manaCost": "105",
     "values": [
      {
@@ -29649,7 +29656,7 @@
     "piercesImmunity": null,
     "dispellable": null,
     "cooldown": "21 / 18 / 15 / 12",
-    "manaCost": "70 / 80 / 90 / 100",
+    "manaCost": "60 / 65 / 70 / 75",
     "values": [
      {
       "label": "BASE DAMAGE PER SHOT",
@@ -30887,7 +30894,7 @@
     "key": "primal_beast_colossal",
     "name": "Colossal",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/primal_beast_colossal.png",
-    "desc": "Primal Beast has 10% base Slow Resistance and gains 0.5% bonus Area of Effect and 1% Slow Resistance for every 100 Max Health.",
+    "desc": "Primal Beast has 10% base Slow Resistance and gains 0.5% bonus Area of Effect and 0.75% Slow Resistance for every 100 Max Health.",
     "notes": [],
     "lore": "",
     "scepter": "",
@@ -31865,7 +31872,7 @@
     "values": [
      {
       "label": "DAMAGE",
-      "value": "60 / 120 / 180 / 240"
+      "value": "80 / 140 / 200 / 260"
      },
      {
       "label": "SILENCE DURATION",
@@ -32171,7 +32178,7 @@
      },
      {
       "label": "MAX STACKS",
-      "value": "5"
+      "value": "4 / 5 / 6"
      },
      {
       "label": "ARMOR PER STACK",

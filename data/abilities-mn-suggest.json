@@ -1,1 +1,22 @@
-{}
+{
+ "-30s Stampede Cooldown": "-30 Stampede Cooldown",
+ "-35 Bristleback Damage Threshold": "-35 Bristleback Гэмтлийн босго",
+ "+100 Shadow Wave Cast Range": "+100 Shadow Wave Цутгах хүрээ",
+ "+20 Curse of Avernus DPS": "+20 Curse of Avernus DPS",
+ "+25 Eidolon Damage": "+25 Eidolon гэмтэл",
+ "+30 Wrath of Nature Base Damage": "+30 Wrath of Nature Үндсэн гэмтэл",
+ "+4.5 Health Regen": "+4.5 HP Сэргээх",
+ "Aghanim's Scepter goes on a 6 second cooldown when moved between Lone Druid and the Spirit Bear, unless near a shop.": "Aghanim's Scepter нь дэлгүүрийн ойролцоо биш л бол Lone Druid болон Сүнсний баавгайн хооронд шилжихэд 6 секунд cooldown үргэлжилнэ.",
+ "Attacks that miss Timbersaw due to evasion, blindness or uphill disadvantage still grant stacks.": "evasion, сохор эсвэл өгсөх сул байдлаас шалтгаалан Timbersaw-г алдсан довтолгоонууд стекийг өгдөг.",
+ "Experience gained by any Meepo is decreased proportionally by the number of Meepos that have gained experience in the last 10s.": "Аливаа Meepo-ийн олж авсан туршлага нь сүүлийн 10-аад онд туршлага хуримтлуулсан Мипогийн тоогоор пропорциональ хэмжээгээр буурдаг.",
+ "Huskar draws upon his health to break an enemy's life, leaping at a target to shatter a percentage of that hero's current health and slow both their movement and attack speed. While leaping, Huskar is Debuff Immune with 80% magic resistance.": "Huskar нь дайсны амийг таслахын тулд өөрийн HP-г ашиглаж, бай руу харайж тухайн баатрын одоогийн HP-ийн тодорхой хувийг эвдэж, тэдний хөдөлгөөн болон довтолгооны хурдыг удаашруулна. Үсрэх үед Huskar нь Debuff дархлаатай, 80% ид шидийн эсэргүүцэлтэй байдаг.",
+ "Increases Cast Range. Sand King leaves behind a trail of spines, that, after a 0.8s delay, create Stinger attack areas along the path, that apply 70% of Stinger damage to enemies hit.": "Дамжуулах хүрээг нэмэгдүүлдэг. Sand King нь нурууны ул мөр үлдээдэг бөгөөд 0.8 секундын саатлын дараа зам дагуу Stinger довтолгооны хэсгүүдийг үүсгэж, дайсанд Stinger хохирлын 70%-ийг өгдөг.",
+ "Increases Nothl Projection's cast range by 200 and leash range by 450.": "Nothl Projection-ийн цутгах хүрээг 200, оосорны хүрээг 450-аар нэмэгдүүлнэ.",
+ "Lycan and units under his control mark units on attack for 6 seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to 5% of its attack damage per stack, and heals the attacker for 3% of its attack damage per stack. Only units within 1200 range of Lycan can apply new marks.": "Lycan ба түүний удирдлаган дор байгаа нэгжүүд 6 секундын турш довтолгоонд өртөж байна. Lycan эсвэл түүний удирдлаган дор байгаа нэгж тэмдэглэгдсэн нэгж рүү довтлох үед энэ нь стек тутамд довтолгооны хохирлынхоо 5%-тай тэнцэх хэмжээний нэмэлт хохирол өгч, довтолгооны гэмтлийн 3%-ийг эдгээдэг. Зөвхөн Lycan-ийн 1200 хүрээн доторх нэгжид шинэ тэмдэг тавих боломжтой.",
+ "MARK RANGE": "Хүрээг тэмдэглэх",
+ "Naga Siren has bonus evasion, increased per every other Naga Siren within 1200 radius.": "Naga Siren нь 1200 радиус дотор Naga Siren тутамд нэмэгддэг evasion урамшуулалтай.",
+ "Primal Beast has 10% base Slow Resistance and gains 0.5% bonus Area of Effect and 0.75% Slow Resistance for every 100 Max Health.": "Primal Beast нь 10% суурь удаан эсэргүүцэлтэй бөгөөд 100 Max HP тутамд 0.5% нэмэлт нөлөөллийн талбай, 0.75% удаашралтай эсэргүүцлийг олдог.",
+ "The Thunderhide's Slam slows enemies for 2 seconds.": "Thunderhide's Slam нь дайснуудыг 2 секундын турш удаашруулдаг.",
+ "Throws a dagger slowing the enemy unit's movement speed, dealing 65 / 70 / 75 / 80+25 / 40 / 55 / 70% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities.": "Дайсны нэгжийн хөдөлгөөний хурдыг удаашруулах чинжаал шидэж, Phantom Assassin-ийн довтолгооны хохирлын 65/70/75/80+25/40/55/70%-ийг физик гэмтэл болгон өгч, эд зүйл, чадвараас довтолгооны нөлөө үзүүлнэ.",
+ "While at least one of Chaos Knight's phantasms is alive, Ahead, Armageddon can be activated to charge over terrain, building up to a max speed before releasing. Chaos Knight and the illusions will attack units they charge over. Can only be activated once per cast of Phantasm, and is refreshed when Phantasm is cast.": "Chaos Knight-ийн дор хаяж нэг нь амьд байгаа ч Ahead, Armageddon-г газар дээр цэнэглэхийн тулд идэвхжүүлж, суллахаас өмнө дээд хурдыг нэмэгдүүлэх боломжтой. Chaos Knight ба хуурмаг зүйл нь тэдний цэнэглэсэн нэгж рүү дайрах болно. Phantasm-н дамжуулалт бүрд зөвхөн нэг удаа идэвхжүүлэх боломжтой бөгөөд Phantasm-г дамжуулах үед шинэчлэгддэг."
+}

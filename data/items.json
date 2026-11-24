@@ -1925,29 +1925,6 @@
   "lore": "",
   "notes": ""
  },
- "defiant_shell": {
-  "id": 950,
-  "key": "defiant_shell",
-  "name": "Defiant Shell",
-  "kind": "neutral",
-  "cost": 0,
-  "tier": 2,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/defiant_shell.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Reciprocity",
-    "description": "When attacked, the hero counter-attacks a target within their attack range for 80% of their regular attack damage."
-   }
-  ],
-  "attrib": [],
-  "cooldown": 4,
-  "manaCost": null,
-  "lore": "",
-  "notes": ""
- },
  "demon_edge": {
   "id": 51,
   "key": "demon_edge",
@@ -4110,29 +4087,6 @@
   "lore": "The powerful headpiece of a dead necromancer.",
   "notes": "Cannot dominate more than one unit at a time. If a new unit is dominated, the old one will die.\nCan also Dominate enemy lane creeps and summoned units.\nSelling Helm of the Dominator will cause dominated units to die."
  },
- "helm_of_the_hivemind": {
-  "id": 1911,
-  "key": "helm_of_the_hivemind",
-  "name": "Helm of the Hivemind",
-  "kind": "neutral",
-  "cost": 0,
-  "tier": 4,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/helm_of_the_hivemind.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Brood Awakening",
-    "description": "Merge consciousness with an unknown monarch, gaining 120 cast range. Bonus cast range is increased by 80 and maximum health is decreased by 8% for every assimilated hero on both teams."
-   }
-  ],
-  "attrib": [],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "",
-  "notes": ""
- },
  "helm_of_the_overlord": {
   "id": 635,
   "key": "helm_of_the_overlord",
@@ -4217,25 +4171,25 @@
   "lore": "A prized relic long thought lost forever in a failed crusade.",
   "notes": ""
  },
- "horn_of_battle_greater": {
-  "id": 1951,
-  "key": "horn_of_battle_greater",
-  "name": "Greater Horn of Battle",
+ "horn_of_battle": {
+  "id": 1950,
+  "key": "horn_of_battle",
+  "name": "Horn of Battle",
   "kind": "shop",
   "cost": 0,
   "tier": null,
   "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/horn_of_battle_greater.png",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/horn_of_battle.png",
   "components": null,
   "abilities": [
    {
     "type": "use",
-    "title": "Grand Call to Arms",
-    "description": "Summons a wave of mega creeps, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack."
+    "title": "Call to Arms",
+    "description": "Target an allied barracks anywhere on the map to summon a wave of Super Creeps, or Mega Creeps, if all enemy barracks are destroyed, including a catapult and a flagbearer, in that lane for your team. Can be used from the backpack."
    }
   ],
   "attrib": [],
-  "cooldown": 30,
+  "cooldown": null,
   "manaCost": null,
   "lore": "",
   "notes": ""
@@ -5180,29 +5134,6 @@
   "cooldown": 24,
   "manaCost": 75,
   "lore": "An enchanted hammer forged of metals discovered in the ruins of a village destroyed by a great star storm.",
-  "notes": ""
- },
- "mind_breaker": {
-  "id": 309,
-  "key": "mind_breaker",
-  "name": "Mind Breaker",
-  "kind": "neutral",
-  "cost": 0,
-  "tier": 4,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mind_breaker.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "passive",
-    "title": "Silence Strike",
-    "description": "The next attack silences the hit enemy for 2 seconds."
-   }
-  ],
-  "attrib": [],
-  "cooldown": 14,
-  "manaCost": null,
-  "lore": "A bewitching blade of indeterminate form capable of piercing the psyche of even the most willful foe.",
   "notes": ""
  },
  "minotaur_horn": {
@@ -6765,40 +6696,6 @@
   "lore": "Atos, the Lord of Blight, has his essence stored in this deceptively simple wand.",
   "notes": ""
  },
- "roshans_banner": {
-  "id": 1804,
-  "key": "roshans_banner",
-  "name": "Roshan's Banner",
-  "kind": "shop",
-  "cost": 0,
-  "tier": null,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/roshans_banner.png",
-  "components": null,
-  "abilities": [
-   {
-    "type": "use",
-    "title": "Place Banner",
-    "description": "Creates a banner at the target location. Lane creeps in the area of effect become damage immune while the Banner is up. Lasts 120 seconds.\n\n Can be destroyed. Creeps and illusions deal 25% damage to the banner."
-   }
-  ],
-  "attrib": [
-   {
-    "key": "radius",
-    "display": "EFFECT RADIUS: {value}",
-    "value": "600 / 900 / 1200"
-   },
-   {
-    "key": "health_tooltip",
-    "display": "PIP HEALTH: {value}",
-    "value": "6 / 8 / 10"
-   }
-  ],
-  "cooldown": 1,
-  "manaCost": null,
-  "lore": "",
-  "notes": "The banner has fragile pips: melee heroes and Roshan remove 2 pips per attack."
- },
  "safety_bubble": {
   "id": 1157,
   "key": "safety_bubble",
@@ -6820,7 +6717,7 @@
   "cooldown": null,
   "manaCost": null,
   "lore": "",
-  "notes": ""
+  "notes": "Damage to the barrier on illusions is amplified by the illusion's incoming damage taken."
  },
  "sange": {
   "id": 162,
@@ -7225,7 +7122,7 @@
    {
     "key": "bonus_all_stats",
     "display": "+ {value} All Attributes",
-    "value": "35"
+    "value": "32"
    }
   ],
   "cooldown": null,
