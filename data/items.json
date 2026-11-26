@@ -2719,39 +2719,6 @@
   "lore": "",
   "notes": ""
  },
- "enhancement_hulking": {
-  "id": 1866,
-  "key": "enhancement_hulking",
-  "name": "Hulking",
-  "kind": "enchantment",
-  "cost": 0,
-  "tier": null,
-  "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/enhancement_hulking.png",
-  "components": null,
-  "abilities": [],
-  "attrib": [
-   {
-    "key": "max_health",
-    "display": "+ {value}% Health",
-    "value": "5"
-   },
-   {
-    "key": "max_health_regen",
-    "display": "+ {value}% Max Health Regen",
-    "value": "1.5"
-   },
-   {
-    "key": "attack_speed",
-    "display": "- {value}% Attack Speed",
-    "value": "-30"
-   }
-  ],
-  "cooldown": null,
-  "manaCost": null,
-  "lore": "",
-  "notes": ""
- },
  "enhancement_keen_eyed": {
   "id": 1595,
   "key": "enhancement_keen_eyed",
@@ -4171,25 +4138,25 @@
   "lore": "A prized relic long thought lost forever in a failed crusade.",
   "notes": ""
  },
- "horn_of_battle": {
-  "id": 1950,
-  "key": "horn_of_battle",
-  "name": "Horn of Battle",
+ "horn_of_battle_greater": {
+  "id": 1951,
+  "key": "horn_of_battle_greater",
+  "name": "Greater Horn of Battle",
   "kind": "shop",
   "cost": 0,
   "tier": null,
   "category": null,
-  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/horn_of_battle.png",
+  "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/horn_of_battle_greater.png",
   "components": null,
   "abilities": [
    {
     "type": "use",
-    "title": "Call to Arms",
-    "description": "Target an allied barracks anywhere on the map to summon a wave of Super Creeps, or Mega Creeps, if all enemy barracks are destroyed, including a catapult and a flagbearer, in that lane for your team. Can be used from the backpack."
+    "title": "Grand Call to Arms",
+    "description": "Summons a wave of Super Creeps, or Mega Creeps, if all enemy barracks are destroyed, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack."
    }
   ],
   "attrib": [],
-  "cooldown": null,
+  "cooldown": 30,
   "manaCost": null,
   "lore": "",
   "notes": ""

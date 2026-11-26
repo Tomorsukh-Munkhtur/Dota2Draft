@@ -5225,6 +5225,12 @@
  "items": {
   "horn_of_battle_greater": [
    {
+    "patch": "7.42a",
+    "lines": [
+     "Now correctly states that it summons Super Creeps when used, and Mega Creeps when all enemy barracks are destroyed"
+    ]
+   },
+   {
     "patch": "7.42",
     "lines": [
      "Dropped from Tormentor on every death",
@@ -6802,14 +6808,6 @@
     "patch": "7.42",
     "lines": [
      "Tier changed from 5 to 4"
-    ]
-   }
-  ],
-  "horn_of_battle": [
-   {
-    "patch": "7.42a",
-    "lines": [
-     "Now correctly states that it summons Super Creeps when used, and Mega Creeps when all enemy barracks are destroyed"
     ]
    }
   ]

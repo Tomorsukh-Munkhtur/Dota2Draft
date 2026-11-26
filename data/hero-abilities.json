@@ -18661,7 +18661,7 @@
     "key": "lycan_pack_hunter",
     "name": "Pack Hunter",
     "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/lycan_pack_hunter.png",
-    "desc": "Lycan and units under his control mark units on attack for 6 seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to 5% of its attack damage per stack, and heals the attacker for 3% of its attack damage per stack. Only units within 1200 range of Lycan can apply new marks.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Lycan and units under his control mark units on attack for 6 seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to 5% of its attack damage per stack, and heals the attacker for 3% of its attack damage per stack. Only units within 1200 range of Lycan can apply new marks.",
     "notes": [
      "Each unit can apply 1 mark per enemy.",
      "Marked units are revealed through fog of war and invisibility.",
